@@ -45,12 +45,12 @@ function App() {
             <h2>Full stack Web Developer who loves his job!</h2>
             <div className="buttons">
               <a id="projects-button" href="#">
-                Projects
-                <HiArrowNarrowRight size={30} />
+                <span>Projects</span>
+                <HiArrowNarrowRight size={28} />
               </a>
               <a id="contact-button" href="#">
                 Contact
-                <FaRegPaperPlane size={24} />
+                <FaRegPaperPlane size={22} />
               </a>
             </div>
           </div>

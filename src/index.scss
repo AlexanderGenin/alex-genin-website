@@ -43,7 +43,6 @@ header {
         position: relative;
         display: block;
         text-decoration: none;
-        transition: 0.3s;
         color: $textColor;
         padding-bottom: 4px;
         &::after {
@@ -102,17 +101,52 @@ main {
         font-size: 1.4rem;
         font-weight: bold;
         margin: 2rem 2rem;
+
         &#projects-button {
           color: $yellow;
+
+          span {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 4px;
+            &::after {
+              position: absolute;
+              content: "";
+              width: 100%;
+              height: 2px;
+              top: 100%;
+              left: 0;
+              background: $yellow;
+            }
+          }
+          svg {
+            transition: transform 0.3s ease-out;
+          }
+          &:hover svg {
+            transform: translateX(8px);
+          }
         }
         &#contact-button {
           color: $red;
           border: 2px solid $red;
           padding: 0.5rem 1.4rem;
           border-radius: 10px;
+          transition: all 0.3s;
+          background-color: transparent;
+          background-size: 100% 200%;
+          background-image: linear-gradient(
+            to bottom,
+            transparent 50%,
+            $red 50%
+          );
+          &:hover {
+            background-color: $red;
+            color: $textColor;
+            background-position: 0 -100%;
+          }
         }
         svg {
-          padding-left: 1rem;
+          padding-left: 0.8rem;
           vertical-align: middle;
         }
       }
