@@ -1,0 +1,92 @@
+@import "./font/Nunito.css";
+
+body {
+  box-sizing: border-box;
+  background-color: #2d2e32;
+  color: #e1eee5;
+  font-family: "Nunito", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+  font-size: 16px;
+  margin: 0 auto;
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+}
+
+header {
+  margin: 1rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  svg {
+    width: 60px;
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 0;
+    li {
+      list-style: none;
+      margin: 1rem;
+    }
+  }
+}
+
+main {
+  .photo {
+    width: 700px;
+    position: absolute;
+    bottom: -20px;
+    left: -140px;
+    z-index: -10;
+  }
+
+  .heading-container {
+    margin-left: 40%;
+    margin-top: 5rem;
+    h1 {
+      font-family: "Segoe UI", "Arial", sans-serif;
+      font-size: 6rem;
+      font-weight: bold;
+      margin: 0;
+      line-height: 6rem;
+      .first-word {
+        margin-left: -2rem;
+      }
+    }
+    h2 {
+      font-size: 1.2rem;
+      font-weight: normal;
+      margin: 2rem 0 1rem 1rem;
+    }
+
+    .buttons {
+      a {
+        display: inline-block;
+        text-decoration: none;
+        font-size: 1.4rem;
+        font-weight: bold;
+        margin: 2rem 2rem;
+        &#projects-button {
+          color: #ecdd7b;
+        }
+        &#contact-button {
+          color: #fa554e;
+          border: 2px solid #fa554e;
+          padding: 0.5rem 1.4rem;
+          border-radius: 10px;
+        }
+        svg {
+          padding-left: 1rem;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+}

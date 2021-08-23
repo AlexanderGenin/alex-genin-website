@@ -1,23 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import { ReactComponent as Logo } from "./images/alex-genin-logo.svg";
+import AlexGeninPhoto from "./images/alex-genin-w-circle.png";
+import { HiArrowNarrowRight } from "react-icons/hi";
+import { FaRegPaperPlane } from "react-icons/fa";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="container">
+        <header>
+          <Logo />
+          <nav>
+            <div></div>
+            <ul>
+              <li>Home</li>
+              <li>Projects</li>
+              <li>About me</li>
+              <li>Contact</li>
+            </ul>
+          </nav>
+          <div className="lang">EN</div>
+        </header>
+        <main>
+          <img src={AlexGeninPhoto} className="photo" alt="Alex Genin" />
+          <div className="heading-container">
+            <h1>
+              <span className="first-word">Alex</span>
+              <br />
+              Genin
+            </h1>
+            <h2>Full stack Web Developer who loves his job!</h2>
+            <div className="buttons">
+              <a id="projects-button" href="#">
+                Projects
+                <HiArrowNarrowRight size={30} />
+              </a>
+              <a id="contact-button" href="#">
+                Contact
+                <FaRegPaperPlane size={24} />
+              </a>
+            </div>
+          </div>
+        </main>
+      </div>
     </div>
   );
 }
