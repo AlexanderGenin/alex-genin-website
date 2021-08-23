@@ -6,7 +6,7 @@ import {
   FaGithub,
   FaLinkedin,
   FaVk,
-  FaInstagram,
+  FaFacebookF,
 } from "react-icons/fa";
 
 function App() {
@@ -18,10 +18,18 @@ function App() {
           <nav>
             <div></div>
             <ul>
-              <li>Home</li>
-              <li>Projects</li>
-              <li>About me</li>
-              <li>Contact</li>
+              <li>
+                <a href="#">Home</a>
+              </li>
+              <li>
+                <a href="#">Projects</a>
+              </li>
+              <li>
+                <a href="#">About me</a>
+              </li>
+              <li>
+                <a href="#">Contact</a>
+              </li>
             </ul>
           </nav>
           <div className="lang">EN</div>
@@ -51,7 +59,7 @@ function App() {
             <FaGithub size={20} />
             <FaLinkedin size={20} />
             <FaVk size={20} />
-            <FaInstagram size={20} />
+            <FaFacebookF size={20} />
           </div>
         </main>
       </div>
