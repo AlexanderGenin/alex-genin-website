@@ -1,5 +1,9 @@
 @import "./font/Nunito.css";
 
+$yellow: #ecdd7b;
+$red: #fa554e;
+$contentWidth: 900px;
+
 body {
   box-sizing: border-box;
   background-color: #2d2e32;
@@ -9,7 +13,7 @@ body {
   margin: 0 auto;
 
   .container {
-    max-width: 900px;
+    max-width: $contentWidth;
     margin: 0 auto;
   }
 }
@@ -74,11 +78,11 @@ main {
         font-weight: bold;
         margin: 2rem 2rem;
         &#projects-button {
-          color: #ecdd7b;
+          color: $yellow;
         }
         &#contact-button {
-          color: #fa554e;
-          border: 2px solid #fa554e;
+          color: $red;
+          border: 2px solid $red;
           padding: 0.5rem 1.4rem;
           border-radius: 10px;
         }
@@ -87,6 +91,25 @@ main {
           vertical-align: middle;
         }
       }
+    }
+  }
+  .social-networks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 16rem;
+    position: absolute;
+    top: 9rem;
+    right: calc((100% - #{$contentWidth}) / 2);
+    .social-networks-line {
+      height: 7rem;
+      border-radius: 5px;
+      border: 1px solid $yellow;
+      margin-bottom: 0.6rem;
+    }
+    svg {
+      color: $yellow;
     }
   }
 }

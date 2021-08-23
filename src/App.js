@@ -1,7 +1,13 @@
 import { ReactComponent as Logo } from "./images/alex-genin-logo.svg";
 import AlexGeninPhoto from "./images/alex-genin-w-circle.png";
 import { HiArrowNarrowRight } from "react-icons/hi";
-import { FaRegPaperPlane } from "react-icons/fa";
+import {
+  FaRegPaperPlane,
+  FaGithub,
+  FaLinkedin,
+  FaVk,
+  FaInstagram,
+} from "react-icons/fa";
 
 function App() {
   return (
@@ -39,6 +45,13 @@ function App() {
                 <FaRegPaperPlane size={24} />
               </a>
             </div>
+          </div>
+          <div className="social-networks">
+            <div className="social-networks-line"></div>
+            <FaGithub size={20} />
+            <FaLinkedin size={20} />
+            <FaVk size={20} />
+            <FaInstagram size={20} />
           </div>
         </main>
       </div>
