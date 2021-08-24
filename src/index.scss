@@ -26,6 +26,35 @@ header {
   align-items: center;
   justify-content: space-between;
 
+  .switch-lang {
+    transform: translate(30%, 25%);
+    cursor: pointer;
+    .langs {
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      height: 50px;
+      p {
+        margin: 0;
+        width: 20px;
+        display: inline-block;
+        padding-right: 0.4rem;
+      }
+    }
+    svg {
+      color: $yellow;
+      vertical-align: middle;
+      width: 20px;
+      height: 20px;
+      transition: transform 0.3s;
+      &.rotate {
+        transform-origin: center;
+        transform: rotate(180deg);
+      }
+    }
+  }
+
   svg {
     width: 60px;
   }

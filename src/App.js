@@ -1,6 +1,8 @@
+import React, { useState } from "react";
 import { ReactComponent as Logo } from "./images/alex-genin-logo.svg";
 import AlexGeninPhoto from "./images/alex-genin-w-circle.png";
 import { HiArrowNarrowRight } from "react-icons/hi";
+import { IoIosArrowDown } from "react-icons/io";
 import {
   FaRegPaperPlane,
   FaGithub,
@@ -10,10 +12,16 @@ import {
 } from "react-icons/fa";
 import { ReactComponent as MongoDB } from "./images/mongodb.svg";
 import { ReactComponent as Express } from "./images/express.svg";
-import { ReactComponent as React } from "./images/react.svg";
+import { ReactComponent as ReactJS } from "./images/react.svg";
 import { ReactComponent as Node } from "./images/node.svg";
 
 function App() {
+  const [showLangs, setShowLangs] = useState(false);
+  const [langs, setLangs] = useState(["EN", "RU"]);
+  const switchLangs = (bool) => {
+    setLangs((prevLangs) => [prevLangs[+bool], prevLangs[+!bool]]);
+  };
+
   return (
     <div className="App">
       <div className="container">
@@ -36,7 +44,22 @@ function App() {
               </li>
             </ul>
           </nav>
-          <div className="lang">EN</div>
+          <div
+            className="switch-lang"
+            onClick={() => setShowLangs((prev) => !prev)}
+          >
+            <div className="langs">
+              <p
+                onClick={() => {
+                  showLangs && switchLangs(false);
+                }}
+              >
+                {langs[0]}
+              </p>
+              {showLangs && <p onClick={() => switchLangs(true)}>{langs[1]}</p>}
+            </div>
+            <IoIosArrowDown className={showLangs && "rotate"} />
+          </div>
         </header>
       </div>
       <main>
@@ -86,7 +109,7 @@ function App() {
               <p className="tech-description">Framework</p>
             </div>
             <div className="tech-container">
-              <React />
+              <ReactJS />
               <p className="tech-name">React</p>
               <p className="tech-description">Front-end</p>
             </div>
