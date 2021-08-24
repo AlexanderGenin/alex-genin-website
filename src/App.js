@@ -8,6 +8,10 @@ import {
   FaVk,
   FaFacebookF,
 } from "react-icons/fa";
+import { ReactComponent as MongoDB } from "./images/mongodb.svg";
+import { ReactComponent as Express } from "./images/express.svg";
+import { ReactComponent as React } from "./images/react.svg";
+import { ReactComponent as Node } from "./images/node.svg";
 
 function App() {
   return (
@@ -34,24 +38,28 @@ function App() {
           </nav>
           <div className="lang">EN</div>
         </header>
-        <main>
-          <img src={AlexGeninPhoto} className="photo" alt="Alex Genin" />
-          <div className="heading-container">
-            <h1>
-              <span className="first-word">Alex</span>
-              <br />
-              Genin
-            </h1>
-            <h2>Full stack Web Developer who loves his job!</h2>
-            <div className="buttons">
-              <a id="projects-button" href="#">
-                <span>Projects</span>
-                <HiArrowNarrowRight size={28} />
-              </a>
-              <a id="contact-button" href="#">
-                Contact
-                <FaRegPaperPlane size={22} />
-              </a>
+      </div>
+      <main>
+        <div className="container">
+          <div className="intro">
+            <img src={AlexGeninPhoto} className="photo" alt="Alex Genin" />
+            <div className="heading-container">
+              <h1>
+                <span className="first-word">Alex</span>
+                <br />
+                Genin
+              </h1>
+              <h2>Full stack Web Developer who loves his job!</h2>
+              <div className="buttons">
+                <a id="projects-button" href="#">
+                  <span>Projects</span>
+                  <HiArrowNarrowRight size={28} />
+                </a>
+                <a id="contact-button" href="#">
+                  Contact
+                  <FaRegPaperPlane size={22} />
+                </a>
+              </div>
             </div>
           </div>
           <div className="social-networks">
@@ -61,8 +69,35 @@ function App() {
             <FaVk size={20} />
             <FaFacebookF size={20} />
           </div>
-        </main>
-      </div>
+        </div>
+        <div className="mern">
+          <h3>
+            Working with <span className="mern-word">MERN</span>
+          </h3>
+          <div className="mern-container">
+            <div className="tech-container">
+              <MongoDB />
+              <p className="tech-name">MongoDB</p>
+              <p className="tech-description">Database</p>
+            </div>
+            <div className="tech-container">
+              <Express />
+              <p className="tech-name">Express</p>
+              <p className="tech-description">Framework</p>
+            </div>
+            <div className="tech-container">
+              <React />
+              <p className="tech-name">React</p>
+              <p className="tech-description">Front-end</p>
+            </div>
+            <div className="tech-container">
+              <Node />
+              <p className="tech-name">Node</p>
+              <p className="tech-description">Back-end</p>
+            </div>
+          </div>
+        </div>
+      </main>
     </div>
   );
 }
