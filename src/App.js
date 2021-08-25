@@ -14,6 +14,11 @@ import { ReactComponent as MongoDB } from "./images/mongodb.svg";
 import { ReactComponent as Express } from "./images/express.svg";
 import { ReactComponent as ReactJS } from "./images/react.svg";
 import { ReactComponent as Node } from "./images/node.svg";
+import { ReactComponent as StocksAppSummary } from "./images/stocks-app-summary.svg";
+import { ReactComponent as StocksAppAnalysis } from "./images/stocks-app-analysis.svg";
+import { ReactComponent as PortfolioAbout } from "./images/portfolio-about.svg";
+import { ReactComponent as PortfolioFeedback } from "./images/portfolio-feedback.svg";
+import Heading from "./components/heading";
 
 function App() {
   const [showLangs, setShowLangs] = useState(false);
@@ -93,7 +98,7 @@ function App() {
             <FaFacebookF size={20} />
           </div>
         </div>
-        <div className="mern">
+        <section className="mern">
           <h3>
             Working with <span className="mern-word">MERN</span>
           </h3>
@@ -104,7 +109,7 @@ function App() {
               <p className="tech-description">Database</p>
             </div>
             <div className="tech-container">
-              <Express />
+              <Express fill={"#fff"} />
               <p className="tech-name">Express</p>
               <p className="tech-description">Framework</p>
             </div>
@@ -119,6 +124,55 @@ function App() {
               <p className="tech-description">Back-end</p>
             </div>
           </div>
+        </section>
+        <div className="container">
+          <section className="projects">
+            <Heading content={"My projects"} />
+            <div className="project-container">
+              <div className="description-container">
+                <h4>Stocks live app</h4>
+                <p className="description-text">
+                  An interactive lightweight app to get live info about various
+                  stocks on global market.
+                </p>
+                <ul>
+                  <li>React</li>
+                  <li>Node</li>
+                  <li>Chart.js</li>
+                  <li>Yahoo Finance API</li>
+                </ul>
+                <div className="link-container">
+                  <a href="#">
+                    Take a look
+                    <HiArrowNarrowRight size={22} />
+                  </a>
+                </div>
+              </div>
+              <div className="images-container">
+                <StocksAppSummary />
+                <StocksAppAnalysis />
+              </div>
+            </div>
+            <div className="project-container">
+              <div className="images-container portfolio">
+                <PortfolioFeedback />
+                <PortfolioAbout />
+              </div>
+              <div className="description-container">
+                <h4>This website</h4>
+                <p className="description-text">
+                  I created this website from scratch. Starting from UX/UI
+                  design, writing code and finishing with uploading it to the
+                  host.
+                </p>
+                <ul>
+                  <li>React Hooks</li>
+                  <li>Sass/CSS3</li>
+                  <li>Figma</li>
+                </ul>
+              </div>
+            </div>
+          </section>
         </div>
       </main>
     </div>
