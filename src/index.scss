@@ -20,6 +20,14 @@ body {
     margin: 0 auto;
   }
 
+  .floating {
+    box-shadow: $shadow;
+    transition: transform 0.3s ease-out;
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+
   header {
     margin: 1rem auto;
     display: flex;
@@ -207,10 +215,6 @@ body {
       }
     }
     .mern {
-      background-color: #28292d;
-      width: 100%;
-      padding-top: 2rem;
-      padding-bottom: 2rem;
       h3 {
         margin: 0 auto;
         padding-bottom: 1rem;
@@ -266,7 +270,7 @@ body {
       position: relative;
       color: $yellow;
       text-transform: uppercase;
-      font-weight: 2rem;
+      font-weight: bold;
       margin-left: 0;
       letter-spacing: 0.1rem;
       &::before {
@@ -280,6 +284,20 @@ body {
         vertical-align: middle;
         transform: translateY(-50%);
       }
+    }
+
+    .sections-h4 {
+      text-align: center;
+      font-size: 1.4rem;
+      margin: 4rem auto 1rem auto;
+      font-weight: 300;
+    }
+
+    .dark-wrapper {
+      background-color: #28292d;
+      width: 100%;
+      padding-top: 2rem;
+      padding-bottom: 2rem;
     }
 
     .projects .project-container {
@@ -373,6 +391,22 @@ body {
             }
           }
         }
+      }
+    }
+    .skills {
+      .brackets {
+        color: $yellow;
+      }
+      .techs-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .fundamental-previous-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
       }
     }
   }
