@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { ReactComponent as Logo } from "./images/alex-genin-logo.svg";
 import AlexGeninPhoto from "./images/alex-genin-w-circle.png";
-import { HiArrowNarrowRight } from "react-icons/hi";
+import { HiArrowNarrowRight, HiDownload } from "react-icons/hi";
 import { IoIosArrowDown } from "react-icons/io";
 import {
   FaRegPaperPlane,
@@ -33,9 +33,51 @@ import { ReactComponent as StocksAppSummary } from "./images/stocks-app-summary.
 import { ReactComponent as StocksAppAnalysis } from "./images/stocks-app-analysis.svg";
 import { ReactComponent as PortfolioAbout } from "./images/portfolio-about.svg";
 import { ReactComponent as PortfolioFeedback } from "./images/portfolio-feedback.svg";
+
+import { ReactComponent as GraduationHat } from "./images/graduation-hat.svg";
+import { ReactComponent as Book } from "./images/book.svg";
+import { ReactComponent as Translation } from "./images/translation.svg";
+import { ReactComponent as Experience } from "./images/experience.svg";
+import { ReactComponent as Chat } from "./images/chat.svg";
+import { ReactComponent as Sports } from "./images/sports.svg";
+
 import Heading from "./components/heading";
 import Subheading from "./components/subheading";
 import TechBox from "./components/techBox";
+import QuickFact from "./components/quickFact";
+
+const quickFacts = [
+  {
+    icon: <GraduationHat />,
+    heading: "Moscow State University Student",
+    text: "I’m studying at the top 1 University of Russia and get only the highest grades",
+  },
+  {
+    icon: <Book />,
+    heading: "Self-taught developer",
+    text: "Learned everything I know with the help of books and online resources",
+  },
+  {
+    icon: <Translation />,
+    heading: "Advanced English (C1)",
+    text: "Approved by official Cambridge certificate (FCE) which you can check here",
+  },
+  {
+    icon: <Experience className="ajust" />,
+    heading: "Real Work Experience",
+    text: "Successfully delivered two Wordpress projects on UpWork. Received positive feedback",
+  },
+  {
+    icon: <Chat />,
+    heading: "Soft Skills",
+    text: "I value a lot my reputation of a friendly and trustworthy person :)",
+  },
+  {
+    icon: <Sports />,
+    heading: "My Hobbies",
+    text: "I am keen on travelling and also love playing all kinds of team sports games!",
+  },
+];
 
 function App() {
   const [showLangs, setShowLangs] = useState(false);
@@ -93,7 +135,9 @@ function App() {
                 <br />
                 Genin
               </h1>
-              <h2>Full stack Web Developer who loves his job!</h2>
+              <p className="moto">
+                Full stack Web Developer who loves his job!
+              </p>
               <div className="buttons">
                 <a id="projects-button" href="#">
                   <span>Projects</span>
@@ -185,8 +229,9 @@ function App() {
                 </p>
                 <ul>
                   <li>React Hooks</li>
+                  <li>JavaScript</li>
                   <li>Sass/CSS3</li>
-                  <li>Figma</li>
+                  <li>HTML5</li>
                 </ul>
               </div>
             </div>
@@ -219,7 +264,7 @@ function App() {
                   />
                   <TechBox
                     title={"TypeScript"}
-                    exp={"1+ years"}
+                    exp={"<1 year"}
                     icon={<TypeScript />}
                     type={"big"}
                   />
@@ -322,6 +367,37 @@ function App() {
             </section>
           </div>
         </div>
+        <section className="about">
+          <div className="container">
+            <Heading content={"About me"} />
+            <div className="desc-container">
+              <div className="greeting-intro">
+                <p class="greeting">Hello There!</p>
+                <p className="intro">
+                  My name is Alexander Genin. I’m a 21 years old professional
+                  full stack developer from Russia.
+                </p>
+              </div>
+              <div className="exp-cv">
+                <div className="container">
+                  <p className="exp-years">1</p>
+                  <p className="exp-text">year of experience</p>
+                </div>
+                <button className="cv">
+                  Download CV
+                  <HiDownload />
+                </button>
+              </div>
+            </div>
+            <div className="quick-facts-grid-container">
+              <div className="quick-facts-grid">
+                {quickFacts.map((qf, i) => (
+                  <QuickFact {...qf} color={i % 2 === 0 ? "yellow" : "red"} />
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
     </div>
   );

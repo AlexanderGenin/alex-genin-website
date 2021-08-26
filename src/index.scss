@@ -6,12 +6,14 @@ $textColor: #e1eee5;
 $yellow: #ecdd7b;
 $red: #fa554e;
 $contentWidth: 900px;
+$textFont: "Nunito", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+$bigTextFont: "Segoe UI", "Arial", sans-serif;
 
 body {
   box-sizing: border-box;
   background-color: $bgColor;
   color: #e1eee5;
-  font-family: "Nunito", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+  font-family: $textFont;
   font-size: 16px;
   margin: 0 auto;
 
@@ -118,7 +120,7 @@ body {
       .heading-container {
         margin-top: 4rem;
         h1 {
-          font-family: "Segoe UI", "Arial", sans-serif;
+          font-family: $bigTextFont;
           font-size: 5rem;
           font-weight: bold;
           margin: 0;
@@ -127,7 +129,7 @@ body {
             margin-left: -2rem;
           }
         }
-        h2 {
+        .moto {
           font-size: 1.2rem;
           font-weight: normal;
           margin: 2rem 0 1rem 1rem;
@@ -215,7 +217,7 @@ body {
       }
     }
     .mern {
-      h3 {
+      h2 {
         margin: 0 auto;
         padding-bottom: 1rem;
         text-align: center;
@@ -265,7 +267,7 @@ body {
       }
     }
 
-    .sections-h3 {
+    .sections-h2 {
       margin-top: 4rem;
       position: relative;
       color: $yellow;
@@ -286,7 +288,7 @@ body {
       }
     }
 
-    .sections-h4 {
+    .sections-h3 {
       text-align: center;
       font-size: 1.4rem;
       margin: 4rem auto 1rem auto;
@@ -407,6 +409,85 @@ body {
         display: flex;
         justify-content: space-between;
         align-items: center;
+      }
+    }
+    .about {
+      .desc-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        .greeting-intro {
+          max-width: 30rem;
+          .greeting {
+            font-weight: bold;
+            font-family: $bigTextFont;
+            font-size: 4rem;
+            margin: 0;
+          }
+        }
+        .exp-cv {
+          max-width: 14rem;
+          .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            .exp-years {
+              font-size: 4rem;
+              color: $yellow;
+              margin: 0;
+              padding-right: 1rem;
+              margin-right: 0.5rem;
+            }
+            .exp-text {
+              width: 4rem;
+              font-size: 1.2rem;
+            }
+          }
+          .cv {
+            font-family: $textFont;
+            font-weight: bold;
+            border: 2px solid $red;
+            border-radius: 40px;
+            background-color: transparent;
+            color: $red;
+            text-transform: uppercase;
+            padding: 0.8rem 2rem;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            background-size: 100% 200%;
+            background-image: linear-gradient(
+              to bottom,
+              transparent 50%,
+              $red 50%
+            );
+            &:hover {
+              background-color: $red;
+              color: $textColor;
+              background-position: 0 -100%;
+            }
+            svg {
+              display: inline-block;
+              padding-left: 0.5rem;
+              vertical-align: middle;
+              width: 20px;
+              height: 20px;
+            }
+          }
+        }
+      }
+      .quick-facts-grid-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 6rem;
+        .quick-facts-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 15rem);
+          grid-template-rows: repeat(2, 20rem);
+          gap: 2rem;
+        }
       }
     }
   }
