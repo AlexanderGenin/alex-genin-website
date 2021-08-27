@@ -1,0 +1,15 @@
+.list-with-ticks {
+  padding-left: 1rem;
+  list-style-type: none;
+  li:before {
+    content: "";
+    display: inline-block;
+    height: 1.6rem;
+    width: 1.6rem;
+    background-image: url(../images/approve.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 0.5em;
+    vertical-align: middle;
+  }
+}
