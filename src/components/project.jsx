@@ -4,7 +4,7 @@ import List from "./list";
 import "../sass/project.scss";
 
 export default function Project({
-  title,
+  name,
   description,
   techs,
   images,
@@ -18,7 +18,7 @@ export default function Project({
           {images.map((image) => image)}
         </div>
         <div className="description-container">
-          <h4>{title}</h4>
+          <h4>{name}</h4>
           <p className="description-text">{description}</p>
           <List items={techs} />
           {showLink && (
@@ -37,7 +37,7 @@ export default function Project({
   return (
     <div className="project-container">
       <div className="description-container">
-        <h4>{title}</h4>
+        <h4>{name}</h4>
         <p className="description-text">{description}</p>
         <List items={techs} />
         {showLink && (

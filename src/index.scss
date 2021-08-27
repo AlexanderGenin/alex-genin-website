@@ -308,92 +308,6 @@ body {
       align-items: flex-start;
       justify-content: space-between;
       margin-bottom: 6rem;
-      .description-container {
-        width: 25rem;
-        h4 {
-          margin: 0;
-          margin-top: 2rem;
-          text-align: center;
-          font-size: 1.6rem;
-        }
-        ul {
-          padding-left: 1rem;
-          list-style-type: none;
-          li:before {
-            content: "";
-            display: inline-block;
-            height: 1.6rem;
-            width: 1.6rem;
-            background-image: url(./images/approve.svg);
-            background-size: contain;
-            background-repeat: no-repeat;
-            margin-right: 0.5em;
-            vertical-align: middle;
-          }
-        }
-        .link-container {
-          display: flex;
-          align-items: center;
-          justify-content: flex-end;
-          a {
-            position: relative;
-            text-decoration: none;
-            color: $yellow;
-            font-size: 1.4rem;
-            display: inline-block;
-            margin-right: 2rem;
-            svg {
-              vertical-align: middle;
-              transition: transform 0.3s ease-out;
-              margin-bottom: 4px;
-              margin-left: 0.5rem;
-            }
-            &:hover svg {
-              transform: translateX(8px);
-            }
-          }
-        }
-      }
-      .images-container {
-        display: flex;
-        flex-direction: column;
-        svg {
-          width: 360px;
-          height: 256px;
-          transform: skewX(-25deg);
-          border-radius: 10px;
-          box-shadow: 5px 5px 8px rgba(39, 68, 234, 0.26);
-          transition: all 0.2s ease-in;
-          &:hover {
-            box-shadow: 5px 5px 8px rgba(39, 68, 234, 1);
-            transform: skewX(-25deg) translateY(-5px);
-          }
-          &:first-child {
-            z-index: 10;
-          }
-          &:last-child {
-            margin-left: 4rem;
-            margin-top: -8rem;
-            z-index: 5;
-          }
-        }
-        &.portfolio {
-          svg {
-            width: 320px;
-            height: 180px;
-            box-shadow: 5px 5px 8px rgba(236, 221, 123, 0.212);
-            &:hover {
-              box-shadow: 5px 5px 8px rgba(236, 221, 123, 1);
-              transform: skewX(-25deg) translateY(-5px);
-            }
-            &:last-child {
-              margin-left: 4rem;
-              margin-top: -6rem;
-              z-index: 5;
-            }
-          }
-        }
-      }
     }
     .skills {
       .brackets {
@@ -487,6 +401,25 @@ body {
           grid-template-columns: repeat(3, 15rem);
           grid-template-rows: repeat(2, 20rem);
           gap: 2rem;
+        }
+      }
+    }
+    .experience {
+      .experience-timeline-container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        margin: 4rem auto;
+        .timeline-container {
+          margin-right: 6rem;
+          svg {
+            display: block;
+            width: 114px;
+            height: 547px;
+          }
+        }
+        .experiences-container {
+          width: 36rem;
         }
       }
     }

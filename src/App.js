@@ -4,6 +4,11 @@ import AlexGeninPhoto from "./images/alex-genin-w-circle.png";
 import { HiArrowNarrowRight, HiDownload } from "react-icons/hi";
 import { IoIosArrowDown } from "react-icons/io";
 import {
+  IoRocketOutline,
+  IoLaptopOutline,
+  IoBookOutline,
+} from "react-icons/io5";
+import {
   FaRegPaperPlane,
   FaGithub,
   FaLinkedin,
@@ -37,15 +42,17 @@ import { ReactComponent as PortfolioFeedback } from "./images/portfolio-feedback
 import { ReactComponent as GraduationHat } from "./images/graduation-hat.svg";
 import { ReactComponent as Book } from "./images/book.svg";
 import { ReactComponent as Translation } from "./images/translation.svg";
-import { ReactComponent as Experience } from "./images/experience.svg";
+import { ReactComponent as ExperienceIcon } from "./images/experience.svg";
 import { ReactComponent as Chat } from "./images/chat.svg";
 import { ReactComponent as Sports } from "./images/sports.svg";
+import { ReactComponent as Timeline } from "./images/timeline.svg";
 
 import Heading from "./components/heading";
 import Subheading from "./components/subheading";
 import TechBox from "./components/techBox";
 import QuickFact from "./components/quickFact";
 import Project from "./components/project";
+import Experience from "./components/experience";
 
 const quickFacts = [
   {
@@ -64,7 +71,7 @@ const quickFacts = [
     text: "Approved by official Cambridge certificate (FCE) which you can check here",
   },
   {
-    icon: <Experience className="ajust" />,
+    icon: <ExperienceIcon className="ajust" />,
     heading: "Real Work Experience",
     text: "Successfully delivered two Wordpress projects on UpWork. Received positive feedback",
   },
@@ -98,6 +105,39 @@ const projects = [
     images: [<PortfolioFeedback />, <PortfolioAbout />],
     showLink: false,
     portfolioMarker: "portfolio",
+  },
+];
+
+const experiences = [
+  {
+    icon: <IoRocketOutline />,
+    title: "Moving to React and Node",
+    descList: [
+      "Learning Node, React, Express, MongoDB",
+      "Reading official documentations",
+      "Creating pet projects like this for practice",
+      "Improving my JavaScript skills with LeetCode",
+    ],
+  },
+  {
+    icon: <IoLaptopOutline />,
+    title: "Freelancing on UpWork",
+    descList: [
+      "Continue learning JavaScript, PHP, Wordpress, MySQL",
+      "Studying Web Design fundamentals",
+      "Creating custom WordPress Theme for ThemeForest",
+      "Working on UpWork: successfully making custom WordPress plugins (visit my profile     )",
+    ],
+  },
+  {
+    icon: <IoBookOutline />,
+    title: "Learning Javascript and PHP",
+    descList: [
+      "Learning Web Development in general",
+      "Watching countless tutorials online",
+      "Reading JavaScript and PHP docs",
+      "Practicing, practicing, practicing...",
+    ],
   },
 ];
 
@@ -215,51 +255,6 @@ function App() {
             {projects.map((project) => {
               return <Project {...project} />;
             })}
-            {/* <div className="project-container">
-              <div className="description-container">
-                <h4>Stocks live app</h4>
-                <p className="description-text">
-                  An interactive lightweight app to get live info about various
-                  stocks on global market.
-                </p>
-                <ul>
-                  <li>React</li>
-                  <li>Node</li>
-                  <li>Chart.js</li>
-                  <li>Yahoo Finance API</li>
-                </ul>
-                <div className="link-container">
-                  <a href="#">
-                    Take a look
-                    <HiArrowNarrowRight size={22} />
-                  </a>
-                </div>
-              </div>
-              <div className="images-container">
-                <StocksAppSummary />
-                <StocksAppAnalysis />
-              </div>
-            </div>
-            <div className="project-container">
-              <div className="images-container portfolio">
-                <PortfolioFeedback />
-                <PortfolioAbout />
-              </div>
-              <div className="description-container">
-                <h4>This website</h4>
-                <p className="description-text">
-                  I created this website from scratch. Starting with UX/UI
-                  design, prototyping and finishing with writing code and
-                  uploading it to the host.
-                </p>
-                <ul>
-                  <li>React Hooks</li>
-                  <li>JavaScript</li>
-                  <li>Sass/CSS3</li>
-                  <li>HTML5</li>
-                </ul>
-              </div>
-            </div> */}
           </section>
         </div>
         <div className="dark-wrapper">
@@ -425,8 +420,16 @@ function App() {
         </section>
         <section className="experience">
           <div className="container">
+            <Heading content={"My experience"} />
             <div className="experience-timeline-container">
-              <div className="expereince-container"></div>
+              <div className="timeline-container">
+                <Timeline />
+              </div>
+              <div className="experiences-container">
+                {experiences.map((experience) => (
+                  <Experience {...experience} />
+                ))}
+              </div>
             </div>
           </div>
         </section>
