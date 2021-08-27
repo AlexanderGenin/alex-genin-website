@@ -45,6 +45,7 @@ import Heading from "./components/heading";
 import Subheading from "./components/subheading";
 import TechBox from "./components/techBox";
 import QuickFact from "./components/quickFact";
+import Project from "./components/project";
 
 const quickFacts = [
   {
@@ -76,6 +77,27 @@ const quickFacts = [
     icon: <Sports />,
     heading: "My Hobbies",
     text: "I am keen on travelling and also love playing all kinds of team sports games!",
+  },
+];
+
+const projects = [
+  {
+    name: "Stocks Live App",
+    description:
+      "An interactive lightweight app to get live info about various stocks on global market.",
+    techs: ["React", "Node", "Chart.js", "Yahoo Finance API"],
+    images: [<StocksAppSummary />, <StocksAppAnalysis />],
+    showLink: true,
+    portfolioMarker: "",
+  },
+  {
+    name: "Stocks Live App",
+    description:
+      "I created this website from scratch. Starting with UX/UI design, prototyping and finishing with writing code and uploading it to the host.",
+    techs: ["React Hooks", "JavaScript", "Sass/CSS3", "HTML5"],
+    images: [<PortfolioFeedback />, <PortfolioAbout />],
+    showLink: false,
+    portfolioMarker: "portfolio",
   },
 ];
 
@@ -190,7 +212,10 @@ function App() {
         <div className="container">
           <section className="projects">
             <Heading content={"My projects"} />
-            <div className="project-container">
+            {projects.map((project) => {
+              return <Project {...project} />;
+            })}
+            {/* <div className="project-container">
               <div className="description-container">
                 <h4>Stocks live app</h4>
                 <p className="description-text">
@@ -234,7 +259,7 @@ function App() {
                   <li>HTML5</li>
                 </ul>
               </div>
-            </div>
+            </div> */}
           </section>
         </div>
         <div className="dark-wrapper">
@@ -395,6 +420,13 @@ function App() {
                   <QuickFact {...qf} color={i % 2 === 0 ? "yellow" : "red"} />
                 ))}
               </div>
+            </div>
+          </div>
+        </section>
+        <section className="experience">
+          <div className="container">
+            <div className="experience-timeline-container">
+              <div className="expereince-container"></div>
             </div>
           </div>
         </section>
