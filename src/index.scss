@@ -217,7 +217,7 @@ body {
       }
     }
     .mern {
-      h2 {
+      h3 {
         margin: 0 auto;
         padding-bottom: 1rem;
         text-align: center;
@@ -420,6 +420,62 @@ body {
         }
         .experiences-container {
           width: 36rem;
+        }
+      }
+    }
+
+    .review {
+      margin-top: 6rem;
+      margin-bottom: 6rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .avatar-container {
+        width: 20rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        svg {
+          width: 8rem;
+          height: 8rem;
+        }
+      }
+      .content-container {
+        width: 30rem;
+        svg {
+          fill: rgba(106, 108, 118, 0.26);
+        }
+        figure {
+          margin: 0;
+          p {
+            margin: 0;
+            line-height: 1.8rem;
+            text-align: justify;
+          }
+          blockquote {
+            margin: 1rem 0 2rem 3rem;
+          }
+          figcaption {
+            p {
+              text-align: right;
+            }
+            .cite-container {
+              display: flex;
+              justify-content: flex-end;
+              align-items: center;
+              a {
+                display: block;
+                text-decoration: none;
+                color: rgba(106, 108, 118, 0.849);
+                cite {
+                  font-style: normal;
+                }
+                svg {
+                  transform: translateY(3px);
+                }
+              }
+            }
+          }
         }
       }
     }

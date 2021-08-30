@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 import { ReactComponent as Logo } from "./images/alex-genin-logo.svg";
 import AlexGeninPhoto from "./images/alex-genin-w-circle.png";
-import { HiArrowNarrowRight, HiDownload } from "react-icons/hi";
+import {
+  HiArrowNarrowRight,
+  HiDownload,
+  HiOutlineExternalLink,
+} from "react-icons/hi";
 import { IoIosArrowDown } from "react-icons/io";
+import { ImQuotesLeft } from "react-icons/im";
 import {
   IoRocketOutline,
   IoLaptopOutline,
@@ -15,6 +20,7 @@ import {
   FaVk,
   FaFacebookF,
 } from "react-icons/fa";
+
 import StyledCsLogo from "./images/styledcs.png";
 import { ReactComponent as MongoDB } from "./images/mongodb.svg";
 import { ReactComponent as Express } from "./images/express.svg";
@@ -38,7 +44,7 @@ import { ReactComponent as StocksAppSummary } from "./images/stocks-app-summary.
 import { ReactComponent as StocksAppAnalysis } from "./images/stocks-app-analysis.svg";
 import { ReactComponent as PortfolioAbout } from "./images/portfolio-about.svg";
 import { ReactComponent as PortfolioFeedback } from "./images/portfolio-feedback.svg";
-
+import { ReactComponent as ReviewAvatar } from "./images/review-avatar.svg";
 import { ReactComponent as GraduationHat } from "./images/graduation-hat.svg";
 import { ReactComponent as Book } from "./images/book.svg";
 import { ReactComponent as Translation } from "./images/translation.svg";
@@ -429,6 +435,44 @@ function App() {
                 {experiences.map((experience) => (
                   <Experience {...experience} />
                 ))}
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="reviews">
+          <div className="container">
+            <Heading content={"What clients say"} />
+            <div className="review">
+              <div className="avatar-container">
+                <ReviewAvatar />
+              </div>
+              <div className="content-container">
+                <ImQuotesLeft size={74} />
+                <figure>
+                  <blockquote cite="https://www.upwork.com/freelancers/~0132ab416b37ee78a5">
+                    <p>
+                      Alexander did an excellent job creating my WordPress
+                      custom plugin. He was very communicative during the whole
+                      development and very open to suggestions. Alexander
+                      followed instructions very well and is very attentive to
+                      details. I will definitely hire Alex again next time I
+                      have a PHP project.
+                    </p>
+                  </blockquote>
+                  <figcaption>
+                    <p>— Esteban Rodriguez from GrubBytes</p>
+                    <div className="cite-container">
+                      <a
+                        href="https://www.upwork.com/freelancers/~0132ab416b37ee78a5"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <cite>See it on UpWork &nbsp;</cite>
+                        <HiOutlineExternalLink size={18} />
+                      </a>
+                    </div>
+                  </figcaption>
+                </figure>
               </div>
             </div>
           </div>
