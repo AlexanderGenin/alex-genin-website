@@ -477,6 +477,37 @@ function App() {
             </div>
           </div>
         </section>
+        <section className="contacts">
+          <div className="container">
+            <Heading content="Get in touch" />
+            <div className="contacts-container">
+              <div className="description">
+                <p class="heading">Let's Work Together!</p>
+                <p className="text">
+                  Always open to new projects and collaborations! Ready to be
+                  hired. Don’t hesitate to drop me a line!
+                </p>
+              </div>
+              <div className="form">
+                <form action="#">
+                  <input type="text" placeholder="Your name..." />
+                  <input type="email" placeholder="Your email for reply..." />
+                  <textarea
+                    name=""
+                    placeholder="Your message..."
+                    id=""
+                    cols="30"
+                    rows="6"
+                  ></textarea>
+                  <button type="submit">
+                    Send&nbsp;
+                    <HiArrowNarrowRight />
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
     </div>
   );
