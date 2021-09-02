@@ -5,9 +5,11 @@ $bgColor: #2d2e32;
 $textColor: #e1eee5;
 $yellow: #ecdd7b;
 $red: #fa554e;
-$contentWidth: 900px;
+$laptopWidth: 900px;
+$tabletWidth: 700px;
 $textFont: "Nunito", "Roboto", "Oxygen", "Ubuntu", sans-serif;
 $bigTextFont: "Segoe UI", "Arial", sans-serif;
+$largeScreen: 1020px;
 
 body {
   box-sizing: border-box;
@@ -19,11 +21,11 @@ body {
 
   // General styles
   .container {
-    max-width: $contentWidth;
+    max-width: $laptopWidth;
     margin: 0 auto;
 
-    @media (max-width: 1020px) {
-      max-width: 700px;
+    @media (max-width: $largeScreen) {
+      max-width: $tabletWidth;
     }
   }
 
@@ -121,6 +123,9 @@ body {
         width: 700px;
         margin-left: -500px;
         margin-right: 2rem;
+        @media (max-width: $largeScreen) {
+          margin-left: -450px;
+        }
       }
 
       .heading-container {
@@ -139,6 +144,9 @@ body {
           font-size: 1.2rem;
           font-weight: normal;
           margin: 2rem 0 1rem 1rem;
+          @media (max-width: $largeScreen) {
+            width: 14rem;
+          }
         }
 
         .buttons {
@@ -211,7 +219,10 @@ body {
       height: 18rem;
       position: absolute;
       top: 5rem;
-      right: calc((100% - #{$contentWidth}) / 2);
+      right: calc((100% - #{$laptopWidth}) / 2);
+      @media (max-width: $largeScreen) {
+        right: calc((100% - #{$tabletWidth}) / 2);
+      }
       .social-networks-line {
         height: 7rem;
         border-radius: 5px;
@@ -239,10 +250,15 @@ body {
         }
       }
       .mern-container {
+        @media (max-width: $largeScreen) {
+          max-width: 40rem;
+          margin: 0 auto;
+        }
         display: flex;
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
+
         .tech-container {
           width: 12rem;
           height: 12rem;
@@ -251,6 +267,7 @@ body {
           margin: 1rem 1rem;
           box-shadow: $shadow;
           transition: transform 0.3s ease-out;
+
           &:hover {
             transform: translateY(-5px);
           }
@@ -349,6 +366,11 @@ body {
             font-size: 4rem;
             margin: 0;
           }
+          @media (max-width: $largeScreen) {
+            .intro {
+              width: 22rem;
+            }
+          }
         }
         .exp-cv {
           max-width: 14rem;
@@ -384,9 +406,12 @@ body {
             background-size: 100% 200%;
             background-image: linear-gradient(
               to bottom,
-              transparent 50%,
+              transparent 51%,
               $red 50%
             );
+            @media (max-width: $largeScreen) {
+              padding: 0.8rem 1.4rem;
+            }
             &:hover {
               background-color: $red;
               color: $textColor;
@@ -406,12 +431,16 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 6rem;
+        margin-top: 6rem;
+        margin-bottom: 6rem;
         .quick-facts-grid {
           display: grid;
-          grid-template-columns: repeat(3, 15rem);
+          grid-template-columns: repeat(3, 14rem);
           grid-template-rows: repeat(2, 20rem);
           gap: 2rem;
+          @media (max-width: $largeScreen) {
+            grid-template-columns: repeat(3, 12rem);
+          }
         }
       }
     }

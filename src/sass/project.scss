@@ -1,7 +1,11 @@
 $yellow: #ecdd7b;
+$largeScreen: 1020px;
 
 .description-container {
   width: 25rem;
+  @media (max-width: $largeScreen) {
+    width: 20rem;
+  }
   h4 {
     margin: 0;
     margin-top: 2rem;
@@ -41,17 +45,27 @@ $yellow: #ecdd7b;
     border-radius: 10px;
     box-shadow: 5px 5px 8px rgba(39, 68, 234, 0.26);
     transition: all 0.2s ease-in;
+    @media (max-width: $largeScreen) {
+      width: 270px;
+      height: 192px;
+    }
     &:hover {
       box-shadow: 5px 5px 8px rgba(39, 68, 234, 1);
       transform: skewX(-25deg) translateY(-5px);
     }
     &:first-child {
       z-index: 10;
+      @media (max-width: $largeScreen) {
+        margin-right: 4rem;
+      }
     }
     &:last-child {
       margin-left: 4rem;
       margin-top: -8rem;
       z-index: 5;
+      @media (max-width: $largeScreen) {
+        margin-left: 2rem;
+      }
     }
   }
   &.portfolio {
@@ -59,6 +73,10 @@ $yellow: #ecdd7b;
       width: 320px;
       height: 180px;
       box-shadow: 5px 5px 8px rgba(236, 221, 123, 0.212);
+      @media (max-width: $largeScreen) {
+        width: 240px;
+        height: 135px;
+      }
       &:hover {
         box-shadow: 5px 5px 8px rgba(236, 221, 123, 1);
         transform: skewX(-25deg) translateY(-5px);

@@ -64,7 +64,7 @@ import Experience from "./components/experience";
 const quickFacts = [
   {
     icon: <GraduationHat />,
-    heading: "Moscow State University Student",
+    heading: "Moscow State University",
     text: "I’m studying at the top 1 University of Russia and get only the highest grades",
   },
   {
@@ -105,7 +105,7 @@ const projects = [
     portfolioMarker: "",
   },
   {
-    name: "Stocks Live App",
+    name: "This Website",
     description:
       "I created this website from scratch. Starting with UX/UI design, prototyping and finishing with writing code and uploading it to the host.",
     techs: ["React Hooks", "JavaScript", "Sass/CSS3", "HTML5"],
