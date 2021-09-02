@@ -508,6 +508,29 @@ function App() {
             </div>
           </div>
         </section>
+        <footer>
+          <div className="container">
+            <div className="footer-container">
+              <Logo />
+              <nav>
+                <ul>
+                  <li>
+                    <a href="#">Home</a>
+                  </li>
+                  <li>
+                    <a href="#">Projects</a>
+                  </li>
+                  <li>
+                    <a href="#">About me</a>
+                  </li>
+                  <li>
+                    <a href="#">Contact</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </footer>
       </main>
     </div>
   );
