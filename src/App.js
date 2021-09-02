@@ -149,113 +149,96 @@ const experiences = [
 ];
 
 function App() {
-  const [showLangs, setShowLangs] = useState(false);
-  const [langs, setLangs] = useState(["EN", "RU"]);
-  const switchLangs = (bool) => {
-    setLangs((prevLangs) => [prevLangs[+bool], prevLangs[+!bool]]);
-  };
-
   return (
-    <div className="App">
-      <div className="container">
-        <header>
-          <Logo />
-          <nav>
-            <ul>
-              <li>
-                <a href="#">Home</a>
-              </li>
-              <li>
-                <a href="#">Projects</a>
-              </li>
-              <li>
-                <a href="#">About me</a>
-              </li>
-              <li>
-                <a href="#">Contact</a>
-              </li>
-            </ul>
-          </nav>
-          <div
-            className="switch-lang"
-            onClick={() => setShowLangs((prev) => !prev)}
-          >
-            <div className="langs">
-              <p
-                onClick={() => {
-                  showLangs && switchLangs(false);
-                }}
-              >
-                {langs[0]}
-              </p>
-              {showLangs && <p onClick={() => switchLangs(true)}>{langs[1]}</p>}
-            </div>
-            <IoIosArrowDown className={showLangs && "rotate"} />
-          </div>
-        </header>
-      </div>
-      <main>
+    <>
+      <header>
         <div className="container">
-          <div className="intro">
-            <img src={AlexGeninPhoto} className="photo" alt="Alex Genin" />
-            <div className="heading-container">
-              <h1>
-                <span className="first-word">Alex</span>
-                <br />
-                Genin
-              </h1>
-              <p className="moto">
-                Full stack Web Developer who loves his job!
-              </p>
-              <div className="buttons">
-                <a id="projects-button" href="#">
-                  <span>Projects</span>
-                  <HiArrowNarrowRight size={28} />
-                </a>
-                <a id="contact-button" href="#">
-                  Contact
-                  <FaRegPaperPlane size={22} />
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="social-networks">
-            <div className="social-networks-line"></div>
-            <a
-              href="https://github.com/AlexanderGenin"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <FaGithub size={20} />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/alex-genin/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <FaLinkedin size={20} />
-            </a>
-            <a href="https://t.me/alexgenin" target="_blank" rel="noreferrer">
-              <FaTelegramPlane size={20} />
-            </a>
-            <a
-              href="https://www.facebook.com/alexgenin99/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <FaFacebookF size={20} />
-            </a>
-            <a
-              href="https://vk.com/alex.genin"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <FaVk size={20} />
-            </a>
+          <div className="logo-menu-container">
+            <Logo />
+            <nav>
+              <ul>
+                <li>
+                  <a href="#">Home</a>
+                </li>
+                <li>
+                  <a href="#">Projects</a>
+                </li>
+                <li>
+                  <a href="#">About me</a>
+                </li>
+                <li>
+                  <a href="#">Contact</a>
+                </li>
+              </ul>
+            </nav>
+            <div></div>
           </div>
         </div>
-        <div className="dark-wrapper">
-          <section className="mern">
+      </header>
+      <main>
+        <section className="home">
+          <div className="container">
+            <div className="intro">
+              <img src={AlexGeninPhoto} className="photo" alt="Alex Genin" />
+              <div className="heading-container">
+                <h1>
+                  <span className="first-word">Alex</span>
+                  <br />
+                  Genin
+                </h1>
+                <p className="moto">
+                  Full stack Web Developer who loves his job!
+                </p>
+                <div className="buttons">
+                  <a id="projects-button" href="#">
+                    <span>Projects</span>
+                    <HiArrowNarrowRight size={28} />
+                  </a>
+                  <a id="contact-button" href="#">
+                    Contact
+                    <FaRegPaperPlane size={22} />
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className="social-networks">
+              <div className="social-networks-line"></div>
+              <a
+                href="https://github.com/AlexanderGenin"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaGithub size={20} />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/alex-genin/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaLinkedin size={20} />
+              </a>
+              <a href="https://t.me/alexgenin" target="_blank" rel="noreferrer">
+                <FaTelegramPlane size={20} />
+              </a>
+              <a
+                href="https://www.facebook.com/alexgenin99/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaFacebookF size={20} />
+              </a>
+              <a
+                href="https://vk.com/alex.genin"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaVk size={20} />
+              </a>
+            </div>
+          </div>
+        </section>
+        <section className="mern">
+          <div className="dark-wrapper">
             <h3>
               Working with <span className="mern-word">MERN</span>
             </h3>
@@ -281,146 +264,156 @@ function App() {
                 <p className="tech-description">Back-end</p>
               </div>
             </div>
-          </section>
-        </div>
-        <div className="container">
-          <section className="projects">
+          </div>
+        </section>
+        <section className="projects">
+          <div className="container">
             <Heading content={"My projects"} />
             {projects.map((project) => {
               return <Project {...project} />;
             })}
-          </section>
-        </div>
-        <div className="dark-wrapper">
-          <div className="container">
-            <section className="skills">
-              <Heading content={"Skills"} />
-              <div className="current-stack">
-                <Subheading content={"Current stack"} />
-                <div className="techs-container">
-                  <TechBox
-                    title={"React"}
-                    exp={"1+ years"}
-                    icon={<ReactJS />}
-                    type={"big"}
-                  />
-                  <TechBox
-                    title={"JavaScript"}
-                    exp={"4+ years"}
-                    icon={<JavaScript />}
-                    type={"big"}
-                  />
-                  <TechBox
-                    title={"Node"}
-                    exp={"1+ years"}
-                    icon={<Node />}
-                    type={"big"}
-                  />
-                  <TechBox
-                    title={"TypeScript"}
-                    exp={"<1 year"}
-                    icon={<TypeScript />}
-                    type={"big"}
-                  />
-                  <TechBox
-                    title={"Express"}
-                    exp={"1+ years"}
-                    icon={<Express fill={"#fff"} />}
-                    type={"big"}
-                  />
-                  <TechBox
-                    title={"MongoDB"}
-                    exp={"1+ years"}
-                    icon={<MongoDB />}
-                    type={"big"}
-                  />
-                </div>
-              </div>
-              <div className="fundamental-previous-container">
-                <div className="fundamental">
-                  <Subheading content={"Fundamental"} />
-                  <div className="techs-container">
-                    <TechBox
-                      title={"HTML5"}
-                      exp={"4+ years"}
-                      icon={<HTML5Logo />}
-                      type={"medium"}
-                    />
-                    <TechBox
-                      title={"CSS3"}
-                      exp={"4+ years"}
-                      icon={<CSS3Logo />}
-                      type={"medium"}
-                    />
-                    <TechBox
-                      title={"Git"}
-                      exp={"2+ years"}
-                      icon={<GitLogo />}
-                      type={"medium"}
-                    />
-                    <TechBox
-                      title={"Webpack"}
-                      exp={"1+ years"}
-                      icon={<WebpackLogo />}
-                      type={"medium"}
-                    />
-                  </div>
-                </div>
-                <div className="previous-stack">
-                  <Subheading content={"Previous stack"} />
-                  <div className="techs-container">
-                    <TechBox
-                      title={"WP"}
-                      exp={"3+ years"}
-                      icon={<WordPressLogo />}
-                      type={"medium"}
-                    />
-                    <TechBox
-                      title={"JQuery"}
-                      exp={"3+ years"}
-                      icon={<JQueryLogo />}
-                      type={"medium"}
-                    />
-                    <TechBox
-                      title={"PHP"}
-                      exp={"3+ years"}
-                      icon={<PHPLogo />}
-                      type={"medium"}
-                    />
-                    <TechBox
-                      title={"MySQL"}
-                      exp={"2+ years"}
-                      icon={<MySQLLogo />}
-                      type={"medium"}
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className="other">
-                <Subheading content={"Other"} />
-                <div className="techs-container">
-                  <TechBox title={"Jest"} icon={<JestLogo />} type={"small"} />
-                  <TechBox title={"Sass"} icon={<SassLogo />} type={"small"} />
-                  <TechBox
-                    title={"Styled c-s"}
-                    icon={<img src={StyledCsLogo} />}
-                    type={"small"}
-                  />
-                  <TechBox
-                    title={"Bootstrap"}
-                    icon={<BootstrapLogo />}
-                    type={"small"}
-                  />
-                  <TechBox
-                    title={"Figma"}
-                    icon={<FigmaLogo />}
-                    type={"small"}
-                  />
-                </div>
-              </div>
-            </section>
           </div>
-        </div>
+        </section>
+        <section className="skills">
+          <div className="dark-wrapper">
+            <div className="container">
+              <div className="skills-container">
+                <Heading content={"Skills"} />
+                <div className="current-stack">
+                  <Subheading content={"Current stack"} />
+                  <div className="techs-container">
+                    <TechBox
+                      title={"React"}
+                      exp={"1+ years"}
+                      icon={<ReactJS />}
+                      type={"big"}
+                    />
+                    <TechBox
+                      title={"JavaScript"}
+                      exp={"4+ years"}
+                      icon={<JavaScript />}
+                      type={"big"}
+                    />
+                    <TechBox
+                      title={"Node"}
+                      exp={"1+ years"}
+                      icon={<Node />}
+                      type={"big"}
+                    />
+                    <TechBox
+                      title={"TypeScript"}
+                      exp={"<1 year"}
+                      icon={<TypeScript />}
+                      type={"big"}
+                    />
+                    <TechBox
+                      title={"Express"}
+                      exp={"1+ years"}
+                      icon={<Express fill={"#fff"} />}
+                      type={"big"}
+                    />
+                    <TechBox
+                      title={"MongoDB"}
+                      exp={"1+ years"}
+                      icon={<MongoDB />}
+                      type={"big"}
+                    />
+                  </div>
+                </div>
+                <div className="fundamental-previous-container">
+                  <div className="fundamental">
+                    <Subheading content={"Fundamental"} />
+                    <div className="techs-container">
+                      <TechBox
+                        title={"HTML5"}
+                        exp={"4+ years"}
+                        icon={<HTML5Logo />}
+                        type={"medium"}
+                      />
+                      <TechBox
+                        title={"CSS3"}
+                        exp={"4+ years"}
+                        icon={<CSS3Logo />}
+                        type={"medium"}
+                      />
+                      <TechBox
+                        title={"Git"}
+                        exp={"2+ years"}
+                        icon={<GitLogo />}
+                        type={"medium"}
+                      />
+                      <TechBox
+                        title={"Webpack"}
+                        exp={"1+ years"}
+                        icon={<WebpackLogo />}
+                        type={"medium"}
+                      />
+                    </div>
+                  </div>
+                  <div className="previous-stack">
+                    <Subheading content={"Previous stack"} />
+                    <div className="techs-container">
+                      <TechBox
+                        title={"WP"}
+                        exp={"3+ years"}
+                        icon={<WordPressLogo />}
+                        type={"medium"}
+                      />
+                      <TechBox
+                        title={"JQuery"}
+                        exp={"3+ years"}
+                        icon={<JQueryLogo />}
+                        type={"medium"}
+                      />
+                      <TechBox
+                        title={"PHP"}
+                        exp={"3+ years"}
+                        icon={<PHPLogo />}
+                        type={"medium"}
+                      />
+                      <TechBox
+                        title={"MySQL"}
+                        exp={"2+ years"}
+                        icon={<MySQLLogo />}
+                        type={"medium"}
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div className="other">
+                  <Subheading content={"Other"} />
+                  <div className="techs-container">
+                    <TechBox
+                      title={"Jest"}
+                      icon={<JestLogo />}
+                      type={"small"}
+                    />
+                    <TechBox
+                      title={"Sass"}
+                      icon={<SassLogo />}
+                      type={"small"}
+                    />
+                    <TechBox
+                      title={"Styled c-s"}
+                      icon={<img src={StyledCsLogo} />}
+                      type={"small"}
+                    />
+                    <TechBox
+                      title={"Bootstrap"}
+                      icon={<BootstrapLogo />}
+                      type={"small"}
+                    />
+                    <TechBox
+                      title={"Figma"}
+                      icon={<FigmaLogo />}
+                      type={"small"}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
         <section className="about">
           <div className="container">
             <Heading content={"About me"} />
@@ -574,31 +567,31 @@ function App() {
             </div>
           </div>
         </section>
-        <footer>
-          <div className="container">
-            <div className="footer-container">
-              <Logo />
-              <nav>
-                <ul>
-                  <li>
-                    <a href="#">Home</a>
-                  </li>
-                  <li>
-                    <a href="#">Projects</a>
-                  </li>
-                  <li>
-                    <a href="#">About me</a>
-                  </li>
-                  <li>
-                    <a href="#">Contact</a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-          </div>
-        </footer>
       </main>
-    </div>
+      <footer>
+        <div className="container">
+          <div className="footer-container">
+            <Logo />
+            <nav>
+              <ul>
+                <li>
+                  <a href="#">Home</a>
+                </li>
+                <li>
+                  <a href="#">Projects</a>
+                </li>
+                <li>
+                  <a href="#">About me</a>
+                </li>
+                <li>
+                  <a href="#">Contact</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </footer>
+    </>
   );
 }
 

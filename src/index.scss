@@ -12,14 +12,19 @@ $bigTextFont: "Segoe UI", "Arial", sans-serif;
 body {
   box-sizing: border-box;
   background-color: $bgColor;
-  color: #e1eee5;
+  color: $textColor;
   font-family: $textFont;
   font-size: 16px;
   margin: 0 auto;
 
+  // General styles
   .container {
     max-width: $contentWidth;
     margin: 0 auto;
+
+    @media (max-width: 1020px) {
+      max-width: 700px;
+    }
   }
 
   .floating {
@@ -30,7 +35,8 @@ body {
     }
   }
 
-  header {
+  // Sections specific styles
+  .logo-menu-container {
     margin: 1rem auto;
     display: flex;
     align-items: center;
@@ -204,7 +210,7 @@ body {
       justify-content: space-between;
       height: 18rem;
       position: absolute;
-      top: 9rem;
+      top: 5rem;
       right: calc((100% - #{$contentWidth}) / 2);
       .social-networks-line {
         height: 7rem;
@@ -314,7 +320,7 @@ body {
       justify-content: space-between;
       margin-bottom: 6rem;
     }
-    .skills {
+    .skills-container {
       .brackets {
         color: $yellow;
       }
@@ -572,27 +578,27 @@ body {
         }
       }
     }
-    footer {
-      margin: 6rem auto;
-      .container {
-        .footer-container {
-          margin: 0 auto;
+  }
+  footer {
+    margin: 6rem auto;
+    .container {
+      .footer-container {
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 40rem;
+        ul {
           display: flex;
-          flex-direction: column;
+          justify-content: space-between;
           align-items: center;
-          width: 40rem;
-          ul {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            list-style-type: none;
-            margin-top: 3rem;
-          }
-          a {
-            text-decoration: none;
-            color: $textColor;
-            margin: 1rem 1.4rem;
-          }
+          list-style-type: none;
+          margin-top: 3rem;
+        }
+        a {
+          text-decoration: none;
+          color: $textColor;
+          margin: 1rem 1.4rem;
         }
       }
     }
