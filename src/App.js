@@ -19,6 +19,7 @@ import {
   FaLinkedin,
   FaVk,
   FaFacebookF,
+  FaTelegramPlane,
 } from "react-icons/fa";
 
 import StyledCsLogo from "./images/styledcs.png";
@@ -220,10 +221,37 @@ function App() {
           </div>
           <div className="social-networks">
             <div className="social-networks-line"></div>
-            <FaGithub size={20} />
-            <FaLinkedin size={20} />
-            <FaVk size={20} />
-            <FaFacebookF size={20} />
+            <a
+              href="https://github.com/AlexanderGenin"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FaGithub size={20} />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/alex-genin/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FaLinkedin size={20} />
+            </a>
+            <a href="https://t.me/alexgenin" target="_blank" rel="noreferrer">
+              <FaTelegramPlane size={20} />
+            </a>
+            <a
+              href="https://www.facebook.com/alexgenin99/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FaFacebookF size={20} />
+            </a>
+            <a
+              href="https://vk.com/alex.genin"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FaVk size={20} />
+            </a>
           </div>
         </div>
         <div className="dark-wrapper">
@@ -487,6 +515,44 @@ function App() {
                   Always open to new projects and collaborations! Ready to be
                   hired. Don’t hesitate to drop me a line!
                 </p>
+                <div className="contact-social">
+                  <p>Find me online:</p>
+                  <a
+                    href="https://github.com/AlexanderGenin"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <FaGithub size={20} />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/alex-genin/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <FaLinkedin size={20} />
+                  </a>
+                  <a
+                    href="https://t.me/alexgenin"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <FaTelegramPlane size={20} />
+                  </a>
+                  <a
+                    href="https://www.facebook.com/alexgenin99/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <FaFacebookF size={20} />
+                  </a>
+                  <a
+                    href="https://vk.com/alex.genin"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <FaVk size={20} />
+                  </a>
+                </div>
               </div>
               <div className="form">
                 <form action="#">
