@@ -6,7 +6,6 @@ import {
   HiDownload,
   HiOutlineExternalLink,
 } from "react-icons/hi";
-import { IoIosArrowDown } from "react-icons/io";
 import { ImQuotesLeft } from "react-icons/im";
 import {
   IoRocketOutline,
@@ -14,7 +13,6 @@ import {
   IoBookOutline,
 } from "react-icons/io5";
 import {
-  FaRegPaperPlane,
   FaGithub,
   FaLinkedin,
   FaVk,
@@ -61,6 +59,7 @@ import QuickFact from "./components/quickFact";
 import Project from "./components/project";
 import Experience from "./components/experience";
 import Header from "./components/header";
+import Home from "./components/home";
 
 const menuLinks = [
   {
@@ -76,10 +75,39 @@ const menuLinks = [
     linkTo: "#about",
   },
   {
-    title: "Contacts",
+    title: "Contact",
     linkTo: "#contacts",
   },
 ];
+
+const socials = [
+  {
+    url: "https://github.com/AlexanderGenin",
+    icon: <FaGithub size={20} />,
+  },
+  {
+    url: "https://www.linkedin.com/in/alex-genin/",
+    icon: <FaLinkedin size={20} />,
+  },
+  {
+    url: "https://t.me/alexgenin",
+    icon: <FaTelegramPlane size={20} />,
+  },
+  {
+    url: "https://www.facebook.com/alexgenin99/",
+    icon: <FaFacebookF size={20} />,
+  },
+  { url: "https://vk.com/alex.genin", icon: <FaVk size={20} /> },
+];
+
+const introContent = {
+  photoUrl: AlexGeninPhoto,
+  name: "Alex",
+  surname: "Genin",
+  subtitle: "Full stack Web Developer who loves his job!",
+  buttonsLinks: [menuLinks[1], menuLinks[3]],
+  socials,
+};
 
 const quickFacts = [
   {
@@ -173,67 +201,7 @@ function App() {
     <>
       <Header links={menuLinks} logo={<Logo />} id="home" />
       <main>
-        <section className="home">
-          <div className="container">
-            <div className="intro">
-              <img src={AlexGeninPhoto} className="photo" alt="Alex Genin" />
-              <div className="heading-container">
-                <h1>
-                  <span className="first-word">Alex</span>
-                  <br />
-                  Genin
-                </h1>
-                <p className="moto">
-                  Full stack Web Developer who loves his job!
-                </p>
-                <div className="buttons">
-                  <a id="projects-button" href="#">
-                    <span>Projects</span>
-                    <HiArrowNarrowRight size={28} />
-                  </a>
-                  <a id="contact-button" href="#">
-                    Contact
-                    <FaRegPaperPlane size={22} />
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="social-networks">
-              <div className="social-networks-line"></div>
-              <a
-                href="https://github.com/AlexanderGenin"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <FaGithub size={20} />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/alex-genin/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <FaLinkedin size={20} />
-              </a>
-              <a href="https://t.me/alexgenin" target="_blank" rel="noreferrer">
-                <FaTelegramPlane size={20} />
-              </a>
-              <a
-                href="https://www.facebook.com/alexgenin99/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <FaFacebookF size={20} />
-              </a>
-              <a
-                href="https://vk.com/alex.genin"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <FaVk size={20} />
-              </a>
-            </div>
-          </div>
-        </section>
+        <Home {...introContent} />
         <section className="mern">
           <div className="dark-wrapper">
             <h3>
