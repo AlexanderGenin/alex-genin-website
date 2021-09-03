@@ -1,4 +1,4 @@
-@import "./font/Nunito.css";
+@import "../font/Nunito.css";
 
 $shadow: 5px 5px 12px rgba(33, 34, 37, 0.32);
 $bgColor: #2d2e32;
@@ -10,6 +10,8 @@ $tabletWidth: 700px;
 $textFont: "Nunito", "Roboto", "Oxygen", "Ubuntu", sans-serif;
 $bigTextFont: "Segoe UI", "Arial", sans-serif;
 $largeScreen: 1020px;
+
+@import "header";
 
 body {
   box-sizing: border-box;
@@ -38,81 +40,6 @@ body {
   }
 
   // Sections specific styles
-  .logo-menu-container {
-    margin: 1rem auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    .switch-lang {
-      transform: translate(30%, 25%);
-      cursor: pointer;
-      .langs {
-        display: inline-flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        height: 50px;
-        p {
-          margin: 0;
-          width: 20px;
-          display: inline-block;
-          padding-right: 0.4rem;
-        }
-      }
-      svg {
-        color: $yellow;
-        vertical-align: middle;
-        width: 20px;
-        height: 20px;
-        transition: transform 0.3s;
-        &.rotate {
-          transform-origin: center;
-          transform: rotate(180deg);
-        }
-      }
-    }
-
-    svg {
-      width: 60px;
-    }
-
-    ul {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.1rem;
-      margin: 0;
-      padding: 0;
-      li {
-        list-style: none;
-        margin: 1rem;
-        a {
-          position: relative;
-          display: block;
-          text-decoration: none;
-          color: $textColor;
-          padding-bottom: 4px;
-          &::after {
-            position: absolute;
-            content: "";
-            width: 100%;
-            height: 2px;
-            top: 100%;
-            left: 0;
-            background: $yellow;
-            transition: transform 0.5s;
-            transform: scaleX(0);
-            transform-origin: right;
-          }
-          &:hover::after {
-            transform: scaleX(1);
-            transform-origin: left;
-          }
-        }
-      }
-    }
-  }
 
   main {
     .intro {

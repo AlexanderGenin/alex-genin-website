@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { ReactComponent as Logo } from "./images/alex-genin-logo.svg";
 import AlexGeninPhoto from "./images/alex-genin-w-circle.png";
 import {
@@ -60,6 +60,26 @@ import TechBox from "./components/techBox";
 import QuickFact from "./components/quickFact";
 import Project from "./components/project";
 import Experience from "./components/experience";
+import Header from "./components/header";
+
+const menuLinks = [
+  {
+    title: "Home",
+    linkTo: "#home",
+  },
+  {
+    title: "Projects",
+    linkTo: "#projects",
+  },
+  {
+    title: "About me",
+    linkTo: "#about",
+  },
+  {
+    title: "Contacts",
+    linkTo: "#contacts",
+  },
+];
 
 const quickFacts = [
   {
@@ -151,30 +171,7 @@ const experiences = [
 function App() {
   return (
     <>
-      <header>
-        <div className="container">
-          <div className="logo-menu-container">
-            <Logo />
-            <nav>
-              <ul>
-                <li>
-                  <a href="#">Home</a>
-                </li>
-                <li>
-                  <a href="#">Projects</a>
-                </li>
-                <li>
-                  <a href="#">About me</a>
-                </li>
-                <li>
-                  <a href="#">Contact</a>
-                </li>
-              </ul>
-            </nav>
-            <div></div>
-          </div>
-        </div>
-      </header>
+      <Header links={menuLinks} logo={<Logo />} id="home" />
       <main>
         <section className="home">
           <div className="container">
@@ -266,7 +263,7 @@ function App() {
             </div>
           </div>
         </section>
-        <section className="projects">
+        <section className="projects" id="projects">
           <div className="container">
             <Heading content={"My projects"} />
             {projects.map((project) => {
@@ -414,7 +411,7 @@ function App() {
             </div>
           </div>
         </section>
-        <section className="about">
+        <section className="about" id="about">
           <div className="container">
             <Heading content={"About me"} />
             <div className="desc-container">
@@ -498,7 +495,7 @@ function App() {
             </div>
           </div>
         </section>
-        <section className="contacts">
+        <section className="contacts" id="contacts">
           <div className="container">
             <Heading content="Get in touch" />
             <div className="contacts-container">
