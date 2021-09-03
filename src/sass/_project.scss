@@ -1,0 +1,93 @@
+.project {
+  margin-top: 4rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 6rem;
+
+  .description {
+    width: 25rem;
+    @media (max-width: $largeScreen) {
+      width: 20rem;
+    }
+    &__title {
+      margin: 0;
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 1.6rem;
+    }
+    .link {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      &__anchor {
+        position: relative;
+        text-decoration: none;
+        color: $yellow;
+        font-size: 1.4rem;
+        display: inline-block;
+        margin-right: 2rem;
+        svg {
+          vertical-align: middle;
+          transition: transform 0.3s ease-out;
+          margin-bottom: 4px;
+          margin-left: 0.5rem;
+        }
+        &:hover svg {
+          transform: translateX(8px);
+        }
+      }
+    }
+  }
+  .images {
+    display: flex;
+    flex-direction: column;
+    svg {
+      transform: skewX(-25deg);
+      border-radius: 10px;
+      box-shadow: 5px 5px 8px rgba(39, 68, 234, 0.26);
+      transition: all 0.2s ease-in;
+      @media (max-width: $largeScreen) {
+        width: 270px;
+        height: 192px;
+      }
+      &:hover {
+        box-shadow: 5px 5px 8px rgba(39, 68, 234, 1);
+        transform: skewX(-25deg) translateY(-5px);
+      }
+      &:first-child {
+        z-index: 10;
+        @media (max-width: $largeScreen) {
+          margin-right: 4rem;
+        }
+      }
+      &:last-child {
+        margin-left: 4rem;
+        margin-top: -8rem;
+        z-index: 5;
+        @media (max-width: $largeScreen) {
+          margin-left: 2rem;
+        }
+      }
+    }
+    &_adjust {
+      transform: translateY(2rem);
+      svg {
+        box-shadow: 5px 5px 8px rgba(236, 221, 123, 0.212);
+        @media (max-width: $largeScreen) {
+          width: 240px;
+          height: 135px;
+        }
+        &:hover {
+          box-shadow: 5px 5px 8px rgba(236, 221, 123, 1);
+          transform: skewX(-25deg) translateY(-5px);
+        }
+        &:last-child {
+          margin-left: 4rem;
+          margin-top: -6rem;
+          z-index: 5;
+        }
+      }
+    }
+  }
+}

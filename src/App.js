@@ -56,10 +56,11 @@ import Heading from "./components/heading";
 import Subheading from "./components/subheading";
 import TechBox from "./components/techBox";
 import QuickFact from "./components/quickFact";
-import Project from "./components/project";
 import Experience from "./components/experience";
 import Header from "./components/header";
 import Home from "./components/home";
+import Stack from "./components/stack";
+import Projects from "./components/projects";
 
 const menuLinks = [
   {
@@ -109,6 +110,31 @@ const introContent = {
   socials,
 };
 
+const stackTechs = [
+  {
+    name: "MongoDB",
+    description: "Database",
+    icon: <MongoDB />,
+  },
+  {
+    name: "Express",
+    description: "Framework",
+    icon: <Express fill={"#fff"} />,
+  },
+  {
+    name: "React",
+    description: "Front-end",
+    icon: <ReactJS />,
+  },
+  {
+    name: "Node",
+    description: "Back-end",
+    icon: <Node />,
+  },
+];
+
+const stack = "MERN";
+
 const quickFacts = [
   {
     icon: <GraduationHat />,
@@ -148,18 +174,24 @@ const projects = [
     description:
       "An interactive lightweight app to get live info about various stocks on global market.",
     techs: ["React", "Node", "Chart.js", "Yahoo Finance API"],
-    images: [<StocksAppSummary />, <StocksAppAnalysis />],
+    images: [
+      <StocksAppSummary style={{ width: "360px", height: "256px" }} />,
+      <StocksAppAnalysis style={{ width: "360px", height: "256px" }} />,
+    ],
     showLink: true,
-    portfolioMarker: "",
+    reflect: false,
   },
   {
     name: "This Website",
     description:
       "I created this website from scratch. Starting with UX/UI design, prototyping and finishing with writing code and uploading it to the host.",
     techs: ["React Hooks", "JavaScript", "Sass/CSS3", "HTML5"],
-    images: [<PortfolioFeedback />, <PortfolioAbout />],
+    images: [
+      <PortfolioFeedback style={{ width: "320px", height: "180px" }} />,
+      <PortfolioAbout style={{ width: "320px", height: "180px" }} />,
+    ],
     showLink: false,
-    portfolioMarker: "portfolio",
+    reflect: true,
   },
 ];
 
@@ -202,43 +234,8 @@ function App() {
       <Header links={menuLinks} logo={<Logo />} id="home" />
       <main>
         <Home {...introContent} />
-        <section className="mern">
-          <div className="dark-wrapper">
-            <h3>
-              Working with <span className="mern-word">MERN</span>
-            </h3>
-            <div className="mern-container">
-              <div className="tech-container">
-                <MongoDB />
-                <p className="tech-name">MongoDB</p>
-                <p className="tech-description">Database</p>
-              </div>
-              <div className="tech-container">
-                <Express fill={"#fff"} />
-                <p className="tech-name">Express</p>
-                <p className="tech-description">Framework</p>
-              </div>
-              <div className="tech-container">
-                <ReactJS />
-                <p className="tech-name">React</p>
-                <p className="tech-description">Front-end</p>
-              </div>
-              <div className="tech-container">
-                <Node />
-                <p className="tech-name">Node</p>
-                <p className="tech-description">Back-end</p>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section className="projects" id="projects">
-          <div className="container">
-            <Heading content={"My projects"} />
-            {projects.map((project) => {
-              return <Project {...project} />;
-            })}
-          </div>
-        </section>
+        <Stack list={stackTechs} stack={stack} />
+        <Projects projects={projects} id="projects" />
         <section className="skills">
           <div className="dark-wrapper">
             <div className="container">
