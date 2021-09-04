@@ -28,7 +28,7 @@ export default function About({
         <Heading content={"About me"} />
         <div className="intro">
           <div className="intro__content">
-            <p class="intro__heading">{heading}</p>
+            <p className="intro__heading">{heading}</p>
             <p className="intro__text">
               My name is <span className="em">{name}</span>. I’m a{" "}
               <span className="em">{getAge(birthDate)}</span> years old{" "}
@@ -49,8 +49,12 @@ export default function About({
         </div>
         <div className="facts">
           <div className="facts-grid">
-            {facts.map((fact, i) => (
-              <Fact {...fact} color={i % 2 === 0 ? "yellow" : "red"} />
+            {facts.map((fact, index) => (
+              <Fact
+                {...fact}
+                key={index}
+                color={index % 2 === 0 ? "yellow" : "red"}
+              />
             ))}
           </div>
         </div>

@@ -47,10 +47,8 @@ import { ReactComponent as Translation } from "./images/translation.svg";
 import { ReactComponent as ExperienceIcon } from "./images/experience.svg";
 import { ReactComponent as Chat } from "./images/chat.svg";
 import { ReactComponent as Sports } from "./images/sports.svg";
-import { ReactComponent as Timeline } from "./images/timeline.svg";
 
 import Heading from "./components/heading";
-import Experience from "./components/experience";
 import Header from "./components/header";
 import Home from "./components/home";
 import Stack from "./components/stack";
@@ -60,6 +58,7 @@ import About from "./components/about";
 
 import FCECertificate from "./static/Alexander-Genin-FCE-certificate.pdf";
 import MongoDBCertificates from "./static/Alexander-Genin-MongoDB-certificates.pdf";
+import Experience from "./components/experience";
 
 const menuLinks = [
   {
@@ -181,8 +180,8 @@ const projects = [
       "An interactive lightweight app for getting live info about various stocks on global market.",
     techs: ["React", "Node", "Chart.js", "Yahoo Finance API"],
     images: [
-      <StocksAppSummary style={{ width: "360px", height: "256px" }} />,
-      <StocksAppAnalysis style={{ width: "360px", height: "256px" }} />,
+      <StocksAppSummary style={{ width: "360px", height: "256px" }} key={0} />,
+      <StocksAppAnalysis style={{ width: "360px", height: "256px" }} key={1} />,
     ],
     showLink: true,
     reflect: false,
@@ -193,8 +192,8 @@ const projects = [
       "I created my personal website from scratch - starting from the UX/UI design, prototyping, and ending up with writing code and uploading it to the host.",
     techs: ["React Hooks", "JavaScript", "Sass/CSS3", "HTML5"],
     images: [
-      <PortfolioFeedback style={{ width: "320px", height: "180px" }} />,
-      <PortfolioAbout style={{ width: "320px", height: "180px" }} />,
+      <PortfolioFeedback style={{ width: "320px", height: "180px" }} key={0} />,
+      <PortfolioAbout style={{ width: "320px", height: "180px" }} key={1} />,
     ],
     showLink: false,
     reflect: true,
@@ -309,21 +308,7 @@ function App() {
         <Projects projects={projects} />
         <Skills {...skills} />
         <About {...about} />
-        <section className="experience">
-          <div className="container">
-            <Heading content={"My experience"} />
-            <div className="experience-timeline-container">
-              <div className="timeline-container">
-                <Timeline />
-              </div>
-              <div className="experiences-container">
-                {experiences.map((experience) => (
-                  <Experience {...experience} />
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
+        <Experience experiences={experiences} />
         <section className="reviews">
           <div className="container">
             <Heading content={"What clients say"} />
@@ -367,7 +352,7 @@ function App() {
             <Heading content="Get in touch" />
             <div className="contacts-container">
               <div className="description">
-                <p class="heading">Let's Work Together!</p>
+                <p className="heading">Let's Work Together!</p>
                 <p className="text">
                   Always open to new projects and collaborations!
                   <br />

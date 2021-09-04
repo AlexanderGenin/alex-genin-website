@@ -42,9 +42,10 @@ export default function Home({
         </div>
         <div className="social-networks">
           <div className="social-networks__line"></div>
-          {socials.map(({ url, icon }) => {
+          {socials.map(({ url, icon }, index) => {
             return (
               <a
+                key={index}
                 className="social-networks__link"
                 href={url}
                 target="_blank"

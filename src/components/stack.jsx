@@ -8,9 +8,9 @@ export default function Stack({ list, stack }) {
           Working with <span className="stack__heading_highlight">{stack}</span>
         </h3>
         <div className="stack-techs">
-          {list.map(({ name, description, icon }) => {
+          {list.map(({ name, description, icon }, index) => {
             return (
-              <div className="stack-tech floating">
+              <div className="stack-tech floating" key={index}>
                 {icon}
                 <p className="stack-tech__name">{name}</p>
                 <p className="stack-tech__description">{description}</p>

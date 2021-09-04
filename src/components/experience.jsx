@@ -1,21 +1,24 @@
 import React from "react";
-import List from "./list";
-import "../sass/experience.scss";
+import Heading from "./heading";
+import { ReactComponent as Timeline } from "../images/timeline.svg";
+import ExperienceBlock from "./experienceBlock";
 
-export default function Experience({ icon, title, descList }) {
+export default function Experience({ experiences }) {
   return (
-    <div>
-      <div className="experience-block">
-        <div className="experience-title">
-          <h3>
-            {icon}
-            {title}
-          </h3>
-        </div>
-        <div className="experience-desc">
-          <List items={descList} />
+    <section className="experience">
+      <div className="container">
+        <Heading content={"My experience"} />
+        <div className="experience__timeline">
+          <div className="timeline">
+            <Timeline />
+          </div>
+          <div className="experiences">
+            {experiences.map((experience, index) => (
+              <ExperienceBlock key={index} {...experience} />
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

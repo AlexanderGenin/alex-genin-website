@@ -7,8 +7,8 @@ export default function Projects({ projects }) {
     <section className="projects" id="projects">
       <div className="container">
         <Heading content={"My projects"} />
-        {projects.map((project) => {
-          return <Project {...project} />;
+        {projects.map((project, index) => {
+          return <Project {...project} key={index} />;
         })}
       </div>
     </section>

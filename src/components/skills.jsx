@@ -13,8 +13,8 @@ export default function Skills({ current, fundamental, previous, other }) {
             <div className="skills-container__current">
               <Subheading content={"Current stack"} />
               <div className="skills-container__techs">
-                {current.map((tech) => {
-                  return <TechBox {...tech} />;
+                {current.map((tech, index) => {
+                  return <TechBox key={index} {...tech} />;
                 })}
               </div>
             </div>
@@ -22,16 +22,16 @@ export default function Skills({ current, fundamental, previous, other }) {
               <div className="skills-container__fundamental">
                 <Subheading content={"Fundamental"} />
                 <div className="skills-container__techs">
-                  {fundamental.map((tech) => {
-                    return <TechBox {...tech} />;
+                  {fundamental.map((tech, index) => {
+                    return <TechBox key={index} {...tech} />;
                   })}
                 </div>
               </div>
               <div className="skills-container__previous">
                 <Subheading content={"Previous stack"} />
                 <div className="skills-container__techs">
-                  {previous.map((tech) => {
-                    return <TechBox {...tech} />;
+                  {previous.map((tech, index) => {
+                    return <TechBox key={index} {...tech} />;
                   })}
                 </div>
               </div>
@@ -39,8 +39,8 @@ export default function Skills({ current, fundamental, previous, other }) {
             <div className="skills-container__other">
               <Subheading content={"Other"} />
               <div className="skills-container__techs">
-                {other.map((tech) => {
-                  return <TechBox {...tech} />;
+                {other.map((tech, index) => {
+                  return <TechBox key={index} {...tech} />;
                 })}
               </div>
             </div>

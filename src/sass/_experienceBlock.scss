@@ -1,11 +1,6 @@
-$red: #fa554e;
-
 .experience-block {
   margin-bottom: 4.4rem;
-  .experience-title {
-    h3 {
-      font-size: 1.2rem;
-    }
+  &__title {
     svg {
       display: inline-block;
       width: 36px;
@@ -14,5 +9,8 @@ $red: #fa554e;
       margin-right: 1rem;
       vertical-align: middle;
     }
+  }
+  &__heading {
+    font-size: 1.2rem;
   }
 }

@@ -1,0 +1,22 @@
+.experience {
+  &__timeline {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 4rem 0 4rem 8rem;
+    .timeline {
+      margin-right: 6rem;
+      svg {
+        display: block;
+        transform-origin: top;
+        width: 118.5px;
+        height: 871px;
+      }
+    }
+    .experiences {
+      width: 36rem;
+
+      @import "experienceBlock";
+    }
+  }
+}

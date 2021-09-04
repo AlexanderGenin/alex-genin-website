@@ -17,6 +17,8 @@ $largeScreen: 1020px;
 @import "projects";
 @import "skills";
 @import "about";
+@import "experience";
+@import "list";
 
 body {
   box-sizing: border-box;
@@ -95,27 +97,6 @@ body {
       width: 100%;
       padding-top: 2rem;
       padding-bottom: 2rem;
-    }
-
-    .experience {
-      .experience-timeline-container {
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-start;
-        margin: 4rem 0 4rem 8rem;
-        .timeline-container {
-          margin-right: 6rem;
-          svg {
-            display: block;
-            transform-origin: top;
-            width: 118.5px;
-            height: 871px;
-          }
-        }
-        .experiences-container {
-          width: 36rem;
-        }
-      }
     }
 
     .review {
