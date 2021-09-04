@@ -53,14 +53,13 @@ import { ReactComponent as Sports } from "./images/sports.svg";
 import { ReactComponent as Timeline } from "./images/timeline.svg";
 
 import Heading from "./components/heading";
-import Subheading from "./components/subheading";
-import TechBox from "./components/techBox";
 import QuickFact from "./components/quickFact";
 import Experience from "./components/experience";
 import Header from "./components/header";
 import Home from "./components/home";
 import Stack from "./components/stack";
 import Projects from "./components/projects";
+import Skills from "./components/skills";
 
 const menuLinks = [
   {
@@ -228,6 +227,46 @@ const experiences = [
   },
 ];
 
+const skills = {
+  current: [
+    { title: "React", exp: "1+ years", icon: <JavaScript />, type: "big" },
+    { title: "JavaScript", exp: "4+ years", icon: <ReactJS />, type: "big" },
+    { title: "Node", exp: "1+ years", icon: <Node />, type: "big" },
+    { title: "TypeScript", exp: "<1 year", icon: <TypeScript />, type: "big" },
+    {
+      title: "Express",
+      exp: "1+ year",
+      icon: <Express fill={"#fff"} />,
+      type: "big",
+    },
+    { title: "MongoDB", exp: "1+ year", icon: <MongoDB />, type: "big" },
+  ],
+  fundamental: [
+    { title: "HTML5", exp: "4+ years", icon: <HTML5Logo />, type: "medium" },
+    { title: "CSS3", exp: "4+ years", icon: <CSS3Logo />, type: "medium" },
+    { title: "Git", exp: "2+ years", icon: <GitLogo />, type: "medium" },
+    {
+      title: "Webpack",
+      exp: "1+ years",
+      icon: <WebpackLogo />,
+      type: "medium",
+    },
+  ],
+  previous: [
+    { title: "WP", exp: "3+ years", icon: <WordPressLogo />, type: "medium" },
+    { title: "JQuery", exp: "3+ years", icon: <JQueryLogo />, type: "medium" },
+    { title: "PHP", exp: "3+ years", icon: <PHPLogo />, type: "medium" },
+    { title: "MySQL", exp: "2+ years", icon: <MySQLLogo />, type: "medium" },
+  ],
+  other: [
+    { title: "Jest", icon: <JestLogo />, type: "small" },
+    { title: "Sass", icon: <SassLogo />, type: "small" },
+    { title: "Styled c-s", icon: <img src={StyledCsLogo} />, type: "small" },
+    { title: "Bootstrap", icon: <BootstrapLogo />, type: "small" },
+    { title: "Figma", icon: <FigmaLogo />, type: "small" },
+  ],
+};
+
 function App() {
   return (
     <>
@@ -235,147 +274,8 @@ function App() {
       <main>
         <Home {...introContent} />
         <Stack list={stackTechs} stack={stack} />
-        <Projects projects={projects} id="projects" />
-        <section className="skills">
-          <div className="dark-wrapper">
-            <div className="container">
-              <div className="skills-container">
-                <Heading content={"Skills"} />
-                <div className="current-stack">
-                  <Subheading content={"Current stack"} />
-                  <div className="techs-container">
-                    <TechBox
-                      title={"React"}
-                      exp={"1+ years"}
-                      icon={<ReactJS />}
-                      type={"big"}
-                    />
-                    <TechBox
-                      title={"JavaScript"}
-                      exp={"4+ years"}
-                      icon={<JavaScript />}
-                      type={"big"}
-                    />
-                    <TechBox
-                      title={"Node"}
-                      exp={"1+ years"}
-                      icon={<Node />}
-                      type={"big"}
-                    />
-                    <TechBox
-                      title={"TypeScript"}
-                      exp={"<1 year"}
-                      icon={<TypeScript />}
-                      type={"big"}
-                    />
-                    <TechBox
-                      title={"Express"}
-                      exp={"1+ years"}
-                      icon={<Express fill={"#fff"} />}
-                      type={"big"}
-                    />
-                    <TechBox
-                      title={"MongoDB"}
-                      exp={"1+ years"}
-                      icon={<MongoDB />}
-                      type={"big"}
-                    />
-                  </div>
-                </div>
-                <div className="fundamental-previous-container">
-                  <div className="fundamental">
-                    <Subheading content={"Fundamental"} />
-                    <div className="techs-container">
-                      <TechBox
-                        title={"HTML5"}
-                        exp={"4+ years"}
-                        icon={<HTML5Logo />}
-                        type={"medium"}
-                      />
-                      <TechBox
-                        title={"CSS3"}
-                        exp={"4+ years"}
-                        icon={<CSS3Logo />}
-                        type={"medium"}
-                      />
-                      <TechBox
-                        title={"Git"}
-                        exp={"2+ years"}
-                        icon={<GitLogo />}
-                        type={"medium"}
-                      />
-                      <TechBox
-                        title={"Webpack"}
-                        exp={"1+ years"}
-                        icon={<WebpackLogo />}
-                        type={"medium"}
-                      />
-                    </div>
-                  </div>
-                  <div className="previous-stack">
-                    <Subheading content={"Previous stack"} />
-                    <div className="techs-container">
-                      <TechBox
-                        title={"WP"}
-                        exp={"3+ years"}
-                        icon={<WordPressLogo />}
-                        type={"medium"}
-                      />
-                      <TechBox
-                        title={"JQuery"}
-                        exp={"3+ years"}
-                        icon={<JQueryLogo />}
-                        type={"medium"}
-                      />
-                      <TechBox
-                        title={"PHP"}
-                        exp={"3+ years"}
-                        icon={<PHPLogo />}
-                        type={"medium"}
-                      />
-                      <TechBox
-                        title={"MySQL"}
-                        exp={"2+ years"}
-                        icon={<MySQLLogo />}
-                        type={"medium"}
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="other">
-                  <Subheading content={"Other"} />
-                  <div className="techs-container">
-                    <TechBox
-                      title={"Jest"}
-                      icon={<JestLogo />}
-                      type={"small"}
-                    />
-                    <TechBox
-                      title={"Sass"}
-                      icon={<SassLogo />}
-                      type={"small"}
-                    />
-                    <TechBox
-                      title={"Styled c-s"}
-                      icon={<img src={StyledCsLogo} />}
-                      type={"small"}
-                    />
-                    <TechBox
-                      title={"Bootstrap"}
-                      icon={<BootstrapLogo />}
-                      type={"small"}
-                    />
-                    <TechBox
-                      title={"Figma"}
-                      icon={<FigmaLogo />}
-                      type={"small"}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <Projects projects={projects} />
+        <Skills {...skills} />
         <section className="about" id="about">
           <div className="container">
             <Heading content={"About me"} />

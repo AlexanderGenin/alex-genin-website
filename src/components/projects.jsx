@@ -4,7 +4,7 @@ import Project from "./project";
 
 export default function Projects({ projects }) {
   return (
-    <section className="projects">
+    <section className="projects" id="projects">
       <div className="container">
         <Heading content={"My projects"} />
         {projects.map((project) => {
