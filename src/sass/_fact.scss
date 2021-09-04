@@ -1,5 +1,5 @@
-.quick-fact {
-  .icon-wrapper {
+.fact {
+  &__icon {
     width: 5rem;
     height: 5rem;
     display: flex;
@@ -29,7 +29,7 @@
       }
     }
 
-    &.yellow {
+    &_yellow {
       &::before {
         background-color: rgba(236, 221, 123, 0.17);
       }
@@ -37,7 +37,7 @@
         fill: #ecdd7b;
       }
     }
-    &.red {
+    &_red {
       &::before {
         background-color: rgba(250, 85, 78, 0.17);
       }
@@ -47,14 +47,14 @@
     }
   }
 
-  &:hover .icon-wrapper::before {
+  &:hover .fact__icon::before {
     transform: scale(1.1);
   }
-  h3 {
+  &__title {
     text-align: center;
     margin: 2rem auto 1rem auto;
   }
-  p {
+  &__text {
     text-align: center;
     margin: 1rem auto;
   }

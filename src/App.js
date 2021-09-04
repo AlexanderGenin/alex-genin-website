@@ -1,11 +1,7 @@
 import React from "react";
 import { ReactComponent as Logo } from "./images/alex-genin-logo.svg";
 import AlexGeninPhoto from "./images/alex-genin-w-circle.png";
-import {
-  HiArrowNarrowRight,
-  HiDownload,
-  HiOutlineExternalLink,
-} from "react-icons/hi";
+import { HiArrowNarrowRight, HiOutlineExternalLink } from "react-icons/hi";
 import { ImQuotesLeft } from "react-icons/im";
 import {
   IoRocketOutline,
@@ -54,13 +50,13 @@ import { ReactComponent as Sports } from "./images/sports.svg";
 import { ReactComponent as Timeline } from "./images/timeline.svg";
 
 import Heading from "./components/heading";
-import QuickFact from "./components/quickFact";
 import Experience from "./components/experience";
 import Header from "./components/header";
 import Home from "./components/home";
 import Stack from "./components/stack";
 import Projects from "./components/projects";
 import Skills from "./components/skills";
+import About from "./components/about";
 
 import FCECertificate from "./static/Alexander-Genin-FCE-certificate.pdf";
 import MongoDBCertificates from "./static/Alexander-Genin-MongoDB-certificates.pdf";
@@ -138,20 +134,20 @@ const stackTechs = [
 
 const stack = "MERN";
 
-const quickFacts = [
+const facts = [
   {
     icon: <GraduationHat />,
-    heading: "Moscow State University",
+    title: "Moscow State University",
     text: "I’m studying at the top 1 University of Russia and get only the highest grades",
   },
   {
     icon: <Book />,
-    heading: "Self-taught Developer",
+    title: "Self-taught Developer",
     text: "Learned everything I know with the help of books and online resources",
   },
   {
     icon: <Translation />,
-    heading: "Advanced English (C1)",
+    title: "Advanced English (C1)",
     text: (
       <>
         Approved by official Cambridge certificate (FCE) which you can find{" "}
@@ -163,17 +159,17 @@ const quickFacts = [
   },
   {
     icon: <ExperienceIcon className="adjust" />,
-    heading: "Real Work Experience",
+    title: "Real Work Experience",
     text: "Successfully delivered a number of projects at UpWork. Received positive feedback",
   },
   {
     icon: <Chat />,
-    heading: "Soft Skills",
+    title: "Soft Skills",
     text: "I value a lot my reputation of a friendly and trustworthy person :)",
   },
   {
     icon: <Sports />,
-    heading: "My Hobbies",
+    title: "My Hobbies",
     text: "I am keen on travelling and also love playing all kinds of team sports games!",
   },
 ];
@@ -293,18 +289,17 @@ const skills = {
   ],
 };
 
-function App() {
-  function getAge(dateString) {
-    var today = new Date();
-    var birthDate = new Date(dateString);
-    var age = today.getFullYear() - birthDate.getFullYear();
-    var m = today.getMonth() - birthDate.getMonth();
-    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-      age--;
-    }
-    return age;
-  }
+const about = {
+  heading: "Hello There!",
+  name: "Alexander Genin",
+  birthDate: "1999-11-15",
+  job: "Full Stack",
+  text: "I am inspired to utilize the power of Web technologies to create valuable apps for people all over the world!",
+  years: "2+",
+  facts,
+};
 
+function App() {
   return (
     <>
       <Header links={menuLinks} logo={<Logo />} id="home" />
@@ -313,41 +308,7 @@ function App() {
         <Stack list={stackTechs} stack={stack} />
         <Projects projects={projects} />
         <Skills {...skills} />
-        <section className="about" id="about">
-          <div className="container">
-            <Heading content={"About me"} />
-            <div className="desc-container">
-              <div className="greeting-intro">
-                <p class="greeting">Hello There!</p>
-                <p className="intro">
-                  My name is <span className="em">Alexander Genin</span>. I’m a{" "}
-                  <span className="em">{getAge("1999-11-15")}</span> years old{" "}
-                  <span className="em">Full Stack</span> Web Developer from
-                  Russia. I am inspired to utilize the power of Web technologies
-                  to <span className="em">create valuable apps</span> for people
-                  all over the world!
-                </p>
-              </div>
-              <div className="exp-cv">
-                <div className="container">
-                  <p className="exp-years">2+</p>
-                  <p className="exp-text">years of experience</p>
-                </div>
-                <button className="cv">
-                  Download CV
-                  <HiDownload />
-                </button>
-              </div>
-            </div>
-            <div className="quick-facts-grid-container">
-              <div className="quick-facts-grid">
-                {quickFacts.map((qf, i) => (
-                  <QuickFact {...qf} color={i % 2 === 0 ? "yellow" : "red"} />
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
+        <About {...about} />
         <section className="experience">
           <div className="container">
             <Heading content={"My experience"} />
