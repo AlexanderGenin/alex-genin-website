@@ -10,11 +10,12 @@ import { ImQuotesLeft } from "react-icons/im";
 import {
   IoRocketOutline,
   IoLaptopOutline,
-  IoBookOutline,
+  IoLibraryOutline,
+  IoCodeSlashOutline,
 } from "react-icons/io5";
 import {
   FaGithub,
-  FaLinkedin,
+  FaLinkedinIn,
   FaVk,
   FaFacebookF,
   FaTelegramPlane,
@@ -61,6 +62,9 @@ import Stack from "./components/stack";
 import Projects from "./components/projects";
 import Skills from "./components/skills";
 
+import FCECertificate from "./static/Alexander-Genin-FCE-certificate.pdf";
+import MongoDBCertificates from "./static/Alexander-Genin-MongoDB-certificates.pdf";
+
 const menuLinks = [
   {
     title: "Home",
@@ -87,7 +91,7 @@ const socials = [
   },
   {
     url: "https://www.linkedin.com/in/alex-genin/",
-    icon: <FaLinkedin size={20} />,
+    icon: <FaLinkedinIn size={20} />,
   },
   {
     url: "https://t.me/alexgenin",
@@ -104,7 +108,7 @@ const introContent = {
   photoUrl: AlexGeninPhoto,
   name: "Alex",
   surname: "Genin",
-  subtitle: "Full stack Web Developer who loves his job!",
+  subtitle: "Full Stack Web Developer",
   buttonsLinks: [menuLinks[1], menuLinks[3]],
   socials,
 };
@@ -142,18 +146,25 @@ const quickFacts = [
   },
   {
     icon: <Book />,
-    heading: "Self-taught developer",
+    heading: "Self-taught Developer",
     text: "Learned everything I know with the help of books and online resources",
   },
   {
     icon: <Translation />,
     heading: "Advanced English (C1)",
-    text: "Approved by official Cambridge certificate (FCE) which you can check here",
+    text: (
+      <>
+        Approved by official Cambridge certificate (FCE) which you can find{" "}
+        <a href={FCECertificate} target="_blank">
+          <span className="em un">here</span>
+        </a>
+      </>
+    ),
   },
   {
-    icon: <ExperienceIcon className="ajust" />,
+    icon: <ExperienceIcon className="adjust" />,
     heading: "Real Work Experience",
-    text: "Successfully delivered two Wordpress projects on UpWork. Received positive feedback",
+    text: "Successfully delivered a number of projects at UpWork. Received positive feedback",
   },
   {
     icon: <Chat />,
@@ -171,7 +182,7 @@ const projects = [
   {
     name: "Stocks Live App",
     description:
-      "An interactive lightweight app to get live info about various stocks on global market.",
+      "An interactive lightweight app for getting live info about various stocks on global market.",
     techs: ["React", "Node", "Chart.js", "Yahoo Finance API"],
     images: [
       <StocksAppSummary style={{ width: "360px", height: "256px" }} />,
@@ -183,7 +194,7 @@ const projects = [
   {
     name: "This Website",
     description:
-      "I created this website from scratch. Starting with UX/UI design, prototyping and finishing with writing code and uploading it to the host.",
+      "I created my personal website from scratch - starting from the UX/UI design, prototyping, and ending up with writing code and uploading it to the host.",
     techs: ["React Hooks", "JavaScript", "Sass/CSS3", "HTML5"],
     images: [
       <PortfolioFeedback style={{ width: "320px", height: "180px" }} />,
@@ -199,47 +210,62 @@ const experiences = [
     icon: <IoRocketOutline />,
     title: "Moving to React and Node",
     descList: [
-      "Learning Node, React, Express, MongoDB",
-      "Reading official documentations",
-      "Creating pet projects like this for practice",
+      "Learning React.js, Node.js, Express.js, MongoDB, TypeScript",
+      "Creating pet projects like this one for practice",
       "Improving my JavaScript skills with LeetCode",
+      <>
+        Getting "MongoDB University"{" "}
+        <a href={MongoDBCertificates} target="_blank">
+          <span className="em un">certificates</span>
+        </a>
+      </>,
     ],
   },
   {
     icon: <IoLaptopOutline />,
-    title: "Freelancing on UpWork",
+    title: "Freelancing at UpWork",
     descList: [
-      "Continue learning JavaScript, PHP, Wordpress, MySQL",
-      "Studying Web Design fundamentals",
-      "Creating custom WordPress Theme for ThemeForest",
-      "Working on UpWork: successfully making custom WordPress plugins (visit my profile     )",
+      "Learning React.js and Node.js",
+      "Studying UX/UI fundamentals",
+      "Creating custom WordPress Plugins",
+      "Working at UpWork — successfully completed several projects",
     ],
   },
   {
-    icon: <IoBookOutline />,
-    title: "Learning Javascript and PHP",
+    icon: <IoLibraryOutline />,
+    title: "Learning Javascript and Web Fundamentals",
     descList: [
+      "Reading HTML, CSS, JavaScript and PHP docs",
+      "Learning WordPress API and Elementor API",
+      "Creating custom WordPress Theme for Envato",
+      "Creating HTML/CSS layouts and practicing JavaScript",
+    ],
+  },
+  {
+    icon: <IoCodeSlashOutline />,
+    title: "The Journey Begins",
+    descList: [
+      "Learning JavaScript and PHP",
       "Learning Web Development in general",
-      "Watching countless tutorials online",
-      "Reading JavaScript and PHP docs",
-      "Practicing, practicing, practicing...",
+      "Watching countless lectures online",
+      'Reading "Computer Networks" (by Tanenbaum)',
     ],
   },
 ];
 
 const skills = {
   current: [
-    { title: "React", exp: "1+ years", icon: <JavaScript />, type: "big" },
-    { title: "JavaScript", exp: "4+ years", icon: <ReactJS />, type: "big" },
+    { title: "React", exp: "1+ years", icon: <ReactJS />, type: "big" },
+    { title: "JavaScript", exp: "4+ years", icon: <JavaScript />, type: "big" },
     { title: "Node", exp: "1+ years", icon: <Node />, type: "big" },
     { title: "TypeScript", exp: "<1 year", icon: <TypeScript />, type: "big" },
     {
       title: "Express",
-      exp: "1+ year",
+      exp: "1+ years",
       icon: <Express fill={"#fff"} />,
       type: "big",
     },
-    { title: "MongoDB", exp: "1+ year", icon: <MongoDB />, type: "big" },
+    { title: "MongoDB", exp: "1+ years", icon: <MongoDB />, type: "big" },
   ],
   fundamental: [
     { title: "HTML5", exp: "4+ years", icon: <HTML5Logo />, type: "medium" },
@@ -268,6 +294,17 @@ const skills = {
 };
 
 function App() {
+  function getAge(dateString) {
+    var today = new Date();
+    var birthDate = new Date(dateString);
+    var age = today.getFullYear() - birthDate.getFullYear();
+    var m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+      age--;
+    }
+    return age;
+  }
+
   return (
     <>
       <Header links={menuLinks} logo={<Logo />} id="home" />
@@ -283,14 +320,18 @@ function App() {
               <div className="greeting-intro">
                 <p class="greeting">Hello There!</p>
                 <p className="intro">
-                  My name is Alexander Genin. I’m a 21 years old professional
-                  full stack developer from Russia.
+                  My name is <span className="em">Alexander Genin</span>. I’m a{" "}
+                  <span className="em">{getAge("1999-11-15")}</span> years old{" "}
+                  <span className="em">Full Stack</span> Web Developer from
+                  Russia. I am inspired to utilize the power of Web technologies
+                  to <span className="em">create valuable apps</span> for people
+                  all over the world!
                 </p>
               </div>
               <div className="exp-cv">
                 <div className="container">
-                  <p className="exp-years">1</p>
-                  <p className="exp-text">year of experience</p>
+                  <p className="exp-years">2+</p>
+                  <p className="exp-text">years of experience</p>
                 </div>
                 <button className="cv">
                   Download CV
@@ -367,46 +408,49 @@ function App() {
               <div className="description">
                 <p class="heading">Let's Work Together!</p>
                 <p className="text">
-                  Always open to new projects and collaborations! Ready to be
-                  hired. Don’t hesitate to drop me a line!
+                  Always open to new projects and collaborations!
+                  <br />
+                  Ready to be hired. Don’t hesitate to drop me a line!
                 </p>
                 <div className="contact-social">
-                  <p>Find me online:</p>
-                  <a
-                    href="https://github.com/AlexanderGenin"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <FaGithub size={20} />
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/in/alex-genin/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <FaLinkedin size={20} />
-                  </a>
-                  <a
-                    href="https://t.me/alexgenin"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <FaTelegramPlane size={20} />
-                  </a>
-                  <a
-                    href="https://www.facebook.com/alexgenin99/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <FaFacebookF size={20} />
-                  </a>
-                  <a
-                    href="https://vk.com/alex.genin"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <FaVk size={20} />
-                  </a>
+                  <p>Contact me online:</p>
+                  <div>
+                    <a
+                      href="https://github.com/AlexanderGenin"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <FaGithub size={20} />
+                    </a>
+                    <a
+                      href="https://www.linkedin.com/in/alex-genin/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <FaLinkedinIn size={20} />
+                    </a>
+                    <a
+                      href="https://t.me/alexgenin"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <FaTelegramPlane size={20} />
+                    </a>
+                    <a
+                      href="https://www.facebook.com/alexgenin99/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <FaFacebookF size={20} />
+                    </a>
+                    <a
+                      href="https://vk.com/alex.genin"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <FaVk size={20} />
+                    </a>
+                  </div>
                 </div>
               </div>
               <div className="form">
@@ -450,6 +494,42 @@ function App() {
                 </li>
               </ul>
             </nav>
+            <div className="socials">
+              <a
+                href="https://github.com/AlexanderGenin"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaGithub size={20} />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/alex-genin/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaLinkedinIn size={20} />
+              </a>
+              <a href="https://t.me/alexgenin" target="_blank" rel="noreferrer">
+                <FaTelegramPlane size={20} />
+              </a>
+              <a
+                href="https://www.facebook.com/alexgenin99/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaFacebookF size={20} />
+              </a>
+              <a
+                href="https://vk.com/alex.genin"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaVk size={20} />
+              </a>
+            </div>
+            <div className="copyright">
+              <p>© 2021, Alexander Genin</p>
+            </div>
           </div>
         </div>
       </footer>

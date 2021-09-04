@@ -7,6 +7,9 @@
   justify-content: flex-start;
   align-items: center;
   padding: 1rem 2.5rem;
+  .em {
+    font-weight: bold;
+  }
   &_big {
     svg {
       width: 3.6rem;

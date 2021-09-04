@@ -9,7 +9,7 @@
       color: $yellow;
     }
   }
-  .techs {
+  .stack-techs {
     @media (max-width: $largeScreen) {
       max-width: 40rem;
       margin: 0 auto;
@@ -19,7 +19,7 @@
     align-items: center;
     flex-wrap: wrap;
 
-    .tech {
+    .stack-tech {
       width: 12rem;
       height: 12rem;
       background-color: $bgColor;

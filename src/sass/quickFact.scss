@@ -1,35 +1,54 @@
-$largeScreen: 1020px;
-
 .quick-fact {
   .icon-wrapper {
     width: 5rem;
     height: 5rem;
-    border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+    position: relative;
+
+    &::before {
+      border-radius: 20px;
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5rem;
+      height: 5rem;
+      z-index: -1;
+      transition: transform 0.4s;
+    }
+
     svg {
       width: 3rem;
       height: 3rem;
       margin: 0 auto;
-      &.ajust {
+      &.adjust {
         transform: translateX(4px);
       }
     }
 
     &.yellow {
-      background-color: rgba(236, 221, 123, 0.17);
+      &::before {
+        background-color: rgba(236, 221, 123, 0.17);
+      }
       svg {
         fill: #ecdd7b;
       }
     }
     &.red {
-      background-color: rgba(250, 85, 78, 0.17);
+      &::before {
+        background-color: rgba(250, 85, 78, 0.17);
+      }
       svg {
         fill: #fa554e;
       }
     }
+  }
+
+  &:hover .icon-wrapper::before {
+    transform: scale(1.1);
   }
   h3 {
     text-align: center;

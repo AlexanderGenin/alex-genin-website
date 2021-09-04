@@ -21,7 +21,7 @@ export default function Home({
               <br />
               <span className="heading__word">{surname}</span>
             </h1>
-            <p className="sentence">{subtitle}</p>
+            <p className="sentence">{subtitle} who loves his job!</p>
             <div className="buttons">
               <a
                 className="buttons__button buttons__button_project"

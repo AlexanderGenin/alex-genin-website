@@ -1,12 +1,15 @@
 $red: #fa554e;
 
 .experience-block {
-  margin-bottom: 3rem;
+  margin-bottom: 4.4rem;
   .experience-title {
+    h3 {
+      font-size: 1.2rem;
+    }
     svg {
       display: inline-block;
-      width: 32px;
-      height: 32px;
+      width: 36px;
+      height: 36px;
       color: $red;
       margin-right: 1rem;
       vertical-align: middle;

@@ -7,13 +7,13 @@ export default function Stack({ list, stack }) {
         <h3 className="stack__heading">
           Working with <span className="stack__heading_highlight">{stack}</span>
         </h3>
-        <div className="techs">
+        <div className="stack-techs">
           {list.map(({ name, description, icon }) => {
             return (
-              <div className="tech floating">
+              <div className="stack-tech floating">
                 {icon}
-                <p className="tech__name">{name}</p>
-                <p className="tech__description">{description}</p>
+                <p className="stack-tech__name">{name}</p>
+                <p className="stack-tech__description">{description}</p>
               </div>
             );
           })}
