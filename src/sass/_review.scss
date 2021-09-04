@@ -1,0 +1,55 @@
+.review {
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__avatar {
+    width: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    svg {
+      width: 8rem;
+      height: 8rem;
+    }
+  }
+  &__content {
+    width: 30rem;
+    svg {
+      fill: rgba(106, 108, 118, 0.26);
+    }
+    figure {
+      margin: 0;
+      p {
+        margin: 0;
+        line-height: 1.5rem;
+        text-align: justify;
+      }
+      blockquote {
+        margin: 1rem 0 2rem 3rem;
+      }
+      figcaption {
+        p {
+          text-align: right;
+        }
+        .cite {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          a {
+            display: block;
+            text-decoration: none;
+            color: rgba(106, 108, 118, 0.849);
+            cite {
+              font-style: normal;
+            }
+            svg {
+              transform: translateY(3px);
+            }
+          }
+        }
+      }
+    }
+  }
+}

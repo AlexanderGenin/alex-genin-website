@@ -1,8 +1,7 @@
 import React from "react";
 import { ReactComponent as Logo } from "./images/alex-genin-logo.svg";
 import AlexGeninPhoto from "./images/alex-genin-w-circle.png";
-import { HiArrowNarrowRight, HiOutlineExternalLink } from "react-icons/hi";
-import { ImQuotesLeft } from "react-icons/im";
+import { HiArrowNarrowRight } from "react-icons/hi";
 import {
   IoRocketOutline,
   IoLaptopOutline,
@@ -40,13 +39,13 @@ import { ReactComponent as StocksAppSummary } from "./images/stocks-app-summary.
 import { ReactComponent as StocksAppAnalysis } from "./images/stocks-app-analysis.svg";
 import { ReactComponent as PortfolioAbout } from "./images/portfolio-about.svg";
 import { ReactComponent as PortfolioFeedback } from "./images/portfolio-feedback.svg";
-import { ReactComponent as ReviewAvatar } from "./images/review-avatar.svg";
 import { ReactComponent as GraduationHat } from "./images/graduation-hat.svg";
 import { ReactComponent as Book } from "./images/book.svg";
 import { ReactComponent as Translation } from "./images/translation.svg";
 import { ReactComponent as ExperienceIcon } from "./images/experience.svg";
 import { ReactComponent as Chat } from "./images/chat.svg";
 import { ReactComponent as Sports } from "./images/sports.svg";
+import { ReactComponent as ReviewAvatar } from "./images/review-avatar.svg";
 
 import Heading from "./components/heading";
 import Header from "./components/header";
@@ -59,6 +58,7 @@ import About from "./components/about";
 import FCECertificate from "./static/Alexander-Genin-FCE-certificate.pdf";
 import MongoDBCertificates from "./static/Alexander-Genin-MongoDB-certificates.pdf";
 import Experience from "./components/experience";
+import Review from "./components/review";
 
 const menuLinks = [
   {
@@ -298,6 +298,12 @@ const about = {
   facts,
 };
 
+const review = {
+  avatar: <ReviewAvatar />,
+  text: "Alexander did an excellent job creating my WordPress custom plugin. He was very communicative during the whole development and very open to suggestions. Alexander followed instructions very well and is very attentive to details. I will definitely hire Alex again next time I have a PHP project.",
+  author: "Esteban Rodriguez from GrubBytes",
+};
+
 function App() {
   return (
     <>
@@ -309,44 +315,7 @@ function App() {
         <Skills {...skills} />
         <About {...about} />
         <Experience experiences={experiences} />
-        <section className="reviews">
-          <div className="container">
-            <Heading content={"What clients say"} />
-            <div className="review">
-              <div className="avatar-container">
-                <ReviewAvatar />
-              </div>
-              <div className="content-container">
-                <ImQuotesLeft size={74} />
-                <figure>
-                  <blockquote cite="https://www.upwork.com/freelancers/~0132ab416b37ee78a5">
-                    <p>
-                      Alexander did an excellent job creating my WordPress
-                      custom plugin. He was very communicative during the whole
-                      development and very open to suggestions. Alexander
-                      followed instructions very well and is very attentive to
-                      details. I will definitely hire Alex again next time I
-                      have a PHP project.
-                    </p>
-                  </blockquote>
-                  <figcaption>
-                    <p>— Esteban Rodriguez from GrubBytes</p>
-                    <div className="cite-container">
-                      <a
-                        href="https://www.upwork.com/freelancers/~0132ab416b37ee78a5"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <cite>See it on UpWork &nbsp;</cite>
-                        <HiOutlineExternalLink size={18} />
-                      </a>
-                    </div>
-                  </figcaption>
-                </figure>
-              </div>
-            </div>
-          </div>
-        </section>
+        <Review {...review} />
         <section className="contacts" id="contacts">
           <div className="container">
             <Heading content="Get in touch" />
