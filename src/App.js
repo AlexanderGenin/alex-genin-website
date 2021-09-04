@@ -1,7 +1,6 @@
 import React from "react";
 import { ReactComponent as Logo } from "./images/alex-genin-logo.svg";
 import AlexGeninPhoto from "./images/alex-genin-w-circle.png";
-import { HiArrowNarrowRight } from "react-icons/hi";
 import {
   IoRocketOutline,
   IoLaptopOutline,
@@ -47,7 +46,6 @@ import { ReactComponent as Chat } from "./images/chat.svg";
 import { ReactComponent as Sports } from "./images/sports.svg";
 import { ReactComponent as ReviewAvatar } from "./images/review-avatar.svg";
 
-import Heading from "./components/heading";
 import Header from "./components/header";
 import Home from "./components/home";
 import Stack from "./components/stack";
@@ -59,6 +57,7 @@ import FCECertificate from "./static/Alexander-Genin-FCE-certificate.pdf";
 import MongoDBCertificates from "./static/Alexander-Genin-MongoDB-certificates.pdf";
 import Experience from "./components/experience";
 import Review from "./components/review";
+import Contacts from "./components/contacts";
 
 const menuLinks = [
   {
@@ -304,6 +303,18 @@ const review = {
   author: "Esteban Rodriguez from GrubBytes",
 };
 
+const contacts = {
+  heading: "Let's Work Together!",
+  text: (
+    <>
+      Always open to new projects and collaborations!
+      <br />
+      Ready to be hired. Don’t hesitate to drop me a line!
+    </>
+  ),
+  socials,
+};
+
 function App() {
   return (
     <>
@@ -316,78 +327,7 @@ function App() {
         <About {...about} />
         <Experience experiences={experiences} />
         <Review {...review} />
-        <section className="contacts" id="contacts">
-          <div className="container">
-            <Heading content="Get in touch" />
-            <div className="contacts-container">
-              <div className="description">
-                <p className="heading">Let's Work Together!</p>
-                <p className="text">
-                  Always open to new projects and collaborations!
-                  <br />
-                  Ready to be hired. Don’t hesitate to drop me a line!
-                </p>
-                <div className="contact-social">
-                  <p>Contact me online:</p>
-                  <div>
-                    <a
-                      href="https://github.com/AlexanderGenin"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <FaGithub size={20} />
-                    </a>
-                    <a
-                      href="https://www.linkedin.com/in/alex-genin/"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <FaLinkedinIn size={20} />
-                    </a>
-                    <a
-                      href="https://t.me/alexgenin"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <FaTelegramPlane size={20} />
-                    </a>
-                    <a
-                      href="https://www.facebook.com/alexgenin99/"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <FaFacebookF size={20} />
-                    </a>
-                    <a
-                      href="https://vk.com/alex.genin"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <FaVk size={20} />
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div className="form">
-                <form action="#">
-                  <input type="text" placeholder="Your name..." />
-                  <input type="email" placeholder="Your email for reply..." />
-                  <textarea
-                    name=""
-                    placeholder="Your message..."
-                    id=""
-                    cols="30"
-                    rows="6"
-                  ></textarea>
-                  <button type="submit">
-                    Send&nbsp;
-                    <HiArrowNarrowRight />
-                  </button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </section>
+        <Contacts {...contacts} />
       </main>
       <footer>
         <div className="container">

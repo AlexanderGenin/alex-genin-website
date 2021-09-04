@@ -1,6 +1,7 @@
 import React from "react";
 import { HiArrowNarrowRight } from "react-icons/hi";
 import { FaRegPaperPlane } from "react-icons/fa";
+import Social from "./social";
 
 export default function Home({
   photoUrl,
@@ -42,19 +43,9 @@ export default function Home({
         </div>
         <div className="social-networks">
           <div className="social-networks__line"></div>
-          {socials.map(({ url, icon }, index) => {
-            return (
-              <a
-                key={index}
-                className="social-networks__link"
-                href={url}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {icon}
-              </a>
-            );
-          })}
+          {socials.map((social, index) => (
+            <Social {...social} index={index} />
+          ))}
         </div>
       </div>
     </section>

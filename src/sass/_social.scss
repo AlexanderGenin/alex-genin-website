@@ -1,0 +1,9 @@
+.social-networks__link svg {
+  color: $yellow;
+  cursor: pointer;
+  transition: color 0.2s;
+  vertical-align: center;
+  &:hover {
+    color: rgba(236, 221, 123, 0.705);
+  }
+}

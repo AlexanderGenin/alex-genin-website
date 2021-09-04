@@ -115,13 +115,7 @@
       border: 1px solid $yellow;
       margin-bottom: 0.6rem;
     }
-    svg {
-      cursor: pointer;
-      color: $yellow;
-      transition: color 0.2s;
-      &:hover {
-        color: rgba(236, 221, 123, 0.705);
-      }
-    }
+
+    @import "social";
   }
 }

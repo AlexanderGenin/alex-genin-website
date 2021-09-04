@@ -20,6 +20,7 @@ $largeScreen: 1020px;
 @import "experience";
 @import "list";
 @import "review";
+@import "contacts";
 
 body {
   box-sizing: border-box;
@@ -98,96 +99,6 @@ body {
       width: 100%;
       padding-top: 2rem;
       padding-bottom: 2rem;
-    }
-
-    .contacts {
-      margin: 5rem auto;
-      .contacts-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        .description {
-          max-width: 30rem;
-          .heading {
-            font-weight: bold;
-            font-family: $bigTextFont;
-            font-size: 4rem;
-            margin: 0;
-          }
-          .text {
-            line-height: 1.5rem;
-          }
-          .contact-social {
-            p {
-              margin-top: 3rem;
-              margin-bottom: 0.6rem;
-              margin-right: 0.5rem;
-              font-size: 1.2rem;
-            }
-            svg {
-              margin-right: 0.8rem;
-              color: $yellow;
-              cursor: pointer;
-              transition: color 0.2s;
-              vertical-align: center;
-              &:hover {
-                color: rgba(236, 221, 123, 0.705);
-              }
-            }
-          }
-        }
-        .form {
-          max-width: 30rem;
-          form {
-            text-align: center;
-            margin: 0 auto;
-            width: 24rem;
-            input,
-            textarea {
-              background-color: #404249;
-              border: 2px solid #404249;
-              border-radius: 10px;
-              width: 22rem;
-              font-size: 1.1rem;
-              color: $yellow;
-              margin: 0.6rem;
-              outline: none;
-              padding: 1rem 1rem;
-              transition: all 0.1s ease-out;
-              font-family: $textFont;
-              &:focus {
-                border: 2px solid $yellow;
-              }
-              &::placeholder {
-                color: #6a6e77;
-              }
-            }
-
-            button {
-              background-color: $red;
-              padding: 0.8rem 2rem;
-              color: $textColor;
-              border-radius: 8px;
-              font-family: $textFont;
-              border: none;
-              margin: 0 auto;
-              cursor: pointer;
-              font-weight: bold;
-              font-size: 1.4rem;
-              margin-top: 1rem;
-              svg {
-                vertical-align: middle;
-                transition: all 0.2s;
-              }
-              &:hover {
-                svg {
-                  transform: translateX(5px);
-                }
-              }
-            }
-          }
-        }
-      }
     }
   }
   footer {
