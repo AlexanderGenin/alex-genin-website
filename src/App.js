@@ -58,6 +58,9 @@ import MongoDBCertificates from "./static/Alexander-Genin-MongoDB-certificates.p
 import Experience from "./components/experience";
 import Review from "./components/review";
 import Contacts from "./components/contacts";
+import Footer from "./components/footer";
+
+const name = "Alexander Genin";
 
 const menuLinks = [
   {
@@ -289,7 +292,7 @@ const skills = {
 
 const about = {
   heading: "Hello There!",
-  name: "Alexander Genin",
+  name,
   birthDate: "1999-11-15",
   job: "Full Stack",
   text: "I am inspired to utilize the power of Web technologies to create valuable apps for people all over the world!",
@@ -315,6 +318,13 @@ const contacts = {
   socials,
 };
 
+const footer = {
+  links: menuLinks,
+  logo: <Logo />,
+  socials,
+  name,
+};
+
 function App() {
   return (
     <>
@@ -329,65 +339,7 @@ function App() {
         <Review {...review} />
         <Contacts {...contacts} />
       </main>
-      <footer>
-        <div className="container">
-          <div className="footer-container">
-            <Logo />
-            <nav>
-              <ul>
-                <li>
-                  <a href="#">Home</a>
-                </li>
-                <li>
-                  <a href="#">Projects</a>
-                </li>
-                <li>
-                  <a href="#">About me</a>
-                </li>
-                <li>
-                  <a href="#">Contact</a>
-                </li>
-              </ul>
-            </nav>
-            <div className="socials">
-              <a
-                href="https://github.com/AlexanderGenin"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <FaGithub size={20} />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/alex-genin/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <FaLinkedinIn size={20} />
-              </a>
-              <a href="https://t.me/alexgenin" target="_blank" rel="noreferrer">
-                <FaTelegramPlane size={20} />
-              </a>
-              <a
-                href="https://www.facebook.com/alexgenin99/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <FaFacebookF size={20} />
-              </a>
-              <a
-                href="https://vk.com/alex.genin"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <FaVk size={20} />
-              </a>
-            </div>
-            <div className="copyright">
-              <p>© 2021, Alexander Genin</p>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer {...footer} />
     </>
   );
 }

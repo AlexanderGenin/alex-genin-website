@@ -21,6 +21,7 @@ $largeScreen: 1020px;
 @import "list";
 @import "review";
 @import "contacts";
+@import "footer";
 
 body {
   box-sizing: border-box;
@@ -99,55 +100,6 @@ body {
       width: 100%;
       padding-top: 2rem;
       padding-bottom: 2rem;
-    }
-  }
-  footer {
-    margin: 6rem auto 0 auto;
-    .container {
-      .footer-container {
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 40rem;
-        ul {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          list-style-type: none;
-          margin: 2rem 0 1rem 0;
-          padding: 0;
-        }
-        a {
-          text-decoration: none;
-          color: $textColor;
-          margin: auto 1.4rem;
-          font-size: 1.1rem;
-        }
-        .socials {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          margin-bottom: 4rem;
-          a {
-            margin: 0;
-
-            svg {
-              margin: 0.8rem;
-              color: $yellow;
-              cursor: pointer;
-              transition: color 0.2s;
-              vertical-align: center;
-              &:hover {
-                color: rgba(236, 221, 123, 0.705);
-              }
-            }
-          }
-        }
-        .copyright {
-          color: #6a6e77;
-        }
-      }
     }
   }
 }
