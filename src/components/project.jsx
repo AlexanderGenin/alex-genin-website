@@ -11,7 +11,7 @@ export default function Project({
   reflect,
 }) {
   return (
-    <div className={"project " + (reflect && "reflect")}>
+    <div className={"project" + (reflect ? " reflect" : "")}>
       <div className="description">
         <h4 className="description__title">{name}</h4>
         <p className="description__text">{description}</p>
@@ -25,7 +25,7 @@ export default function Project({
           </div>
         )}
       </div>
-      <div className={"images " + (reflect && "images_adjust")}>
+      <div className={"images" + (reflect ? " images_adjust" : "")}>
         {images.map((image) => image)}
       </div>
     </div>

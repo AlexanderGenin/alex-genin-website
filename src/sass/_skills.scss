@@ -1,17 +1,20 @@
-.skills-container {
-  .brackets {
-    color: $yellow;
-  }
-  &__techs {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    @import "techBox";
-  }
-  &__wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.skills {
+  .skills-container {
+    margin-bottom: 3rem;
+    .brackets {
+      color: $yellow;
+    }
+    &__techs {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      @import "techBox";
+    }
+    &__wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
   }
 }

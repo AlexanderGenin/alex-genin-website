@@ -44,7 +44,7 @@ export default function Home({
         <div className="social-networks">
           <div className="social-networks__line"></div>
           {socials.map((social, index) => (
-            <Social {...social} index={index} />
+            <Social {...social} key={index} />
           ))}
         </div>
       </div>

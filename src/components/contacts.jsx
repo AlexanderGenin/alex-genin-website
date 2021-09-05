@@ -17,7 +17,7 @@ export default function Contacts({ heading, text, socials }) {
               {socials.map((social, index) => (
                 <Social
                   {...social}
-                  index={index}
+                  key={index}
                   style={{ marginRight: "0.8rem" }}
                 />
               ))}

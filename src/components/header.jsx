@@ -19,8 +19,8 @@ export default function Header({ links, logo }) {
                     <a
                       href={linkTo}
                       className={
-                        "nav-list__link " +
-                        (activeLink === index && "nav-list__link_active")
+                        "nav-list__link" +
+                        (activeLink === index ? " nav-list__link_active" : "")
                       }
                     >
                       {title}

@@ -19,8 +19,8 @@ export default function Footer({ logo, links, socials, name }) {
             </ul>
           </nav>
           <div className="socials">
-            {socials.map((social) => (
-              <Social {...social} style={{ margin: "0.8rem" }} />
+            {socials.map((social, index) => (
+              <Social {...social} key={index} style={{ margin: "0.8rem" }} />
             ))}
           </div>
           <div className="copyright">
