@@ -1,5 +1,5 @@
 import React from "react";
 
 export default function Heading({ content }) {
-  return <h2 className="sections-h2">{content}</h2>;
+  return <h2 className="h2">{content}</h2>;
 }
