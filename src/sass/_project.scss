@@ -42,14 +42,13 @@
   .images {
     display: flex;
     flex-direction: column;
-    svg {
+    img {
       transform: skewX(-25deg);
       border-radius: 10px;
       box-shadow: 5px 5px 8px rgba(39, 68, 234, 0.26);
       transition: all 0.2s ease-in;
       @media (max-width: $largeScreen) {
         width: 270px;
-        height: 192px;
       }
       &:hover {
         box-shadow: 5px 5px 8px rgba(39, 68, 234, 1);
@@ -72,11 +71,10 @@
     }
     &_adjust {
       transform: translateY(2rem);
-      svg {
+      img {
         box-shadow: 5px 5px 8px rgba(236, 221, 123, 0.212);
         @media (max-width: $largeScreen) {
-          width: 240px;
-          height: 135px;
+          width: 270px;
         }
         &:hover {
           box-shadow: 5px 5px 8px rgba(236, 221, 123, 1);

@@ -34,10 +34,10 @@ import { ReactComponent as SassLogo } from "./images/sass.svg";
 import { ReactComponent as JestLogo } from "./images/jest.svg";
 import { ReactComponent as BootstrapLogo } from "./images/bootstrap-5-1.svg";
 import { ReactComponent as FigmaLogo } from "./images/figma.svg";
-import { ReactComponent as StocksAppSummary } from "./images/stocks-app-summary.svg";
-import { ReactComponent as StocksAppAnalysis } from "./images/stocks-app-analysis.svg";
-import { ReactComponent as PortfolioAbout } from "./images/portfolio-about.svg";
-import { ReactComponent as PortfolioFeedback } from "./images/portfolio-feedback.svg";
+import StocksAppSummary from "./images/stocks-app-summary.png";
+import StocksAppAnalysis from "./images/stocks-app-analysis.png";
+import PortfolioAbout from "./images/portfolio-about.png";
+import PortfolioContact from "./images/portfolio-contact.png";
 import { ReactComponent as GraduationHat } from "./images/graduation-hat.svg";
 import { ReactComponent as Book } from "./images/book.svg";
 import { ReactComponent as Translation } from "./images/translation.svg";
@@ -182,8 +182,16 @@ const projects = [
       "An interactive lightweight app for getting live info about various stocks on global market.",
     techs: ["React", "Node", "Chart.js", "Yahoo Finance API"],
     images: [
-      <StocksAppSummary style={{ width: "360px", height: "256px" }} key={0} />,
-      <StocksAppAnalysis style={{ width: "360px", height: "256px" }} key={1} />,
+      {
+        url: StocksAppSummary,
+        alt: "Stocks App Summary",
+        width: "360px",
+      },
+      {
+        url: StocksAppAnalysis,
+        alt: "Stocks App Analysis",
+        width: "360px",
+      },
     ],
     showLink: true,
     reflect: false,
@@ -194,8 +202,16 @@ const projects = [
       "I created my personal website from scratch - starting from the UX/UI design, prototyping, and ending up with writing code and uploading it to the host.",
     techs: ["React Hooks", "JavaScript", "Sass/CSS3", "HTML5"],
     images: [
-      <PortfolioFeedback style={{ width: "320px", height: "180px" }} key={0} />,
-      <PortfolioAbout style={{ width: "320px", height: "180px" }} key={1} />,
+      {
+        url: PortfolioContact,
+        alt: "Portfolio Contact",
+        width: "360px",
+      },
+      {
+        url: PortfolioAbout,
+        alt: "Portfolio About",
+        width: "360px",
+      },
     ],
     showLink: false,
     reflect: true,

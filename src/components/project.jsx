@@ -26,7 +26,9 @@ export default function Project({
         )}
       </div>
       <div className={"images" + (reflect ? " images_adjust" : "")}>
-        {images.map((image) => image)}
+        {images.map(({ url, alt, width }, index) => (
+          <img src={url} alt={alt} key={index} style={{ width }} />
+        ))}
       </div>
     </div>
   );
