@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 export default function Header({ links, logo }) {
   const [activeLink, setActiveLink] = useState(0);
+  const [openMenu, setOpenMenu] = useState(false);
   return (
     <header>
       <div className="container">
@@ -30,7 +31,13 @@ export default function Header({ links, logo }) {
               })}
             </ul>
           </nav>
-          <div></div>
+          <div
+            className={"burger" + (openMenu ? " burger_open" : "")}
+            onClick={() => setOpenMenu(!openMenu)}
+          >
+            <div class="burger__bar burger__bar-1"></div>
+            <div class="burger__bar burger__bar-2"></div>
+          </div>
         </div>
       </div>
     </header>

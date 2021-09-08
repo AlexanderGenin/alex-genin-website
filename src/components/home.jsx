@@ -15,7 +15,9 @@ export default function Home({
     <section className="home">
       <div className="container">
         <div className="intro">
-          <img src={photoUrl} className="photo" alt="Alex Genin" />
+          <div className="photo__wrapper">
+            <img src={photoUrl} className="photo" alt="Alex Genin" />
+          </div>
           <div className="content">
             <h1 className="heading">
               <span className="heading__word_offset">{name}</span>
@@ -23,6 +25,11 @@ export default function Home({
               <span className="heading__word">{surname}</span>
             </h1>
             <p className="sentence">{subtitle} who loves his job!</p>
+            <div className="social-networks-mobile">
+              {socials.map((social, index) => (
+                <Social {...social} key={index} style={{ margin: "0.8rem" }} />
+              ))}
+            </div>
             <div className="buttons">
               <a
                 className="buttons__button buttons__button_project"

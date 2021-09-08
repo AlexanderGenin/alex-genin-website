@@ -1,42 +1,78 @@
 .home {
   .intro {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    .photo {
-      width: 700px;
-      margin-left: -500px;
-      margin-right: 2rem;
-      @media (max-width: $largeScreen) {
-        margin-left: -450px;
+    flex-direction: column;
+    @media (min-width: $tabletScreen) {
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+    }
+    .photo__wrapper {
+      order: 2;
+      width: calc(100% + 4rem);
+      transform: translateX(-2rem);
+      overflow: hidden;
+      @media (min-width: $tabletScreen) {
+        order: 0;
+        width: 700px;
+        margin-left: -500px;
+        margin-right: 2rem;
+        transform: translateX(0);
+      }
+      .photo {
+        width: 500px;
+        margin-left: -150px;
+        transform: translateY(6px);
+        @media (min-width: $tabletScreen) {
+          width: 700px;
+          margin-left: 0;
+        }
       }
     }
 
     .content {
-      margin-top: 4rem;
+      margin-top: 1rem;
+      @media (min-width: $tabletScreen) {
+        margin-top: 4rem;
+      }
       .heading {
         font-family: $bigTextFont;
         font-size: 5rem;
         font-weight: bold;
         margin: 0;
         line-height: 5rem;
-        &__word {
-          &_offset {
-            margin-left: -2rem;
+        text-align: center;
+        @media (min-width: $tabletScreen) {
+          text-align: left;
+          &__word {
+            &_offset {
+              margin-left: -2rem;
+            }
           }
         }
       }
       .sentence {
         font-size: 1.2rem;
         font-weight: normal;
-        margin: 2rem 0 1rem 1rem;
-        @media (max-width: $largeScreen) {
-          width: 14rem;
+        text-align: center;
+        width: 16rem;
+        margin: 2rem auto;
+        @media (min-width: $tabletScreen) {
+          text-align: left;
+          width: 100%;
+          margin: 2rem 0 1rem 1rem;
         }
       }
 
       .buttons {
-        margin-bottom: 120px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+        @media (min-width: $tabletScreen) {
+          display: block;
+          margin-bottom: 120px;
+        }
         &__button {
           display: inline-block;
           text-decoration: none;
@@ -44,8 +80,9 @@
           font-weight: bold;
 
           &_project {
+            margin-bottom: 4rem;
+            order: 2;
             color: $yellow;
-            margin: 2rem 2rem 2rem 1rem;
 
             span {
               position: relative;
@@ -67,9 +104,12 @@
             &:hover svg {
               transform: translateX(8px);
             }
+            @media (min-width: $tabletScreen) {
+              margin: 2rem 2rem 2rem 1rem;
+            }
           }
           &_contact {
-            margin: 2rem 0 2rem 2rem;
+            margin-bottom: 2rem;
             color: $red;
             border: 2px solid $red;
             padding: 0.5rem 1.4rem;
@@ -87,6 +127,9 @@
               color: $textColor;
               background-position: 0 -100%;
             }
+            @media (min-width: $tabletScreen) {
+              margin: 2rem 0 2rem 2rem;
+            }
           }
           svg {
             padding-left: 0.8rem;
@@ -98,16 +141,16 @@
   }
 
   .social-networks {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    height: 18rem;
-    position: absolute;
-    top: 5rem;
-    right: calc((100% - #{$laptopWidth}) / 2);
-    @media (max-width: $largeScreen) {
-      right: calc((100% - #{$tabletWidth}) / 2);
+    display: none;
+    @media (min-width: $laptopScreen) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      height: 18rem;
+      position: absolute;
+      top: 5rem;
+      right: calc((100% - #{$desktopWidth}) / 2);
     }
     &__line {
       height: 7rem;
@@ -117,5 +160,16 @@
     }
 
     @import "social";
+  }
+
+  .social-networks-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem auto;
+    @import "social";
+    @media (min-width: $laptopScreen) {
+      display: none;
+    }
   }
 }

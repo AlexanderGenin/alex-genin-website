@@ -9,12 +9,15 @@
   }
 
   .nav-list {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.1rem;
-    margin: 0;
-    padding: 0;
+    display: none;
+    @media (min-width: $tabletScreen) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      margin: 0;
+      padding: 0;
+    }
     &__item {
       list-style: none;
       margin: 1rem;
@@ -53,6 +56,37 @@
           transform: scaleX(1);
         }
       }
+    }
+  }
+
+  .burger {
+    display: inline-block;
+    cursor: pointer;
+    &__bar,
+    &__bar {
+      height: 2px;
+      border-radius: 5px;
+      background-color: $yellow;
+      margin: 8px 0;
+      transition: 0.4s ease-out;
+      @media (min-width: $tabletScreen) {
+        display: none;
+      }
+      &-1 {
+        width: 40px;
+      }
+      &-2 {
+        width: 25px;
+      }
+    }
+
+    &_open .burger__bar-1 {
+      transform: rotate(-45deg) translate(-5px, 5px);
+    }
+
+    &_open .burger__bar-2 {
+      transform: rotate(45deg) translate(-2px, -2px);
+      width: 40px;
     }
   }
 }
