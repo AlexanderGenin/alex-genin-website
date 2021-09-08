@@ -185,12 +185,10 @@ const projects = [
       {
         url: StocksAppSummary,
         alt: "Stocks App Summary",
-        width: "360px",
       },
       {
         url: StocksAppAnalysis,
         alt: "Stocks App Analysis",
-        width: "360px",
       },
     ],
     showLink: true,
@@ -205,12 +203,10 @@ const projects = [
       {
         url: PortfolioContact,
         alt: "Portfolio Contact",
-        width: "360px",
       },
       {
         url: PortfolioAbout,
         alt: "Portfolio About",
-        width: "360px",
       },
     ],
     showLink: false,
@@ -220,6 +216,7 @@ const projects = [
 
 const experiences = [
   {
+    years: "2020 - 2021",
     icon: <IoRocketOutline />,
     title: "Moving to React and Node",
     descList: [
@@ -235,6 +232,7 @@ const experiences = [
     ],
   },
   {
+    years: "2020",
     icon: <IoLaptopOutline />,
     title: "Freelancing at UpWork",
     descList: [
@@ -245,6 +243,7 @@ const experiences = [
     ],
   },
   {
+    years: "2019",
     icon: <IoLibraryOutline />,
     title: "Learning Javascript and Web Fundamentals",
     descList: [
@@ -255,6 +254,7 @@ const experiences = [
     ],
   },
   {
+    years: "2018",
     icon: <IoCodeSlashOutline />,
     title: "The Journey Begins",
     descList: [

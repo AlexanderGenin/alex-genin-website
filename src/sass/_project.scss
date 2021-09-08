@@ -1,14 +1,17 @@
 .project {
   margin-top: 4rem;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  margin-bottom: 6rem;
+  display: block;
+  margin-bottom: 3rem;
+  @media (min-width: $laptopScreen) {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 6rem;
+  }
 
   .description {
-    width: 25rem;
-    @media (max-width: $largeScreen) {
-      width: 20rem;
+    @media (min-width: $laptopScreen) {
+      width: 25rem;
     }
     &__title {
       margin: 0;
@@ -42,48 +45,64 @@
   .images {
     display: flex;
     flex-direction: column;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    @media (min-width: $tabletScreen) {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
     img {
-      transform: skewX(-25deg);
+      width: 70%;
+      transform: skewX(-25deg) translateX(10%);
       border-radius: 10px;
       box-shadow: 5px 5px 8px rgba(39, 68, 234, 0.26);
       transition: all 0.2s ease-in;
-      @media (max-width: $largeScreen) {
-        width: 270px;
+      @media (min-width: $tabletScreen) {
+        width: 360px;
+        transform: skewX(-25deg);
       }
       &:hover {
         box-shadow: 5px 5px 8px rgba(39, 68, 234, 1);
-        transform: skewX(-25deg) translateY(-5px);
+        transform: skewX(-25deg) translate(10%, -5px);
+        @media (min-width: $tabletScreen) {
+          transform: skewX(-25deg) translateY(-5px);
+        }
       }
       &:first-child {
         z-index: 10;
-        @media (max-width: $largeScreen) {
-          margin-right: 4rem;
-        }
       }
       &:last-child {
-        margin-left: 4rem;
-        margin-top: -8rem;
+        margin-left: 2rem;
+        margin-top: -4rem;
         z-index: 5;
-        @media (max-width: $largeScreen) {
-          margin-left: 2rem;
+        @media (min-width: $tabletScreen) {
+          margin-left: 4rem;
+          margin-top: -8rem;
         }
       }
     }
     &_adjust {
-      transform: translateY(2rem);
+      @media (min-width: $tabletScreen) {
+        transform: translateY(2rem);
+      }
       img {
         box-shadow: 5px 5px 8px rgba(236, 221, 123, 0.212);
-        @media (max-width: $largeScreen) {
-          width: 270px;
+        @media (min-width: $tabletScreen) {
+          width: 360px;
         }
         &:hover {
           box-shadow: 5px 5px 8px rgba(236, 221, 123, 1);
-          transform: skewX(-25deg) translateY(-5px);
+          transform: skewX(-25deg) translate(10%, -5px);
+          @media (min-width: $tabletScreen) {
+            transform: skewX(-25deg) translateY(-5px);
+          }
         }
         &:last-child {
-          margin-left: 4rem;
-          margin-top: -6rem;
-          z-index: 5;
+          @media (min-width: $tabletScreen) {
+            margin-left: 4rem;
+            margin-top: -6rem;
+            z-index: 5;
+          }
         }
       }
     }

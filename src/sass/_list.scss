@@ -1,6 +1,10 @@
 .list-with-ticks {
   padding-left: 1rem;
   list-style-type: none;
+  padding-left: 0;
+  @media (min-width: $tabletScreen) {
+    padding-left: 40px;
+  }
   li:before {
     content: "";
     display: inline-block;

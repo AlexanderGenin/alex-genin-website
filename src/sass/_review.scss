@@ -1,9 +1,14 @@
 .review {
-  margin-top: 6rem;
+  margin-top: 2rem;
   margin-bottom: 8rem;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  @media (min-width: $tabletScreen) {
+    margin-top: 6rem;
+    flex-direction: row;
+  }
   &__avatar {
     width: 20rem;
     display: flex;
@@ -15,7 +20,11 @@
     }
   }
   &__content {
-    width: 30rem;
+    margin-top: 1rem;
+    @media (min-width: $tabletScreen) {
+      width: 30rem;
+      margin-top: 0;
+    }
     svg {
       fill: rgba(106, 108, 118, 0.26);
     }
@@ -27,7 +36,10 @@
         text-align: justify;
       }
       blockquote {
-        margin: 1rem 0 2rem 3rem;
+        margin: 1rem 0 2rem 0;
+        @media (min-width: $tabletScreen) {
+          margin: 1rem 0 2rem 3rem;
+        }
       }
       figcaption {
         p {

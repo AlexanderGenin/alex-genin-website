@@ -10,7 +10,7 @@
     }
   }
   .stack-techs {
-    @media (max-width: $largeScreen) {
+    @media (max-width: $desktopScreen) {
       max-width: 40rem;
       margin: 0 auto;
     }
