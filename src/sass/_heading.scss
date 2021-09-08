@@ -10,11 +10,21 @@
     display: inline-block;
     content: "";
     background-color: $yellow;
-    width: 4rem;
+    width: 2rem;
     height: 3px;
     border-radius: 5px;
-    margin: 0 2rem 0 0;
+    margin-right: 1rem;
     vertical-align: middle;
     transform: translateY(-50%);
+    @media (min-width: $tabletScreen) {
+      width: 4rem;
+      margin-right: 2rem;
+    }
+  }
+  &__first-word {
+    display: none;
+    @media (min-width: $tabletScreen) {
+      display: inline;
+    }
   }
 }
