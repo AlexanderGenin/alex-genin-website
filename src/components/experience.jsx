@@ -7,8 +7,14 @@ export default function Experience({ experiences }) {
   return (
     <section className="experience">
       <div className="container">
-        <Heading content={"My experience"} />
-        <div className="experience__timeline">
+        <Heading
+          content={
+            <>
+              <span className="h2__first-word">My</span> experience
+            </>
+          }
+        />
+        <div className="experience__content">
           <div className="timeline">
             <Timeline />
           </div>

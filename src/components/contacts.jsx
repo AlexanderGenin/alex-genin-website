@@ -14,13 +14,17 @@ export default function Contacts({ heading, text, socials }) {
             <p className="contacts__text">{text}</p>
             <div className="social-networks">
               <p className="social-networks__text">Contact me online:</p>
-              {socials.map((social, index) => (
-                <Social
-                  {...social}
-                  key={index}
-                  style={{ marginRight: "0.8rem" }}
-                />
-              ))}
+              <div className="social-networks__container">
+                {socials.map((social, index) => (
+                  <Social
+                    {...social}
+                    key={index}
+                    style={{
+                      marginRight: "0.8rem",
+                    }}
+                  />
+                ))}
+              </div>
             </div>
           </div>
           <div className="form">

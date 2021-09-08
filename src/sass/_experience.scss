@@ -1,10 +1,17 @@
 .experience {
-  &__timeline {
+  &__content {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    margin: 4rem 0 4rem 8rem;
+    @media (min-width: $tabletScreen) {
+      margin: 4rem 0 4rem 8rem;
+    }
+
     .timeline {
+      display: none;
+      @media (min-width: $laptopScreen) {
+        display: block;
+      }
       margin-right: 6rem;
       svg {
         display: block;
@@ -14,7 +21,9 @@
       }
     }
     .experiences {
-      width: 36rem;
+      @media (min-width: $laptopScreen) {
+        width: 36rem;
+      }
 
       @import "experienceBlock";
     }

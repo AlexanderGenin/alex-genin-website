@@ -7,10 +7,23 @@
       height: 36px;
       color: $red;
       margin-right: 1rem;
-      vertical-align: middle;
+      vertical-align: sub;
+      @media (min-width: $tabletScreen) {
+        vertical-align: middle;
+      }
     }
   }
   &__heading {
     font-size: 1.2rem;
+    margin-top: 0.5rem;
+    @media (min-width: $tabletScreen) {
+      margin: 1rem auto;
+    }
+  }
+  &__years {
+    color: #6a6c76;
+    @media (min-width: $tabletScreen) {
+      display: none;
+    }
   }
 }
