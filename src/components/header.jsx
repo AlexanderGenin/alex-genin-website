@@ -5,10 +5,14 @@ export default function Header({ links, logo }) {
   const [openMenu, setOpenMenu] = useState(false);
   return (
     <header>
+      <div
+        className={"menu-bg-dark" + (openMenu ? " menu-bg-dark_open" : "")}
+      ></div>
+      <div className={"menu-bg" + (openMenu ? " menu-bg_open" : "")}></div>
       <div className="container">
         <div className="header">
           <div className="logo">{logo}</div>
-          <nav className="nav">
+          <nav className={"nav" + (openMenu ? " nav_open" : "")}>
             <ul className="nav-list">
               {links.map(({ linkTo, title }, index) => {
                 return (
@@ -23,6 +27,7 @@ export default function Header({ links, logo }) {
                         "nav-list__link" +
                         (activeLink === index ? " nav-list__link_active" : "")
                       }
+                      onClick={() => setOpenMenu(false)}
                     >
                       {title}
                     </a>
