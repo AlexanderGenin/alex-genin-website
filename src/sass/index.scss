@@ -14,16 +14,16 @@ $tabletScreen: 480px;
 $laptopScreen: 768px;
 $desktopScreen: 1024px;
 
+@import "common/heading";
+@import "common/subheading";
+@import "common/list";
 @import "header";
-@import "heading";
-@import "subheading";
 @import "home";
 @import "stack";
 @import "projects";
 @import "skills";
 @import "about";
 @import "experience";
-@import "list";
 @import "review";
 @import "contacts";
 @import "footer";
@@ -37,7 +37,6 @@ body {
   margin: 0 auto;
 
   .container {
-    // max-width: $tabletWidth;
     margin: 0 2rem;
 
     @media (min-width: $laptopScreen) {

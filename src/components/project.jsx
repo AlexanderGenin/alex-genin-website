@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { HiArrowNarrowRight } from "react-icons/hi";
-import List from "./list";
+import List from "./common/list";
 
 export default function Project({
   name,

@@ -1,5 +1,5 @@
 import React from "react";
-import Heading from "./heading";
+import Heading from "./common/heading";
 import { ImQuotesLeft } from "react-icons/im";
 import { HiOutlineExternalLink } from "react-icons/hi";
 

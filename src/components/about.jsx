@@ -1,7 +1,7 @@
 import React from "react";
 import { HiDownload } from "react-icons/hi";
-import Heading from "./heading";
-import Fact from "./fact";
+import Heading from "./common/heading";
+import Fact from "./common/fact";
 
 export default function About({
   heading,

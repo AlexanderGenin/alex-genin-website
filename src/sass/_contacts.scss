@@ -27,7 +27,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        @import "social";
+        @import "common/social";
         @media (min-width: $laptopScreen) {
           display: block;
         }
@@ -47,6 +47,9 @@
         @media (min-width: $laptopScreen) {
           width: 20rem;
         }
+        @media (min-width: $desktopScreen) {
+          width: 24rem;
+        }
         input,
         textarea {
           width: 80%;
@@ -65,6 +68,9 @@
           }
           @media (min-width: $laptopScreen) {
             width: 18rem;
+          }
+          @media (min-width: $desktopScreen) {
+            width: 22rem;
           }
           &:focus {
             border: 2px solid $yellow;

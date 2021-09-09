@@ -1,5 +1,5 @@
 import React from "react";
-import Social from "./social";
+import Social from "./common/social";
 
 export default function Footer({ logo, links, socials, name }) {
   return (

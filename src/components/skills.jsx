@@ -1,7 +1,7 @@
 import React from "react";
-import Heading from "./heading";
-import Subheading from "./subheading";
-import TechBox from "./techBox";
+import Heading from "./common/heading";
+import Subheading from "./common/subheading";
+import TechBox from "./common/techBox";
 
 export default function Skills({ current, fundamental, previous, other }) {
   return (

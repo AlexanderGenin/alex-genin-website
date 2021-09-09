@@ -1,7 +1,7 @@
 import React from "react";
-import Heading from "./heading";
-import { ReactComponent as Timeline } from "../images/timeline.svg";
-import ExperienceBlock from "./experienceBlock";
+import Heading from "./common/heading";
+import { ReactComponent as Timeline } from "../images/icons/timeline.svg";
+import ExperienceBlock from "./common/experienceBlock";
 
 export default function Experience({ experiences }) {
   return (

@@ -1,7 +1,7 @@
 import React from "react";
 import { HiArrowNarrowRight } from "react-icons/hi";
 import { FaRegPaperPlane } from "react-icons/fa";
-import Social from "./social";
+import Social from "./common/social";
 
 export default function Home({
   photoUrl,

@@ -1,6 +1,6 @@
 import React from "react";
-import { ReactComponent as Logo } from "./images/alex-genin-logo.svg";
-import AlexGeninPhoto from "./images/alex-genin-w-circle.png";
+import { ReactComponent as Logo } from "./images/personal/alex-genin-logo.svg";
+import AlexGeninPhoto from "./images/personal/alex-genin-w-circle.png";
 import {
   IoRocketOutline,
   IoLaptopOutline,
@@ -15,36 +15,36 @@ import {
   FaTelegramPlane,
 } from "react-icons/fa";
 
-import StyledCsLogo from "./images/styledcs.png";
-import { ReactComponent as MongoDB } from "./images/mongodb.svg";
-import { ReactComponent as Express } from "./images/express.svg";
-import { ReactComponent as ReactJS } from "./images/react.svg";
-import { ReactComponent as Node } from "./images/node.svg";
-import { ReactComponent as JavaScript } from "./images/javascript.svg";
-import { ReactComponent as TypeScript } from "./images/typescript.svg";
-import { ReactComponent as HTML5Logo } from "./images/html.svg";
-import { ReactComponent as CSS3Logo } from "./images/css.svg";
-import { ReactComponent as GitLogo } from "./images/git.svg";
-import { ReactComponent as WebpackLogo } from "./images/webpack.svg";
-import { ReactComponent as WordPressLogo } from "./images/wordpress.svg";
-import { ReactComponent as JQueryLogo } from "./images/jquery.svg";
-import { ReactComponent as PHPLogo } from "./images/php.svg";
-import { ReactComponent as MySQLLogo } from "./images/mysql.svg";
-import { ReactComponent as SassLogo } from "./images/sass.svg";
-import { ReactComponent as JestLogo } from "./images/jest.svg";
-import { ReactComponent as BootstrapLogo } from "./images/bootstrap-5-1.svg";
-import { ReactComponent as FigmaLogo } from "./images/figma.svg";
-import StocksAppSummary from "./images/stocks-app-summary.png";
-import StocksAppAnalysis from "./images/stocks-app-analysis.png";
-import PortfolioAbout from "./images/portfolio-about.png";
-import PortfolioContact from "./images/portfolio-contact.png";
-import { ReactComponent as GraduationHat } from "./images/graduation-hat.svg";
-import { ReactComponent as Book } from "./images/book.svg";
-import { ReactComponent as Translation } from "./images/translation.svg";
-import { ReactComponent as ExperienceIcon } from "./images/experience.svg";
-import { ReactComponent as Chat } from "./images/chat.svg";
-import { ReactComponent as Sports } from "./images/sports.svg";
-import { ReactComponent as ReviewAvatar } from "./images/review-avatar.svg";
+import StyledCsLogo from "./images/icons/styled-cs.png";
+import { ReactComponent as MongoDB } from "./images/icons/mongodb.svg";
+import { ReactComponent as Express } from "./images/icons/express.svg";
+import { ReactComponent as ReactJS } from "./images/icons/react.svg";
+import { ReactComponent as Node } from "./images/icons/node.svg";
+import { ReactComponent as JavaScript } from "./images/icons/javascript.svg";
+import { ReactComponent as TypeScript } from "./images/icons/typescript.svg";
+import { ReactComponent as HTML5Logo } from "./images/icons/html.svg";
+import { ReactComponent as CSS3Logo } from "./images/icons/css.svg";
+import { ReactComponent as GitLogo } from "./images/icons/git.svg";
+import { ReactComponent as WebpackLogo } from "./images/icons/webpack.svg";
+import { ReactComponent as WordPressLogo } from "./images/icons/wordpress.svg";
+import { ReactComponent as JQueryLogo } from "./images/icons/jquery.svg";
+import { ReactComponent as PHPLogo } from "./images/icons/php.svg";
+import { ReactComponent as MySQLLogo } from "./images/icons/mysql.svg";
+import { ReactComponent as SassLogo } from "./images/icons/sass.svg";
+import { ReactComponent as JestLogo } from "./images/icons/jest.svg";
+import { ReactComponent as BootstrapLogo } from "./images/icons/bootstrap.svg";
+import { ReactComponent as FigmaLogo } from "./images/icons/figma.svg";
+import StocksAppSummary from "./images/projects/stocks-app-summary.png";
+import StocksAppAnalysis from "./images/projects/stocks-app-analysis.png";
+import PortfolioAbout from "./images/projects/portfolio-about.png";
+import PortfolioContact from "./images/projects/portfolio-contact.png";
+import { ReactComponent as GraduationHat } from "./images/icons/graduation-hat.svg";
+import { ReactComponent as Book } from "./images/icons/book.svg";
+import { ReactComponent as Translation } from "./images/icons/translation.svg";
+import { ReactComponent as ExperienceIcon } from "./images/icons/experience.svg";
+import { ReactComponent as Chat } from "./images/icons/chat.svg";
+import { ReactComponent as Sports } from "./images/icons/sports.svg";
+import { ReactComponent as ReviewAvatar } from "./images/icons/review-avatar.svg";
 
 import Header from "./components/header";
 import Home from "./components/home";

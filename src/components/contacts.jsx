@@ -1,6 +1,6 @@
 import React from "react";
-import Heading from "./heading";
-import Social from "./social";
+import Heading from "./common/heading";
+import Social from "./common/social";
 import { HiArrowNarrowRight } from "react-icons/hi";
 
 export default function Contacts({ heading, text, socials }) {
