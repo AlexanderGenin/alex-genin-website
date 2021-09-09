@@ -15,10 +15,14 @@
       @media (min-width: $laptopScreen) {
         order: 0;
         width: 700px;
+        margin-left: -400px;
+      }
+      @media (min-width: $desktopScreen) {
         margin-left: -500px;
         margin-right: 2rem;
         transform: translateX(0);
       }
+
       .photo {
         width: 500px;
         margin-left: -150px;
@@ -145,6 +149,7 @@
 
   .social-networks {
     display: none;
+
     @media (min-width: $laptopScreen) {
       display: flex;
       flex-direction: column;
@@ -153,6 +158,9 @@
       height: 18rem;
       position: absolute;
       top: 5rem;
+      right: 2rem;
+    }
+    @media (min-width: $desktopScreen) {
       right: calc((100% - #{$desktopWidth}) / 2);
     }
     &__line {

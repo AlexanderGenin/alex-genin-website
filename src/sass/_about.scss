@@ -37,7 +37,7 @@
     .experience-and-cv {
       max-width: 14rem;
       align-self: center;
-      @media (min-width: $laptopScreen) {
+      @media (min-width: $desktopScreen) {
         margin-right: 4rem;
       }
       .experience {

@@ -44,6 +44,9 @@
         @media (min-width: $tabletScreen) {
           width: 24rem;
         }
+        @media (min-width: $laptopScreen) {
+          width: 20rem;
+        }
         input,
         textarea {
           width: 80%;
@@ -59,6 +62,9 @@
           font-family: $textFont;
           @media (min-width: $tabletScreen) {
             width: 22rem;
+          }
+          @media (min-width: $laptopScreen) {
+            width: 18rem;
           }
           &:focus {
             border: 2px solid $yellow;

@@ -4,13 +4,16 @@
   margin-bottom: 3rem;
   @media (min-width: $laptopScreen) {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
     margin-bottom: 6rem;
   }
 
   .description {
     @media (min-width: $laptopScreen) {
+      width: 20rem;
+    }
+    @media (min-width: $desktopScreen) {
       width: 25rem;
     }
     &__title {
@@ -55,14 +58,13 @@
     img {
       width: 70%;
       max-width: 300px;
-      transform: skewX(-25deg);
       border-radius: 10px;
+      transform: skewX(-25deg);
       box-shadow: 5px 5px 8px rgba(39, 68, 234, 0.26);
       transition: all 0.2s ease-in;
-      @media (min-width: $laptopScreen) {
+      @media (min-width: $desktopScreen) {
         width: 360px;
         max-width: 360px;
-        transform: skewX(-25deg);
       }
       &:hover {
         box-shadow: 5px 5px 8px rgba(39, 68, 234, 1);
@@ -83,11 +85,11 @@
     }
     &_adjust {
       @media (min-width: $laptopScreen) {
-        transform: translateY(2rem);
+        transform: translate(-2rem, 2rem);
       }
       img {
         box-shadow: 5px 5px 8px rgba(236, 221, 123, 0.212);
-        @media (min-width: $laptopScreen) {
+        @media (min-width: $desktopScreen) {
           width: 360px;
         }
         &:hover {

@@ -10,7 +10,7 @@ export default function Project({
   showLink,
   reflect,
 }) {
-  const laptopSizeQuery = "(min-width: 769px)";
+  const laptopSizeQuery = "(min-width: 768px)";
   const [largerThanTablet, setLargerThanTablet] = useState(
     window.matchMedia(laptopSizeQuery).matches
   );
