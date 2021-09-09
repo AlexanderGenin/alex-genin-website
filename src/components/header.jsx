@@ -40,8 +40,8 @@ export default function Header({ links, logo }) {
             className={"burger" + (openMenu ? " burger_open" : "")}
             onClick={() => setOpenMenu(!openMenu)}
           >
-            <div class="burger__bar burger__bar-1"></div>
-            <div class="burger__bar burger__bar-2"></div>
+            <div className="burger__bar burger__bar-1"></div>
+            <div className="burger__bar burger__bar-2"></div>
           </div>
         </div>
       </div>
