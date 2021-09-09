@@ -10,21 +10,21 @@ export default function Project({
   showLink,
   reflect,
 }) {
-  const tabletSizeQuery = "(min-width: 481px)";
-  const [largerThanMobile, setLargerThanMobile] = useState(
-    window.matchMedia(tabletSizeQuery).matches
+  const laptopSizeQuery = "(min-width: 769px)";
+  const [largerThanTablet, setLargerThanTablet] = useState(
+    window.matchMedia(laptopSizeQuery).matches
   );
 
   useEffect(() => {
-    const handler = (e) => setLargerThanMobile(e.matches);
-    window.matchMedia(tabletSizeQuery).addEventListener("change", handler);
+    const handler = (e) => setLargerThanTablet(e.matches);
+    window.matchMedia(laptopSizeQuery).addEventListener("change", handler);
   });
 
   return (
     <div className={"project" + (reflect ? " reflect" : "")}>
       <div className="description">
         <h4 className="description__title">{name}</h4>
-        {!largerThanMobile && (
+        {!largerThanTablet && (
           <div className={"images" + (reflect ? " images_adjust" : "")}>
             {images.map(({ url, alt }, index) => (
               <img src={url} alt={alt} key={index} />
@@ -42,7 +42,7 @@ export default function Project({
           </div>
         )}
       </div>
-      {largerThanMobile && (
+      {largerThanTablet && (
         <div className={"images" + (reflect ? " images_adjust" : "")}>
           {images.map(({ url, alt }, index) => (
             <img src={url} alt={alt} key={index} />

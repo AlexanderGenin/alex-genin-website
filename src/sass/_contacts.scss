@@ -1,16 +1,16 @@
 .contacts {
   margin: 5rem auto;
   &__container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    @media (max-width: $laptopScreen) {
-      display: block;
+    display: block;
+    @media (min-width: $laptopScreen) {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
     }
 
     .social-networks {
       margin-bottom: 1rem;
-      @media (min-width: $tabletScreen) {
+      @media (min-width: $laptopScreen) {
         margin-bottom: 0;
       }
       &__text {
@@ -19,7 +19,7 @@
         margin-top: 3rem;
         margin-bottom: 0.6rem;
         margin-right: 0.5rem;
-        @media (min-width: $tabletScreen) {
+        @media (min-width: $laptopScreen) {
           text-align: left;
         }
       }
@@ -28,7 +28,7 @@
         align-items: center;
         justify-content: center;
         @import "social";
-        @media (min-width: $tabletScreen) {
+        @media (min-width: $laptopScreen) {
           display: block;
         }
       }
@@ -94,9 +94,13 @@
     }
   }
   &__description {
-    max-width: 30rem;
-    @media (max-width: $tabletScreen) {
-      margin: 0 auto;
+    margin: 0 auto;
+    @media (min-width: $tabletScreen) {
+      text-align: center;
+    }
+    @media (min-width: $laptopScreen) {
+      text-align: left;
+      max-width: 30rem;
     }
   }
   &__heading {
@@ -105,6 +109,10 @@
     font-size: 3.6rem;
     margin: 0;
     @media (min-width: $tabletScreen) {
+      text-align: center;
+    }
+    @media (min-width: $laptopScreen) {
+      text-align: left;
       font-size: 4rem;
     }
   }

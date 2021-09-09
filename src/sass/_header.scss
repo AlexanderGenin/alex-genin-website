@@ -13,6 +13,11 @@
       position: absolute;
       top: 25%;
       right: 30%;
+      opacity: 0;
+      transition: opacity 275ms;
+      &_open {
+        opacity: 1;
+      }
       .nav-list {
         display: inline-flex;
         flex-direction: column;
@@ -27,7 +32,7 @@
           transform: skew(16deg);
           @for $i from 1 through 4 {
             &:nth-child(#{$i}) .nav-list__link {
-              transition: all 275ms #{125 + ($i * 50)}ms;
+              transition: all 175ms #{125 + ($i * 50)}ms;
             }
           }
         }
@@ -166,7 +171,7 @@
   background: #28292d;
   transform-origin: 0 0;
   transform: skew(-14deg) translateX(-120%);
-  transition: all 0.275s 0.1s;
+  transition: all 0.375s;
   @media (min-width: $tabletScreen) {
     display: none;
   }
@@ -183,7 +188,7 @@
   right: 0;
   opacity: 0;
   visibility: hidden;
-  background: rgba(40, 41, 45, 0.664);
+  background: $bgColor;
   transition: all 0.275s 0.1s;
   @media (min-width: $tabletScreen) {
     display: none;

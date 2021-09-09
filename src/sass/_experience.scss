@@ -3,7 +3,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    @media (min-width: $tabletScreen) {
+    @media (min-width: $laptopScreen) {
       margin: 4rem 0 4rem 8rem;
     }
 
@@ -21,6 +21,7 @@
       }
     }
     .experiences {
+      margin: 0 auto;
       @media (min-width: $laptopScreen) {
         width: 36rem;
       }

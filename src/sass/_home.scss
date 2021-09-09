@@ -2,7 +2,7 @@
   .intro {
     display: flex;
     flex-direction: column;
-    @media (min-width: $tabletScreen) {
+    @media (min-width: $laptopScreen) {
       align-items: center;
       justify-content: center;
       flex-direction: row;
@@ -12,7 +12,7 @@
       width: calc(100% + 4rem);
       transform: translateX(-2rem);
       overflow: hidden;
-      @media (min-width: $tabletScreen) {
+      @media (min-width: $laptopScreen) {
         order: 0;
         width: 700px;
         margin-left: -500px;
@@ -24,6 +24,9 @@
         margin-left: -150px;
         transform: translateY(6px);
         @media (min-width: $tabletScreen) {
+          margin-left: 0;
+        }
+        @media (min-width: $laptopScreen) {
           width: 700px;
           margin-left: 0;
         }
@@ -32,7 +35,7 @@
 
     .content {
       margin-top: 1rem;
-      @media (min-width: $tabletScreen) {
+      @media (min-width: $laptopScreen) {
         margin-top: 4rem;
       }
       .heading {
@@ -42,7 +45,7 @@
         margin: 0;
         line-height: 5rem;
         text-align: center;
-        @media (min-width: $tabletScreen) {
+        @media (min-width: $laptopScreen) {
           text-align: left;
           &__word {
             &_offset {
@@ -57,7 +60,7 @@
         text-align: center;
         width: 16rem;
         margin: 2rem auto;
-        @media (min-width: $tabletScreen) {
+        @media (min-width: $laptopScreen) {
           text-align: left;
           width: 100%;
           margin: 2rem 0 1rem 1rem;
@@ -69,7 +72,7 @@
         flex-direction: column;
         align-items: center;
         justify-items: center;
-        @media (min-width: $tabletScreen) {
+        @media (min-width: $laptopScreen) {
           display: block;
           margin-bottom: 120px;
         }
@@ -104,7 +107,7 @@
             &:hover svg {
               transform: translateX(8px);
             }
-            @media (min-width: $tabletScreen) {
+            @media (min-width: $laptopScreen) {
               margin: 2rem 2rem 2rem 1rem;
             }
           }
@@ -127,7 +130,7 @@
               color: $textColor;
               background-position: 0 -100%;
             }
-            @media (min-width: $tabletScreen) {
+            @media (min-width: $laptopScreen) {
               margin: 2rem 0 2rem 2rem;
             }
           }

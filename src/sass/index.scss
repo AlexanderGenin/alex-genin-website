@@ -37,7 +37,7 @@ body {
   margin: 0 auto;
 
   .container {
-    max-width: $tabletWidth;
+    // max-width: $tabletWidth;
     margin: 0 2rem;
 
     @media (min-width: $laptopScreen) {

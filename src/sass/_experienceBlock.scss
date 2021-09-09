@@ -8,7 +8,7 @@
       color: $red;
       margin-right: 1rem;
       vertical-align: sub;
-      @media (min-width: $tabletScreen) {
+      @media (min-width: $laptopScreen) {
         vertical-align: middle;
       }
     }
@@ -16,13 +16,13 @@
   &__heading {
     font-size: 1.2rem;
     margin-top: 0.5rem;
-    @media (min-width: $tabletScreen) {
+    @media (min-width: $laptopScreen) {
       margin: 1rem auto;
     }
   }
   &__years {
     color: #6a6c76;
-    @media (min-width: $tabletScreen) {
+    @media (min-width: $laptopScreen) {
       display: none;
     }
   }
