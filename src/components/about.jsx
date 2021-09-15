@@ -2,6 +2,7 @@ import React from "react";
 import { HiDownload } from "react-icons/hi";
 import Heading from "./common/heading";
 import Fact from "./common/fact";
+import Resume from "../static/Alexander-Genin-Resume.pdf";
 
 export default function About({
   heading,
@@ -41,10 +42,10 @@ export default function About({
               <p className="experience__years">{years}</p>
               <p className="experience__text">years of experience</p>
             </div>
-            <button className="cv__button">
+            <a className="cv__button" href={Resume} download>
               Download CV
               <HiDownload />
-            </button>
+            </a>
           </div>
         </div>
         <div className="facts">

@@ -181,6 +181,7 @@ export const projects = [
         alt: "Stocks App Analysis",
       },
     ],
+    href: "https://stocksy-app.herokuapp.com/",
     showLink: true,
     reflect: false,
   },
@@ -211,7 +212,17 @@ export const experiences = [
     title: "Moving to React and Node",
     descList: [
       "Learning React.js, Node.js, Express.js, MongoDB, TypeScript",
-      "Creating pet projects like this one for practice",
+      <>
+        Creating pet projects like{" "}
+        <a
+          href="https://stocksy-app.herokuapp.com/ "
+          target="_blank"
+          rel="noreferrer"
+        >
+          <span className="em un">this one</span>
+        </a>{" "}
+        for practice
+      </>,
       "Improving my JavaScript skills with LeetCode",
       <>
         Getting "MongoDB University"{" "}
