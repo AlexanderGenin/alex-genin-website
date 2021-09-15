@@ -9,6 +9,7 @@ export default function Project({
   images,
   showLink,
   reflect,
+  href,
 }) {
   const laptopSizeQuery = "(min-width: 768px)";
   const [largerThanTablet, setLargerThanTablet] = useState(
@@ -35,7 +36,12 @@ export default function Project({
         <List items={techs} />
         {showLink && (
           <div className="link">
-            <a className="link__anchor" href="#">
+            <a
+              className="link__anchor"
+              href={href}
+              target="_blank"
+              rel="noreferrer"
+            >
               Take a look
               <HiArrowNarrowRight size={22} />
             </a>

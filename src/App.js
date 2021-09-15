@@ -29,7 +29,7 @@ import {
 function App() {
   return (
     <>
-      <Header links={menuLinks} logo={<Logo />} id="home" />
+      <Header links={menuLinks} logo={<Logo />} />
       <main>
         <Home {...introContent} />
         <Stack list={stackTechs} stack={stack} />

@@ -4,7 +4,7 @@ export default function Header({ links, logo }) {
   const [activeLink, setActiveLink] = useState(0);
   const [openMenu, setOpenMenu] = useState(false);
   return (
-    <header>
+    <header id="home">
       <div
         className={"menu-bg-dark" + (openMenu ? " menu-bg-dark_open" : "")}
       ></div>

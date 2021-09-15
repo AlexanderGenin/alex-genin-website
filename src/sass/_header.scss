@@ -10,6 +10,7 @@
 
   @media (max-width: $tabletScreen - 0.001px) {
     .nav {
+      z-index: 100;
       position: absolute;
       top: 25%;
       right: 30%;
@@ -133,6 +134,7 @@
   .burger {
     display: inline-block;
     cursor: pointer;
+    z-index: 105;
     &__bar,
     &__bar {
       height: 2px;
@@ -167,6 +169,7 @@
   top: 0;
   bottom: 0;
   left: 0;
+  z-index: 9;
   right: -1rem;
   background: #28292d;
   transform-origin: 0 0;
@@ -186,6 +189,7 @@
   bottom: 0;
   left: 0;
   right: 0;
+  z-index: 10;
   opacity: 0;
   visibility: hidden;
   background: $bgColor;
