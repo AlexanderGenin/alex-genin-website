@@ -2,7 +2,7 @@ import React from "react";
 import { HiDownload } from "react-icons/hi";
 import Heading from "./common/heading";
 import Fact from "./common/fact";
-import Resume from "../static/Alexander-Genin-Resume.pdf";
+import Resume from "../static/Alexander-Genin_Resume.pdf";
 
 export default function About({
   heading,

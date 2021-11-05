@@ -8,7 +8,7 @@
     width: 60px;
   }
 
-  @media (max-width: $tabletScreen - 0.001px) {
+  @media (max-width: ($tabletScreen - 0.001px)) {
     .nav {
       z-index: 100;
       position: absolute;

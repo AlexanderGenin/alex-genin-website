@@ -189,7 +189,7 @@ export const projects = [
     name: "This Website",
     description:
       "I created my personal website from scratch - starting from the UX/UI design, prototyping, and ending up with writing code and uploading it to the host.",
-    techs: ["React Hooks", "JavaScript", "Sass/CSS3", "HTML5"],
+    techs: ["React Hooks", "JavaScript", "Sass", "HTML5"],
     images: [
       {
         url: PortfolioContact,
@@ -293,10 +293,10 @@ export const skills = {
     },
   ],
   previous: [
-    { title: "WP", exp: "3+ years", icon: <WordPressLogo />, type: "medium" },
-    { title: "JQuery", exp: "3+ years", icon: <JQueryLogo />, type: "medium" },
-    { title: "PHP", exp: "3+ years", icon: <PHPLogo />, type: "medium" },
-    { title: "MySQL", exp: "2+ years", icon: <MySQLLogo />, type: "medium" },
+    { title: "WP", exp: "2 years", icon: <WordPressLogo />, type: "medium" },
+    { title: "JQuery", exp: "2 years", icon: <JQueryLogo />, type: "medium" },
+    { title: "PHP", exp: "2 years", icon: <PHPLogo />, type: "medium" },
+    { title: "MySQL", exp: "1 year", icon: <MySQLLogo />, type: "medium" },
   ],
   other: [
     { title: "Jest", icon: <JestLogo />, type: "small" },

@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { ReactComponent as Logo } from "./images/personal/alex-genin-logo.svg";
 
+import Loader from "./components/loader";
 import Header from "./components/header";
 import Home from "./components/home";
 import Stack from "./components/stack";
@@ -27,8 +28,15 @@ import {
 } from "./data";
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
+  setTimeout(() => {
+    setLoading(false);
+  }, 3000);
+
   return (
     <>
+      {loading ? <Loader /> : null}
       <Header links={menuLinks} logo={<Logo />} />
       <main>
         <Home {...introContent} />
