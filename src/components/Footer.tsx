@@ -1,7 +1,16 @@
 import React from "react";
-import Social from "./common/social";
+import Social from "./common/Social";
+import type { FC, ReactElement } from "react";
+import type { MenuLink, TSocial } from "types/types";
 
-export default function Footer({ logo, links, socials, name }) {
+type Props = {
+  logo: ReactElement;
+  links: MenuLink[];
+  socials: TSocial[];
+  name: string;
+};
+
+const Footer: FC<Props> = ({ logo, links, socials, name }) => {
   return (
     <footer className="footer">
       <div className="container">
@@ -30,4 +39,6 @@ export default function Footer({ logo, links, socials, name }) {
       </div>
     </footer>
   );
-}
+};
+
+export default Footer;

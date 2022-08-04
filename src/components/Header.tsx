@@ -1,6 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import type { FC, ReactElement } from "react";
+import type { MenuLink } from "types/types";
 
-export default function Header({ links, logo }) {
+type Props = { links: MenuLink[]; logo: ReactElement };
+
+const Header: FC<Props> = ({ links, logo }) => {
   const [activeLink, setActiveLink] = useState(0);
   const [openMenu, setOpenMenu] = useState(false);
   return (
@@ -47,4 +51,6 @@ export default function Header({ links, logo }) {
       </div>
     </header>
   );
-}
+};
+
+export default Header;

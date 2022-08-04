@@ -1,9 +1,10 @@
-import React from "react";
-import Heading from "./common/heading";
-import Subheading from "./common/subheading";
-import TechBox from "./common/techBox";
+import Heading from "./common/Heading";
+import Subheading from "./common/Subheading";
+import TechBox from "./common/TechBox";
+import type { FC } from "react";
+import type { SkillsSet } from "types/types";
 
-export default function Skills({ current, fundamental, previous, other }) {
+const Skills: FC<SkillsSet> = ({ current, fundamental, previous, other }) => {
   return (
     <section className="skills">
       <div className="dark-wrapper">
@@ -49,4 +50,6 @@ export default function Skills({ current, fundamental, previous, other }) {
       </div>
     </section>
   );
-}
+};
+
+export default Skills;

@@ -1,6 +1,9 @@
-import React from "react";
+import type { FC } from "react";
+import type { TFact } from "types/types";
 
-export default function Fact({ icon, title, text, color }) {
+type Props = TFact & { color: string };
+
+const Fact: FC<Props> = ({ icon, title, text, color }) => {
   return (
     <div className="fact">
       <div className={"fact__icon fact__icon_" + color}>{icon}</div>
@@ -8,4 +11,6 @@ export default function Fact({ icon, title, text, color }) {
       <p className={"fact__text"}>{text}</p>
     </div>
   );
-}
+};
+
+export default Fact;

@@ -1,5 +1,5 @@
 import React from "react";
-import { ReactComponent as Logo } from "./images/personal/alex-genin-logo.svg";
+import Logo from "./images/personal/alex-genin-logo.svg";
 import AlexGeninPhoto from "./images/personal/alex-genin-w-circle.png";
 import {
   IoRocketOutline,
@@ -21,38 +21,51 @@ import PortfolioAbout from "./images/projects/portfolio-about.png";
 import PortfolioContact from "./images/projects/portfolio-contact.png";
 
 import StyledCsLogo from "./images/icons/styled-cs.png";
-import { ReactComponent as MongoDB } from "./images/icons/mongodb.svg";
-import { ReactComponent as Express } from "./images/icons/express.svg";
-import { ReactComponent as ReactJS } from "./images/icons/react.svg";
-import { ReactComponent as Node } from "./images/icons/node.svg";
-import { ReactComponent as JavaScript } from "./images/icons/javascript.svg";
-import { ReactComponent as TypeScript } from "./images/icons/typescript.svg";
-import { ReactComponent as HTML5Logo } from "./images/icons/html.svg";
-import { ReactComponent as CSS3Logo } from "./images/icons/css.svg";
-import { ReactComponent as GitLogo } from "./images/icons/git.svg";
-import { ReactComponent as WebpackLogo } from "./images/icons/webpack.svg";
-import { ReactComponent as WordPressLogo } from "./images/icons/wordpress.svg";
-import { ReactComponent as JQueryLogo } from "./images/icons/jquery.svg";
-import { ReactComponent as PHPLogo } from "./images/icons/php.svg";
-import { ReactComponent as MySQLLogo } from "./images/icons/mysql.svg";
-import { ReactComponent as SassLogo } from "./images/icons/sass.svg";
-import { ReactComponent as JestLogo } from "./images/icons/jest.svg";
-import { ReactComponent as BootstrapLogo } from "./images/icons/bootstrap.svg";
-import { ReactComponent as FigmaLogo } from "./images/icons/figma.svg";
-import { ReactComponent as GraduationHat } from "./images/icons/graduation-hat.svg";
-import { ReactComponent as Book } from "./images/icons/book.svg";
-import { ReactComponent as Translation } from "./images/icons/translation.svg";
-import { ReactComponent as ExperienceIcon } from "./images/icons/experience.svg";
-import { ReactComponent as Chat } from "./images/icons/chat.svg";
-import { ReactComponent as Sports } from "./images/icons/sports.svg";
-import { ReactComponent as ReviewAvatar } from "./images/icons/review-avatar.svg";
+import MongoDB from "./images/icons/mongodb.svg";
+import Express from "./images/icons/express.svg";
+import ReactJS from "./images/icons/react.svg";
+import Node from "./images/icons/node.svg";
+import JavaScript from "./images/icons/javascript.svg";
+import TypeScript from "./images/icons/typescript.svg";
+import HTML5Logo from "./images/icons/html.svg";
+import CSS3Logo from "./images/icons/css.svg";
+import GitLogo from "./images/icons/git.svg";
+import WebpackLogo from "./images/icons/webpack.svg";
+import WordPressLogo from "./images/icons/wordpress.svg";
+import JQueryLogo from "./images/icons/jquery.svg";
+import PHPLogo from "./images/icons/php.svg";
+import MySQLLogo from "./images/icons/mysql.svg";
+import SassLogo from "./images/icons/sass.svg";
+import JestLogo from "./images/icons/jest.svg";
+import BootstrapLogo from "./images/icons/bootstrap.svg";
+import FigmaLogo from "./images/icons/figma.svg";
+import GraduationHat from "./images/icons/graduation-hat.svg";
+import Book from "./images/icons/book.svg";
+import Translation from "./images/icons/translation.svg";
+import ExperienceIcon from "./images/icons/experience.svg";
+import Chat from "./images/icons/chat.svg";
+import Sports from "./images/icons/sports.svg";
+import ReviewAvatar from "./images/icons/review-avatar.svg";
 
 import FCECertificate from "./static/Alexander-Genin-FCE-certificate.pdf";
 import MongoDBCertificates from "./static/Alexander-Genin-MongoDB-certificates.pdf";
 
+import type {
+  TExperience,
+  TFact,
+  IntroContent,
+  MenuLink,
+  TProject,
+  SkillsSet,
+  TSocial,
+  StackTech,
+  TReview,
+  TContacts,
+} from "./types/types";
+
 const name = "Alexander Genin";
 
-export const menuLinks = [
+export const menuLinks: MenuLink[] = [
   {
     title: "Home",
     linkTo: "#home",
@@ -71,7 +84,7 @@ export const menuLinks = [
   },
 ];
 
-const socials = [
+const socials: TSocial[] = [
   {
     url: "https://github.com/AlexanderGenin",
     icon: <FaGithub size={20} />,
@@ -91,7 +104,7 @@ const socials = [
   { url: "https://vk.com/alex.genin", icon: <FaVk size={20} /> },
 ];
 
-export const introContent = {
+export const introContent: IntroContent = {
   photoUrl: AlexGeninPhoto,
   name: "Alex",
   surname: "Genin",
@@ -100,7 +113,7 @@ export const introContent = {
   socials,
 };
 
-export const stackTechs = [
+export const stackTechs: StackTech[] = [
   {
     name: "MongoDB",
     description: "Database",
@@ -125,7 +138,7 @@ export const stackTechs = [
 
 export const stack = "MERN";
 
-const facts = [
+const facts: TFact[] = [
   {
     icon: <GraduationHat />,
     title: "Moscow State University",
@@ -165,7 +178,7 @@ const facts = [
   },
 ];
 
-export const projects = [
+export const projects: TProject[] = [
   {
     name: "Stocks Live App",
     description:
@@ -205,7 +218,7 @@ export const projects = [
   },
 ];
 
-export const experiences = [
+export const experiences: TExperience[] = [
   {
     years: "2020 - 2021",
     icon: <IoRocketOutline />,
@@ -267,7 +280,7 @@ export const experiences = [
   },
 ];
 
-export const skills = {
+export const skills: SkillsSet = {
   current: [
     { title: "React", exp: "1+ years", icon: <ReactJS />, type: "big" },
     { title: "JavaScript", exp: "4+ years", icon: <JavaScript />, type: "big" },
@@ -321,13 +334,13 @@ export const about = {
   facts,
 };
 
-export const review = {
+export const review: TReview = {
   avatar: <ReviewAvatar />,
   text: "Alexander did an excellent job creating my WordPress custom plugin. He was very communicative during the whole development and very open to suggestions. Alexander followed instructions very well and is very attentive to details. I will definitely hire Alex again next time I have a PHP project.",
   author: "Esteban Rodriguez from GrubBytes",
 };
 
-export const contacts = {
+export const contacts: TContacts = {
   heading: "Let's Work Together!",
   text: (
     <>

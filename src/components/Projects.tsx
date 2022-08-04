@@ -1,8 +1,13 @@
-import React from "react";
-import Heading from "./common/heading";
-import Project from "./project";
+import Heading from "./common/Heading";
+import Project from "./Project";
+import type { FC } from "react";
+import type { TProject } from "types/types";
 
-export default function Projects({ projects }) {
+type Props = {
+  projects: TProject[];
+};
+
+const Projects: FC<Props> = ({ projects }) => {
   return (
     <section className="projects" id="projects">
       <div className="container">
@@ -13,4 +18,6 @@ export default function Projects({ projects }) {
       </div>
     </section>
   );
-}
+};
+
+export default Projects;

@@ -1,16 +1,17 @@
-import React from "react";
 import { HiArrowNarrowRight } from "react-icons/hi";
 import { FaRegPaperPlane } from "react-icons/fa";
-import Social from "./common/social";
+import Social from "./common/Social";
+import type { IntroContent } from "types/types";
+import type { FC } from "react";
 
-export default function Home({
+const Home: FC<IntroContent> = ({
   photoUrl,
   name,
   surname,
   subtitle,
   buttonsLinks,
   socials,
-}) {
+}) => {
   return (
     <section className="home">
       <div className="container">
@@ -57,4 +58,6 @@ export default function Home({
       </div>
     </section>
   );
-}
+};
+
+export default Home;

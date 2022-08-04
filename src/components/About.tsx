@@ -1,10 +1,21 @@
-import React from "react";
 import { HiDownload } from "react-icons/hi";
-import Heading from "./common/heading";
-import Fact from "./common/fact";
+import Heading from "./common/Heading";
+import Fact from "./common/Fact";
 import Resume from "../static/Alexander-Genin_Resume.pdf";
+import type { FC } from "react";
+import type { TFact } from "types/types";
 
-export default function About({
+type Props = {
+  heading: string;
+  name: string;
+  birthDate: string;
+  job: string;
+  text: string;
+  years: string;
+  facts: TFact[];
+};
+
+const About: FC<Props> = ({
   heading,
   name,
   birthDate,
@@ -12,8 +23,8 @@ export default function About({
   text,
   years,
   facts,
-}) {
-  function getAge(dateString) {
+}) => {
+  function getAge(dateString: string) {
     var today = new Date();
     var birthDate = new Date(dateString);
     var age = today.getFullYear() - birthDate.getFullYear();
@@ -23,6 +34,7 @@ export default function About({
     }
     return age;
   }
+
   return (
     <section className="about" id="about">
       <div className="container">
@@ -62,4 +74,6 @@ export default function About({
       </div>
     </section>
   );
-}
+};
+
+export default About;

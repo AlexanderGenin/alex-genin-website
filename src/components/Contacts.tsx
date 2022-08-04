@@ -1,17 +1,19 @@
 import React, { useState } from "react";
-import Heading from "./common/heading";
-import Social from "./common/social";
+import Heading from "./common/Heading";
+import Social from "./common/Social";
 import { HiArrowNarrowRight } from "react-icons/hi";
 import { send } from "emailjs-com";
+import type { FC } from "react";
+import type { TContacts } from "types/types";
 
-export default function Contacts({ heading, text, socials }) {
+const Contacts: FC<TContacts> = ({ heading, text, socials }) => {
   const [toSend, setToSend] = useState({
     name: "",
     email: "",
     message: "",
   });
 
-  const onSubmit = (e) => {
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     send(
       "service_otas5x5",
@@ -27,7 +29,9 @@ export default function Contacts({ heading, text, socials }) {
       });
   };
 
-  const handleChange = (e) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setToSend({ ...toSend, [e.target.name]: e.target.value });
   };
   return (
@@ -72,8 +76,8 @@ export default function Contacts({ heading, text, socials }) {
               <textarea
                 placeholder="Your message..."
                 id=""
-                cols="30"
-                rows="6"
+                cols={30}
+                rows={6}
                 name="message"
                 value={toSend.message}
                 onChange={handleChange}
@@ -88,4 +92,6 @@ export default function Contacts({ heading, text, socials }) {
       </div>
     </section>
   );
-}
+};
+
+export default Contacts;

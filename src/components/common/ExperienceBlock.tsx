@@ -1,7 +1,8 @@
-import React from "react";
-import List from "./list";
+import List from "./List";
+import type { FC } from "react";
+import type { TExperience } from "types/types";
 
-export default function ExperienceBlock({ icon, title, descList, years }) {
+const ExperienceBlock: FC<TExperience> = ({ icon, title, descList, years }) => {
   return (
     <div>
       <div className="experience-block">
@@ -18,4 +19,6 @@ export default function ExperienceBlock({ icon, title, descList, years }) {
       </div>
     </div>
   );
-}
+};
+
+export default ExperienceBlock;

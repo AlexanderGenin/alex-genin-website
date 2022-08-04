@@ -1,9 +1,10 @@
-import React from "react";
-import Heading from "./common/heading";
+import Heading from "./common/Heading";
 import { ImQuotesLeft } from "react-icons/im";
 import { HiOutlineExternalLink } from "react-icons/hi";
+import type { FC } from "react";
+import { TReview } from "types/types";
 
-export default function Review({ avatar, text, author }) {
+const Review: FC<TReview> = ({ avatar, text, author }) => {
   return (
     <section className="reviews">
       <div className="container">
@@ -35,4 +36,6 @@ export default function Review({ avatar, text, author }) {
       </div>
     </section>
   );
-}
+};
+
+export default Review;

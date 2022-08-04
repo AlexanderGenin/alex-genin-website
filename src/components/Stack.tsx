@@ -1,6 +1,9 @@
-import React from "react";
+import type { FC } from "react";
+import type { StackTech } from "types/types";
 
-export default function Stack({ list, stack }) {
+type Props = { list: StackTech[]; stack: string };
+
+const Stack: FC<Props> = ({ list, stack }) => {
   return (
     <section className="stack">
       <div className="dark-wrapper">
@@ -21,4 +24,6 @@ export default function Stack({ list, stack }) {
       </div>
     </section>
   );
-}
+};
+
+export default Stack;

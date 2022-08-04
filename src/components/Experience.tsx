@@ -1,9 +1,14 @@
-import React from "react";
-import Heading from "./common/heading";
-import { ReactComponent as Timeline } from "../images/icons/timeline.svg";
-import ExperienceBlock from "./common/experienceBlock";
+import Heading from "./common/Heading";
+import Timeline from "../images/icons/timeline.svg";
+import ExperienceBlock from "./common/ExperienceBlock";
+import type { FC } from "react";
+import type { TExperience } from "types/types";
 
-export default function Experience({ experiences }) {
+type Props = {
+  experiences: TExperience[];
+};
+
+const Experience: FC<Props> = ({ experiences }) => {
   return (
     <section className="experience">
       <div className="container">
@@ -27,4 +32,6 @@ export default function Experience({ experiences }) {
       </div>
     </section>
   );
-}
+};
+
+export default Experience;

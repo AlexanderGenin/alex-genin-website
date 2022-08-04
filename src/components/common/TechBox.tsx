@@ -1,6 +1,7 @@
-import React from "react";
+import type { FC } from "react";
+import type { TSkill } from "types/types";
 
-export default function TechBox({ icon, title, exp = "", type = "big" }) {
+const TechBox: FC<TSkill> = ({ icon, title, exp = "", type = "big" }) => {
   return (
     <div className={"floating tech tech_" + type}>
       {icon}
@@ -10,4 +11,6 @@ export default function TechBox({ icon, title, exp = "", type = "big" }) {
       </div>
     </div>
   );
-}
+};
+
+export default TechBox;

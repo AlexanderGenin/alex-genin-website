@@ -1,6 +1,4 @@
-import React from "react";
-
-export default function Loader() {
+const Loader = () => {
   return (
     <div className="loading">
       <div>
@@ -13,4 +11,6 @@ export default function Loader() {
       </div>
     </div>
   );
-}
+};
+
+export default Loader;

@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { HiArrowNarrowRight } from "react-icons/hi";
-import List from "./common/list";
+import List from "./common/List";
+import type { FC } from "react";
+import type { TProject } from "types/types";
 
-export default function Project({
+const Project: FC<TProject> = ({
   name,
   description,
   techs,
@@ -10,14 +12,14 @@ export default function Project({
   showLink,
   reflect,
   href,
-}) {
+}) => {
   const laptopSizeQuery = "(min-width: 768px)";
   const [largerThanTablet, setLargerThanTablet] = useState(
     window.matchMedia(laptopSizeQuery).matches
   );
 
   useEffect(() => {
-    const handler = (e) => setLargerThanTablet(e.matches);
+    const handler = (e: MediaQueryListEvent) => setLargerThanTablet(e.matches);
     window.matchMedia(laptopSizeQuery).addEventListener("change", handler);
   });
 
@@ -57,4 +59,6 @@ export default function Project({
       )}
     </div>
   );
-}
+};
+
+export default Project;
