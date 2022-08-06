@@ -39,18 +39,24 @@ type Image = {
 export type TProject = {
   name: string;
   description: string;
-  techs: string[];
+  techs: ListItem[];
   images: Image[];
   href?: string;
   showLink: boolean;
   reflect: boolean;
 };
 
+export type ListItem = {
+  text: string;
+  subList?: string[];
+};
+
 export type TExperience = {
   years: string;
   icon: ReactElement;
   title: string;
-  descList: ReactNode[];
+  company: string;
+  descList: ListItem[];
 };
 
 export type TSkill = {
@@ -63,7 +69,7 @@ export type TSkill = {
 export type SkillsSet = {
   current: TSkill[];
   fundamental: TSkill[];
-  previous: TSkill[];
+  supplementary: TSkill[];
   other: TSkill[];
 };
 

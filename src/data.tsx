@@ -21,19 +21,24 @@ import PortfolioAbout from "./images/projects/portfolio-about.png";
 import PortfolioContact from "./images/projects/portfolio-contact.png";
 
 import StyledCsLogo from "./images/icons/styled-cs.png";
+import TestLibLogo from "./images/icons/testing-lib.png";
 import MongoDB from "./images/icons/mongodb.svg";
 import Express from "./images/icons/express.svg";
 import ReactJS from "./images/icons/react.svg";
 import Node from "./images/icons/node.svg";
 import JavaScript from "./images/icons/javascript.svg";
 import TypeScript from "./images/icons/typescript.svg";
+import Redux from "./images/icons/redux.svg";
 import HTML5Logo from "./images/icons/html.svg";
 import CSS3Logo from "./images/icons/css.svg";
 import GitLogo from "./images/icons/git.svg";
 import WebpackLogo from "./images/icons/webpack.svg";
-import WordPressLogo from "./images/icons/wordpress.svg";
 import JQueryLogo from "./images/icons/jquery.svg";
-import PHPLogo from "./images/icons/php.svg";
+import MUILogo from "./images/icons/mui.svg";
+import StorybookLogo from "./images/icons/storybook.svg";
+import NxLogo from "./images/icons/nx.svg";
+import JiraLogo from "./images/icons/jira.svg";
+import ConfluenceLogo from "./images/icons/confluence.svg";
 import MySQLLogo from "./images/icons/mysql.svg";
 import SassLogo from "./images/icons/sass.svg";
 import JestLogo from "./images/icons/jest.svg";
@@ -126,12 +131,12 @@ export const stackTechs: StackTech[] = [
   },
   {
     name: "React",
-    description: "Front-end",
+    description: "Frontend",
     icon: <ReactJS />,
   },
   {
     name: "Node",
-    description: "Back-end",
+    description: "Backend",
     icon: <Node />,
   },
 ];
@@ -139,16 +144,6 @@ export const stackTechs: StackTech[] = [
 export const stack = "MERN";
 
 const facts: TFact[] = [
-  {
-    icon: <GraduationHat />,
-    title: "Moscow State University",
-    text: "I’m studying at the top 1 University of Russia and get only the highest grades",
-  },
-  {
-    icon: <Book />,
-    title: "Self-taught Developer",
-    text: "Learned everything I know with the help of books and online resources",
-  },
   {
     icon: <Translation />,
     title: "Advanced English (C1)",
@@ -162,19 +157,30 @@ const facts: TFact[] = [
     ),
   },
   {
+    icon: <Book />,
+    title: "Self-taught Developer",
+    text: "Learned everything I know with the help of books and online resources",
+  },
+  {
+    icon: <GraduationHat />,
+    title: "Moscow State University",
+    text: "I’m studying at the top 1 University of Russia and get only the highest grades",
+  },
+
+  {
     icon: <ExperienceIcon className="adjust" />,
     title: "Real Work Experience",
-    text: "Successfully delivered a number of projects at UpWork. Received positive feedback",
+    text: "I've taken part in the development of small startups and large high-load projects",
   },
   {
     icon: <Chat />,
     title: "Soft Skills",
-    text: "I value a lot my reputation of a friendly and trustworthy person :)",
+    text: "Regularly receive positive feedback from colleagues and clients :)",
   },
   {
     icon: <Sports />,
     title: "My Hobbies",
-    text: "I am keen on travelling and also love playing all kinds of team sports games!",
+    text: "I am keen on traveling and also love playing all kinds of team sports games!",
   },
 ];
 
@@ -183,7 +189,13 @@ export const projects: TProject[] = [
     name: "Stocks Live App",
     description:
       "An interactive lightweight app for getting live info about various stocks on global market.",
-    techs: ["React", "Node", "Chart.js", "Yahoo Finance API"],
+    techs: [
+      { text: "React, Chart.js" },
+      { text: "TypeScript" },
+      { text: "Yahoo Finance API" },
+      { text: "Node.js" },
+      { text: "MongoDB" },
+    ],
     images: [
       {
         url: StocksAppSummary,
@@ -202,7 +214,12 @@ export const projects: TProject[] = [
     name: "This Website",
     description:
       "I created my personal website from scratch - starting from the UX/UI design, prototyping, and ending up with writing code and uploading it to the host.",
-    techs: ["React Hooks", "JavaScript", "Sass", "HTML5"],
+    techs: [
+      { text: "React Hooks" },
+      { text: "TypeScript" },
+      { text: "Webpack" },
+      { text: "Sass" },
+    ],
     images: [
       {
         url: PortfolioContact,
@@ -220,117 +237,152 @@ export const projects: TProject[] = [
 
 export const experiences: TExperience[] = [
   {
-    years: "2020 - 2021",
-    icon: <IoRocketOutline />,
-    title: "Moving to React and Node",
+    years: "2022",
+    icon: <IoLaptopOutline />,
+    title: "Middle Software Engineer",
+    company: "EPAM Systems",
     descList: [
-      "Learning React.js, Node.js, Express.js, MongoDB, TypeScript",
-      <>
-        Creating pet projects like{" "}
-        <a
-          href="https://stocksy-app.herokuapp.com/ "
-          target="_blank"
-          rel="noreferrer"
-        >
-          <span className="em un">this one</span>
-        </a>{" "}
-        for practice
-      </>,
-      "Improving my JavaScript skills with LeetCode",
-      <>
-        Getting "MongoDB University"{" "}
-        <a href={MongoDBCertificates} target="_blank" rel="noreferrer">
-          <span className="em un">certificates</span>
-        </a>
-      </>,
+      {
+        text: "Early developer at a high-load product-oriented B2B project (a monorepo with 150 contributors) of a large Belgium company",
+      },
+      { text: "Provided high unit test coverage (> 80%)" },
+      { text: "Implemented critical functionality for viewing invoices table" },
+      {
+        text: "Was assessed as close-to-senior developer by project manager based on my performance",
+      },
+      {
+        text: "Provided feature demo for the team of 50 frontend engineers from other teams",
+      },
+      {
+        text: "Implemented reusable Storybook components for the design system",
+      },
+      {
+        text: "Worked in a multicultural team of 20 and received positive feedback from teammates",
+      },
+      {
+        text: "Took the initiative to migrate dependency library to 3 times more lightweight alternative",
+      },
+      {
+        text: "Contributed to multi-language support as well as customization of the project for three regions: North America, Europe and Asia",
+      },
+    ],
+  },
+  {
+    years: "2021",
+    icon: <IoRocketOutline />,
+    title: "Full Stack Web Developer",
+    company: "Upwork",
+    descList: [
+      {
+        text: "Designed the architecture and shipped several projects based on clients’ requests",
+        subList: [
+          "Communicated and discussed product requirements directly with clients",
+          "Received 5-star reviews with positive feedback",
+        ],
+      },
+
+      {
+        text: "Created stocks market app with charts and live data streaming",
+        subList: [
+          "Complex UI with menus, tables and charts using React, Chart.js and Styled Components",
+          "Data search functionality for various stocks achieved with Yahoo Finance API, Node.js and MongoDB",
+        ],
+      },
+      {
+        text: "Implemented restaurant reservation system",
+        subList: [
+          "Design of system structure and business logic with JavaScript",
+          "Public UI with HTML, CSS, Sass, Bootstrap",
+          "Shipping the system increased daily number of reservations by 20%",
+        ],
+      },
+      {
+        text: "Created QR-code based waiter calling system",
+        subList: [
+          "Implemented unique UI/UX design",
+          "Added custom audio notifications",
+        ],
+      },
     ],
   },
   {
     years: "2020",
-    icon: <IoLaptopOutline />,
-    title: "Freelancing at UpWork",
-    descList: [
-      "Learning React.js and Node.js",
-      "Studying UX/UI fundamentals",
-      "Creating custom WordPress Plugins",
-      "Working at UpWork — successfully completed several projects",
-    ],
-  },
-  {
-    years: "2019",
     icon: <IoLibraryOutline />,
-    title: "Learning Javascript and Web Fundamentals",
+    title: "Full Stack Web Developer",
+    company: "ThemeForest by Envato",
     descList: [
-      "Reading HTML, CSS, JavaScript and PHP docs",
-      "Learning WordPress API and Elementor API",
-      "Creating custom WordPress Theme for Envato",
-      "Creating HTML/CSS layouts and practicing JavaScript",
-    ],
-  },
-  {
-    years: "2018",
-    icon: <IoCodeSlashOutline />,
-    title: "The Journey Begins",
-    descList: [
-      "Learning JavaScript and PHP",
-      "Learning Web Development in general",
-      "Watching countless lectures online",
-      'Reading "Computer Networks" (by Tanenbaum)',
+      {
+        text: "Developed portable UI/UX themes with multi-language support from scratch",
+      },
+      {
+        text: "Designed and implemented the projects (both frontend and backend) and connected them to database",
+      },
+      { text: "Implemented complex CSS and JavaScript animations" },
+      {
+        text: "Drastically improved the website initialization time for customers",
+      },
     ],
   },
 ];
 
 export const skills: SkillsSet = {
   current: [
-    { title: "React", exp: "1+ years", icon: <ReactJS />, type: "big" },
-    { title: "JavaScript", exp: "4+ years", icon: <JavaScript />, type: "big" },
-    { title: "Node", exp: "1+ years", icon: <Node />, type: "big" },
-    { title: "TypeScript", exp: "<1 year", icon: <TypeScript />, type: "big" },
-    {
-      title: "Express",
-      exp: "1+ years",
-      icon: <Express fill={"#fff"} />,
-      type: "big",
-    },
-    { title: "MongoDB", exp: "1+ years", icon: <MongoDB />, type: "big" },
+    { title: "React", exp: "3+ years", icon: <ReactJS />, type: "big" },
+    { title: "JavaScript", exp: "5+ years", icon: <JavaScript />, type: "big" },
+    { title: "Node", exp: "2+ years", icon: <Node />, type: "big" },
+    { title: "Redux", exp: "3+ years", icon: <Redux />, type: "big" },
+    { title: "TypeScript", exp: "3+ years", icon: <TypeScript />, type: "big" },
+    { title: "MongoDB", exp: "2+ years", icon: <MongoDB />, type: "big" },
   ],
   fundamental: [
-    { title: "HTML5", exp: "4+ years", icon: <HTML5Logo />, type: "medium" },
-    { title: "CSS3", exp: "4+ years", icon: <CSS3Logo />, type: "medium" },
-    { title: "Git", exp: "2+ years", icon: <GitLogo />, type: "medium" },
+    { title: "HTML5", exp: "5+ years", icon: <HTML5Logo />, type: "medium" },
+    { title: "CSS3", exp: "5+ years", icon: <CSS3Logo />, type: "medium" },
+    { title: "Git", exp: "3+ years", icon: <GitLogo />, type: "medium" },
     {
       title: "Webpack",
-      exp: "1+ years",
+      exp: "2+ years",
       icon: <WebpackLogo />,
       type: "medium",
     },
   ],
-  previous: [
-    { title: "WP", exp: "2 years", icon: <WordPressLogo />, type: "medium" },
-    { title: "JQuery", exp: "2 years", icon: <JQueryLogo />, type: "medium" },
-    { title: "PHP", exp: "2 years", icon: <PHPLogo />, type: "medium" },
-    { title: "MySQL", exp: "1 year", icon: <MySQLLogo />, type: "medium" },
+  supplementary: [
+    { title: "Jest", exp: "2+ years", icon: <JestLogo />, type: "medium" },
+    {
+      title: "RTL",
+      exp: "2+ years",
+      icon: <img src={TestLibLogo} alt="Testing library logo" />,
+      type: "medium",
+    },
+    { title: "Nx", exp: "1+ years", icon: <NxLogo />, type: "medium" },
+    {
+      title: "Storybook",
+      exp: "1+ years",
+      icon: <StorybookLogo />,
+      type: "medium",
+    },
   ],
   other: [
-    { title: "Jest", icon: <JestLogo />, type: "small" },
-    { title: "Sass", icon: <SassLogo />, type: "small" },
+    { title: "Express", icon: <Express fill={"#fff"} />, type: "small" },
+    { title: "MUI", icon: <MUILogo />, type: "small" },
     {
       title: "Styled c-s",
-      icon: <img src={StyledCsLogo} alt="Styled-components logo" />,
+      icon: <img src={StyledCsLogo} alt="Styled components logo" />,
       type: "small",
     },
+    { title: "Sass", icon: <SassLogo />, type: "small" },
     { title: "Bootstrap", icon: <BootstrapLogo />, type: "small" },
     { title: "Figma", icon: <FigmaLogo />, type: "small" },
+    { title: "Jira", icon: <JiraLogo />, type: "small" },
+    { title: "Confluence", icon: <ConfluenceLogo />, type: "small" },
   ],
 };
 
 export const about = {
   heading: "Hello There!",
   name,
-  birthDate: "1999-11-15",
-  job: "Full Stack",
+  job: "Frontend",
   text: "I am inspired to utilize the power of Web technologies to create valuable apps for people all over the world!",
-  years: "2+",
+  years: "3+",
   facts,
 };
 

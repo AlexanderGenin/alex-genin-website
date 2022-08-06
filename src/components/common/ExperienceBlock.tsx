@@ -2,7 +2,13 @@ import List from "./List";
 import type { FC } from "react";
 import type { TExperience } from "types/types";
 
-const ExperienceBlock: FC<TExperience> = ({ icon, title, descList, years }) => {
+const ExperienceBlock: FC<TExperience> = ({
+  icon,
+  title,
+  company,
+  descList,
+  years,
+}) => {
   return (
     <div>
       <div className="experience-block">
@@ -10,7 +16,8 @@ const ExperienceBlock: FC<TExperience> = ({ icon, title, descList, years }) => {
           <span className="experience-block__years">{years}</span>
           <h3 className="experience-block__heading">
             {icon}
-            {title}
+            {title},{" "}
+            <span className="experience-block__company">{company}</span>
           </h3>
         </div>
         <div className="experience-block__description">

@@ -8,33 +8,13 @@ import type { TFact } from "types/types";
 type Props = {
   heading: string;
   name: string;
-  birthDate: string;
   job: string;
   text: string;
   years: string;
   facts: TFact[];
 };
 
-const About: FC<Props> = ({
-  heading,
-  name,
-  birthDate,
-  job,
-  text,
-  years,
-  facts,
-}) => {
-  function getAge(dateString: string) {
-    var today = new Date();
-    var birthDate = new Date(dateString);
-    var age = today.getFullYear() - birthDate.getFullYear();
-    var m = today.getMonth() - birthDate.getMonth();
-    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-      age--;
-    }
-    return age;
-  }
-
+const About: FC<Props> = ({ heading, name, job, text, years, facts }) => {
   return (
     <section className="about" id="about">
       <div className="container">
@@ -44,9 +24,7 @@ const About: FC<Props> = ({
             <p className="intro__heading">{heading}</p>
             <p className="intro__text">
               My name is <span className="em">{name}</span>. I’m a{" "}
-              <span className="em">{getAge(birthDate)}</span> years old{" "}
-              <span className="em">{job}</span> Web Developer from Russia.{" "}
-              {text}
+              <span className="em">Frontend Software Engineer</span>. {text}
             </p>
           </div>
           <div className="experience-and-cv">

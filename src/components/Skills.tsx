@@ -4,7 +4,12 @@ import TechBox from "./common/TechBox";
 import type { FC } from "react";
 import type { SkillsSet } from "types/types";
 
-const Skills: FC<SkillsSet> = ({ current, fundamental, previous, other }) => {
+const Skills: FC<SkillsSet> = ({
+  current,
+  fundamental,
+  supplementary,
+  other,
+}) => {
   return (
     <section className="skills">
       <div className="dark-wrapper">
@@ -12,7 +17,7 @@ const Skills: FC<SkillsSet> = ({ current, fundamental, previous, other }) => {
           <div className="skills-container">
             <Heading content={"Skills"} />
             <div className="skills-container__current">
-              <Subheading content={"Current stack"} />
+              <Subheading content={"Tech stack"} />
               <div className="skills-container__techs">
                 {current.map((tech, index) => {
                   return <TechBox key={index} {...tech} />;
@@ -28,10 +33,10 @@ const Skills: FC<SkillsSet> = ({ current, fundamental, previous, other }) => {
                   })}
                 </div>
               </div>
-              <div className="skills-container__previous">
-                <Subheading content={"Previous stack"} />
+              <div className="skills-container__supplementary">
+                <Subheading content={"Supplementary"} />
                 <div className="skills-container__techs">
-                  {previous.map((tech, index) => {
+                  {supplementary.map((tech, index) => {
                     return <TechBox key={index} {...tech} />;
                   })}
                 </div>

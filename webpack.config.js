@@ -1,48 +1,62 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
+
+console.log(path.join(__dirname, "public"));
 
 module.exports = {
-  mode: 'development',
-  entry: './src/index.tsx',
-  devtool: 'inline-source-map',
+  mode: "development",
+  entry: "./src/index.tsx",
+  devtool: "inline-source-map",
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/template.html',
+      template: "./src/template.html",
     }),
+    // new CopyPlugin([
+    //   {
+    //     from: path.resolve(__dirname, "public"),
+    //     to: path.resolve(__dirname, "dist", "public"),
+    //   },
+    // ]),
   ],
   output: {
-    filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist'),
+    filename: "[name].bundle.js",
+    path: path.resolve(__dirname, "dist"),
     clean: true,
   },
   module: {
     rules: [
       {
         test: /\.tsx?$/,
-        use: 'ts-loader',
+        use: "ts-loader",
         exclude: /node_modules/,
       },
       {
         test: /\.(m?js|jsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
+          loader: "babel-loader",
           options: {
-            presets: ['@babel/preset-env'],
+            presets: ["@babel/preset-env"],
           },
         },
       },
       {
         test: /\.s[ac]ss$/i,
-        use: ['style-loader', 'css-loader', 'resolve-url-loader', 'sass-loader'],
+        use: [
+          "style-loader",
+          "css-loader",
+          "resolve-url-loader",
+          "sass-loader",
+        ],
       },
       {
-        test: /\.(png|jpg|gif|pdf|ico)$/,
+        test: /\.(png|jpg|gif|pdf|json)$/,
         use: [
           {
-            loader: 'file-loader',
+            loader: "file-loader",
             options: {
-              name: '[path][name].[ext]',
+              name: "[path][name].[ext]",
             },
           },
         ],
@@ -52,12 +66,12 @@ module.exports = {
         issuer: /\.[jt]sx?$/,
         use: [
           {
-            loader: '@svgr/webpack',
+            loader: "@svgr/webpack",
             options: {
               svgoConfig: {
                 plugins: [
                   {
-                    name: 'removeViewBox',
+                    name: "removeViewBox",
                     active: false,
                   },
                 ],
@@ -69,14 +83,17 @@ module.exports = {
     ],
   },
   resolve: {
-    modules: [path.resolve(__dirname, 'src'), 'node_modules'],
-    extensions: ['.tsx', '.ts', '.js', '.jsx', '.json'],
+    modules: [path.resolve(__dirname, "src"), "node_modules"],
+    extensions: [".tsx", ".ts", ".js", ".jsx", ".json"],
   },
   devServer: {
     open: {
       app: {
-        name: 'Google Chrome',
+        name: "Google Chrome",
       },
+    },
+    static: {
+      directory: path.join(__dirname, "public"),
     },
   },
 };

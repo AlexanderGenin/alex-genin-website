@@ -7,7 +7,7 @@
       margin-left: 2rem;
     }
     @media (min-width: $desktopScreen) {
-      margin: 4rem 0 4rem 8rem;
+      margin: 4rem 0 4rem 2rem;
     }
 
     .timeline {
@@ -15,7 +15,7 @@
       @media (min-width: $laptopScreen) {
         display: block;
       }
-      margin-right: 6rem;
+      margin-right: 3rem;
       svg {
         display: block;
         transform-origin: top;
@@ -23,17 +23,17 @@
         height: 950px;
         @media (min-width: $desktopScreen) {
           width: 118.5px;
-          height: 871px;
+          height: 1095px;
         }
       }
     }
     .experiences {
       margin: 0 auto;
       @media (min-width: $laptopScreen) {
-        width: 36rem;
+        width: 60rem;
       }
 
-      @import 'common/experienceBlock';
+      @import "common/experienceBlock";
     }
   }
 }

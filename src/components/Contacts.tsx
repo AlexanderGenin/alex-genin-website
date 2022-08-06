@@ -1,31 +1,63 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Heading from "./common/Heading";
 import Social from "./common/Social";
 import { HiArrowNarrowRight } from "react-icons/hi";
-import { send } from "emailjs-com";
+import emailjs from "@emailjs/browser";
 import type { FC } from "react";
 import type { TContacts } from "types/types";
 
+type FormState = "idle" | "pending" | "success" | "error";
+type Email = {
+  name: string;
+  email: string;
+  message: string;
+};
+
 const Contacts: FC<TContacts> = ({ heading, text, socials }) => {
-  const [toSend, setToSend] = useState({
+  const [toSend, setToSend] = useState<Email>({
     name: "",
     email: "",
     message: "",
   });
 
+  const buttonText = (state: FormState) => {
+    switch (state) {
+      case "idle":
+        return "Send";
+      case "pending":
+        return "....";
+      case "success":
+        return "Sent";
+      case "error":
+        return "Error";
+      default:
+        break;
+    }
+  };
+
+  const [formState, setFormState] = useState<FormState>("idle");
+
+  useEffect(() => {
+    let timeout: ReturnType<typeof setTimeout>;
+    if (formState === "success" || formState === "error") {
+      timeout = setTimeout(() => {}, 1000);
+      return () => {
+        clearTimeout(timeout);
+      };
+    }
+  }, [formState]);
+
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    send(
-      "service_otas5x5",
-      "template_7s80lxw",
-      toSend,
-      "user_Fq6lOqqCPVYKrluCiSCxl"
-    )
-      .then((response) => {
-        console.log("SUCCESS!", response.status, response.text);
+    if (formState !== "idle") return;
+    setFormState("pending");
+    emailjs
+      .send("service_nl24wlb", "template_npxem2d", toSend)
+      .then(() => {
+        setFormState("success");
       })
-      .catch((err) => {
-        console.log("FAILED...", err);
+      .catch(() => {
+        setFormState("error");
       });
   };
 
@@ -83,8 +115,8 @@ const Contacts: FC<TContacts> = ({ heading, text, socials }) => {
                 onChange={handleChange}
               ></textarea>
               <button type="submit">
-                Send&nbsp;
-                <HiArrowNarrowRight />
+                {buttonText(formState)}&nbsp;
+                {formState === "idle" && <HiArrowNarrowRight />}
               </button>
             </form>
           </div>
