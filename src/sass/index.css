@@ -72,6 +72,37 @@
   margin-bottom: 10px;
 }
 
+.carousel__container {
+  height: 22rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2rem;
+  margin-bottom: 8rem;
+}
+@media (min-width: 480px) {
+  .carousel__container {
+    margin-top: 6rem;
+  }
+}
+.carousel__window {
+  width: 820px;
+  height: 100%;
+  overflow: scroll;
+}
+.carousel__elements {
+  height: 100%;
+  display: flex;
+  transition: transform 500ms ease-in-out;
+}
+.carousel__arrow {
+  width: 40px;
+}
+.carousel__arrow_svg {
+  color: #6a6c76;
+  cursor: pointer;
+}
+
 @-webkit-keyframes loader {
   0% {
     width: 0;
@@ -1154,8 +1185,6 @@
 }
 
 .review {
-  margin-top: 2rem;
-  margin-bottom: 8rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1163,17 +1192,20 @@
 }
 @media (min-width: 480px) {
   .review {
-    margin-top: 6rem;
     flex-direction: row;
   }
 }
 .review__avatar {
-  width: 20rem;
+  width: 16rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .review__avatar svg {
+  width: 8rem;
+  height: 8rem;
+}
+.review__avatar img {
   width: 8rem;
   height: 8rem;
 }
@@ -1207,22 +1239,7 @@
 }
 .review__content figure figcaption p {
   text-align: right;
-}
-.review__content figure figcaption .cite {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-.review__content figure figcaption .cite a {
-  display: block;
-  text-decoration: none;
-  color: rgba(106, 108, 118, 0.849);
-}
-.review__content figure figcaption .cite a cite {
-  font-style: normal;
-}
-.review__content figure figcaption .cite a svg {
-  transform: translateY(3px);
+  font-style: italic;
 }
 
 .contacts {

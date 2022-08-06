@@ -9,7 +9,7 @@ import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import About from "./components/About";
 import Experience from "./components/Experience";
-import Review from "./components/Review";
+import Reviews from "./components/Reviews";
 import Contacts from "./components/Contacts";
 import Footer from "./components/Footer";
 
@@ -21,7 +21,7 @@ import {
   introContent,
   menuLinks,
   projects,
-  review,
+  reviews,
   skills,
   stack,
   stackTechs,
@@ -49,7 +49,7 @@ const App: FC = () => {
         <Skills {...skills} />
         <About {...about} />
         <Experience experiences={experiences} />
-        <Review {...review} />
+        <Reviews reviews={reviews} />
         <Contacts {...contacts} />
       </main>
       <Footer {...footer} />

@@ -31,7 +31,7 @@
     &__exp {
       font-size: 1.2rem;
       font-weight: 300;
-      color: #6a6c76;
+      color: $secondaryTextColor;
     }
   }
   &_medium {
@@ -61,7 +61,7 @@
     &__exp {
       font-size: 1rem;
       font-weight: 300;
-      color: #6a6c76;
+      color: $secondaryTextColor;
     }
   }
   &_small {

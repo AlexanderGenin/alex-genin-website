@@ -1,0 +1,32 @@
+.carousel {
+  &__container {
+    height: 22rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2rem;
+    margin-bottom: 8rem;
+    @media (min-width: $tabletScreen) {
+      margin-top: 6rem;
+    }
+  }
+  &__window {
+    width: 820px;
+
+    height: 100%;
+    overflow: scroll;
+  }
+  &__elements {
+    height: 100%;
+    display: flex;
+    transition: transform 500ms ease-in-out;
+  }
+  &__arrow {
+    width: 40px;
+  }
+  &__arrow_svg {
+    color: $secondaryTextColor;
+    // width: 40px;
+    cursor: pointer;
+  }
+}

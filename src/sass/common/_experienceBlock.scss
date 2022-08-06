@@ -25,7 +25,7 @@
     }
   }
   &__years {
-    color: #6a6c76;
+    color: $secondaryTextColor;
     @media (min-width: $laptopScreen) {
       display: none;
     }

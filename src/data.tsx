@@ -5,7 +5,6 @@ import {
   IoRocketOutline,
   IoLaptopOutline,
   IoLibraryOutline,
-  IoCodeSlashOutline,
 } from "react-icons/io5";
 import {
   FaGithub,
@@ -33,13 +32,11 @@ import HTML5Logo from "./images/icons/html.svg";
 import CSS3Logo from "./images/icons/css.svg";
 import GitLogo from "./images/icons/git.svg";
 import WebpackLogo from "./images/icons/webpack.svg";
-import JQueryLogo from "./images/icons/jquery.svg";
 import MUILogo from "./images/icons/mui.svg";
 import StorybookLogo from "./images/icons/storybook.svg";
 import NxLogo from "./images/icons/nx.svg";
 import JiraLogo from "./images/icons/jira.svg";
 import ConfluenceLogo from "./images/icons/confluence.svg";
-import MySQLLogo from "./images/icons/mysql.svg";
 import SassLogo from "./images/icons/sass.svg";
 import JestLogo from "./images/icons/jest.svg";
 import BootstrapLogo from "./images/icons/bootstrap.svg";
@@ -50,10 +47,11 @@ import Translation from "./images/icons/translation.svg";
 import ExperienceIcon from "./images/icons/experience.svg";
 import Chat from "./images/icons/chat.svg";
 import Sports from "./images/icons/sports.svg";
-import ReviewAvatar from "./images/icons/review-avatar.svg";
-
+import ReviewAvatar1 from "./images/icons/review-avatar1.png";
+import ReviewAvatar2 from "./images/icons/review-avatar2.png";
+import ReviewAvatar3 from "./images/icons/review-avatar3.png";
+import ReviewAvatar4 from "./images/icons/review-avatar4.png";
 import FCECertificate from "./static/Alexander-Genin-FCE-certificate.pdf";
-import MongoDBCertificates from "./static/Alexander-Genin-MongoDB-certificates.pdf";
 
 import type {
   TExperience,
@@ -386,11 +384,28 @@ export const about = {
   facts,
 };
 
-export const review: TReview = {
-  avatar: <ReviewAvatar />,
-  text: "Alexander did an excellent job creating my WordPress custom plugin. He was very communicative during the whole development and very open to suggestions. Alexander followed instructions very well and is very attentive to details. I will definitely hire Alex again next time I have a PHP project.",
-  author: "Esteban Rodriguez from GrubBytes",
-};
+export const reviews: TReview[] = [
+  {
+    avatar: <img src={ReviewAvatar1} alt={"Review avatar 1"} />,
+    text: "Alexander works on the high speed and great quality of the code, he is brilliant communicator, engaged to the project a lot, and helping the team to achieve common results.",
+    author: "Julia Varonina from EPAM",
+  },
+  {
+    avatar: <img src={ReviewAvatar3} alt={"Review avatar 3"} />,
+    text: "Once you have Alexander in your team, you'll wish to have more Alexanders in the team. He's a very friendly, team player and a responsible engineer. He really stands out with his sense of responsibility. He also works on his self-development and you can notice it.",
+    author: "Temuri Mikava from EPAM",
+  },
+  {
+    avatar: <img src={ReviewAvatar2} alt={"Review avatar 2"} />,
+    text: "Alexander did an excellent job creating my WordPress custom plugin. He was very communicative during the whole development and very open to suggestions. Alexander followed instructions very well and is very attentive to details. I will definitely hire Alex again next time I have a PHP project.",
+    author: "Esteban Rodriguez from GrubBytes",
+  },
+  {
+    avatar: <img src={ReviewAvatar4} alt={"Review avatar 4"} />,
+    text: "As for me Alex is a well-qualified developer who is fully inline with EPAM company values. I hope he will proceed with professional growth and current project allows that for him.",
+    author: "Vladislav Shmelev from EPAM",
+  },
+];
 
 export const contacts: TContacts = {
   heading: "Let's Work Together!",
