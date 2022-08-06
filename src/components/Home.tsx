@@ -1,5 +1,5 @@
-import { HiArrowNarrowRight } from "react-icons/hi";
-import { FaRegPaperPlane } from "react-icons/fa";
+import { HiArrowNarrowRight } from "@react-icons/all-files/hi/HiArrowNarrowRight";
+import { FaRegPaperPlane } from "@react-icons/all-files/fa/FaRegPaperPlane";
 import Social from "./common/Social";
 import type { IntroContent } from "types/types";
 import type { FC } from "react";

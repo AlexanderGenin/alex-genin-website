@@ -1,4 +1,4 @@
-import type { FC, ReactNode } from "react";
+import type { FC } from "react";
 import type { ListItem } from "types/types";
 
 type Props = {
@@ -12,7 +12,7 @@ const List: FC<Props> = ({ items }) => {
         <li key={index} className="list-with-ticks_el">
           {item.text}
           {item.subList && (
-            <ul>
+            <ul className="list-with-ticks__sublist">
               {item.subList.map((subItem, i) => (
                 <li key={i}>{subItem}</li>
               ))}

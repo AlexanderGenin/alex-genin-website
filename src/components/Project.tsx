@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { HiArrowNarrowRight } from "react-icons/hi";
+import { HiArrowNarrowRight } from "@react-icons/all-files/hi/HiArrowNarrowRight";
 import List from "./common/List";
 import type { FC } from "react";
 import type { TProject } from "types/types";

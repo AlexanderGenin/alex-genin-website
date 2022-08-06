@@ -1,18 +1,16 @@
 import React from "react";
 import Logo from "./images/personal/alex-genin-logo.svg";
 import AlexGeninPhoto from "./images/personal/alex-genin-w-circle.png";
-import {
-  IoRocketOutline,
-  IoLaptopOutline,
-  IoLibraryOutline,
-} from "react-icons/io5";
-import {
-  FaGithub,
-  FaLinkedinIn,
-  FaVk,
-  FaFacebookF,
-  FaTelegramPlane,
-} from "react-icons/fa";
+
+import { IoRocketOutline } from "@react-icons/all-files/io5/IoRocketOutline";
+import { IoLaptopOutline } from "@react-icons/all-files/io5/IoLaptopOutline";
+import { IoLibraryOutline } from "@react-icons/all-files/io5/IoLibraryOutline";
+
+import { FaGithub } from "@react-icons/all-files/fa/FaGithub";
+import { FaLinkedinIn } from "@react-icons/all-files/fa/FaLinkedinIn";
+import { FaVk } from "@react-icons/all-files/fa/FaVk";
+import { FaFacebookF } from "@react-icons/all-files/fa/FaFacebookF";
+import { FaTelegramPlane } from "@react-icons/all-files/fa/FaTelegramPlane";
 
 import StocksAppSummary from "./images/projects/stocks-app-summary.png";
 import StocksAppAnalysis from "./images/projects/stocks-app-analysis.png";

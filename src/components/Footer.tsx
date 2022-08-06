@@ -1,4 +1,3 @@
-import React from "react";
 import Social from "./common/Social";
 import type { FC, ReactElement } from "react";
 import type { MenuLink, TSocial } from "types/types";

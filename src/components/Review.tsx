@@ -1,6 +1,5 @@
 import type { FC } from "react";
-import { HiOutlineExternalLink } from "react-icons/hi";
-import { ImQuotesLeft } from "react-icons/im";
+import { ImQuotesLeft } from "@react-icons/all-files/im/ImQuotesLeft";
 import { TReview } from "types/types";
 
 const Review: FC<TReview> = ({ author, text, avatar }) => {

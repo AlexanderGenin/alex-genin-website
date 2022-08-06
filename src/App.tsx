@@ -12,7 +12,6 @@ import Experience from "./components/Experience";
 import Reviews from "./components/Reviews";
 import Contacts from "./components/Contacts";
 import Footer from "./components/Footer";
-
 import {
   about,
   contacts,
@@ -33,14 +32,14 @@ const App: FC = () => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setLoading(false);
-    }, 3000);
+    }, 2000);
 
     return () => clearTimeout(timeout);
   }, []);
 
   return (
     <>
-      {/* {loading ? <Loader /> : null} */}
+      {loading ? <Loader /> : null}
       <Header links={menuLinks} logo={<Logo />} />
       <main>
         <Home {...introContent} />

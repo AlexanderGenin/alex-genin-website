@@ -1,4 +1,4 @@
-import { HiDownload } from "react-icons/hi";
+import { HiDownload } from "@react-icons/all-files/hi/HiDownload";
 import Heading from "./common/Heading";
 import Fact from "./common/Fact";
 import Resume from "../static/Alexander-Genin_Resume.pdf";

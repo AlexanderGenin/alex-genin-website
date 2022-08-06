@@ -46,7 +46,7 @@
   justify-content: center;
   align-items: center;
   z-index: 100;
-  animation: background 0.4s ease-in 2s forwards;
+  animation: background 0.4s ease-in 1s forwards;
   &_text {
     color: $yellow;
     font-size: 3.2rem;
@@ -67,7 +67,7 @@
       color: #fff;
       padding: 2px;
       width: 0;
-      animation: loader 2s ease-in-out forwards;
+      animation: loader 1s ease-in-out forwards;
     }
   }
 }

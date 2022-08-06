@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import Heading from "./common/Heading";
 import Social from "./common/Social";
-import { HiArrowNarrowRight } from "react-icons/hi";
+import { HiArrowNarrowRight } from "@react-icons/all-files/hi/HiArrowNarrowRight";
 import emailjs from "@emailjs/browser";
 import type { FC } from "react";
 import type { TContacts } from "types/types";
@@ -25,7 +25,7 @@ const Contacts: FC<TContacts> = ({ heading, text, socials }) => {
       case "idle":
         return "Send";
       case "pending":
-        return "....";
+        return "...";
       case "success":
         return "Sent";
       case "error":
@@ -37,16 +37,6 @@ const Contacts: FC<TContacts> = ({ heading, text, socials }) => {
 
   const [formState, setFormState] = useState<FormState>("idle");
 
-  useEffect(() => {
-    let timeout: ReturnType<typeof setTimeout>;
-    if (formState === "success" || formState === "error") {
-      timeout = setTimeout(() => {}, 1000);
-      return () => {
-        clearTimeout(timeout);
-      };
-    }
-  }, [formState]);
-
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (formState !== "idle") return;
@@ -55,9 +45,15 @@ const Contacts: FC<TContacts> = ({ heading, text, socials }) => {
       .send("service_nl24wlb", "template_npxem2d", toSend)
       .then(() => {
         setFormState("success");
+        setTimeout(() => {
+          setFormState("idle");
+        }, 1000);
       })
       .catch(() => {
         setFormState("error");
+        setTimeout(() => {
+          setFormState("idle");
+        }, 1000);
       });
   };
 

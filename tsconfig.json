@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "lib": ["dom", "dom.iterable", "esnext"],
-    "outDir": "./build/",
     "baseUrl": "./src/",
     "jsx": "react-jsx",
     "moduleResolution": "node",
