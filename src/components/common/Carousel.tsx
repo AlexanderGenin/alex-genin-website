@@ -26,7 +26,6 @@ const Carousel: FC<Props> = ({ children }) => {
 
   window.addEventListener("resize", () => {
     setSlideWidth(getSlideWidth());
-    console.log(getSlideWidth());
   });
 
   const length = Children.count(children);

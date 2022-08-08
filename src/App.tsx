@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import Logo from "./images/personal/alex-genin-logo.svg";
 import type { FC } from "react";
+import Logo from "./images/personal/alex-genin-logo.svg";
 import Loader from "./components/Loader";
 import Header from "./components/Header";
 import Home from "./components/Home";

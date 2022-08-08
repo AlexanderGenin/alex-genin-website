@@ -1,8 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-console.log(path.join(__dirname, "public"));
-
 module.exports = {
   entry: "./src/index.tsx",
   plugins: [
