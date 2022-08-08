@@ -7,13 +7,30 @@ type Props = {
   children: ReactNode;
 };
 
-const SLIDE_WIDTH = 900 - 40 * 2;
+const getSlideWidth = () => {
+  if (window.screen.width >= 1024) {
+    return 820;
+  }
+  if (window.screen.width >= 768) {
+    return 620;
+  }
+  if (window.screen.width >= 480) {
+    return window.screen.width - 64 - 80;
+  }
+  return window.screen.width - 64 - 40;
+};
 
 const Carousel: FC<Props> = ({ children }) => {
   const [slideIndex, setSlideIndex] = useState(0);
+  const [slideWidth, setSlideWidth] = useState(getSlideWidth());
+
+  window.addEventListener("resize", () => {
+    setSlideWidth(getSlideWidth());
+    console.log(getSlideWidth());
+  });
 
   const length = Children.count(children);
-  let offset = -slideIndex * SLIDE_WIDTH;
+  let offset = -slideIndex * slideWidth;
 
   const handleLeftClick = () => {
     if (slideIndex !== 0) setSlideIndex((i) => i - 1);
@@ -25,16 +42,13 @@ const Carousel: FC<Props> = ({ children }) => {
 
   return (
     <div className="carousel__container">
-      <div className="carousel__arrow carousel__arrow_left">
-        {slideIndex !== 0 && (
-          <BsChevronLeft
-            className="carousel__arrow_svg"
-            size={44}
-            onClick={handleLeftClick}
-          />
-        )}
-      </div>
-
+      <BsChevronLeft
+        className={
+          "carousel__arrow carousel__arrow_left " +
+          (slideIndex === 0 ? "carousel__arrow_hidden" : "")
+        }
+        onClick={slideIndex === 0 ? undefined : handleLeftClick}
+      />
       <div className="carousel__window">
         <div
           className="carousel__elements"
@@ -43,15 +57,15 @@ const Carousel: FC<Props> = ({ children }) => {
           {children}
         </div>
       </div>
-      <div className="carousel__arrow carousel__arrow_left">
-        {slideIndex !== length - 1 && (
-          <BsChevronRight
-            className="carousel__arrow_svg"
-            size={44}
-            onClick={handleRightClick}
-          />
-        )}
-      </div>
+      {
+        <BsChevronRight
+          className={
+            "carousel__arrow carousel__arrow_right " +
+            (slideIndex === length - 1 ? "carousel__arrow_hidden" : "")
+          }
+          onClick={slideIndex === length - 1 ? undefined : handleRightClick}
+        />
+      }
     </div>
   );
 };

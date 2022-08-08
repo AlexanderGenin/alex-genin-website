@@ -1,6 +1,5 @@
 .carousel {
   &__container {
-    height: 22rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -9,12 +8,26 @@
     @media (min-width: $tabletScreen) {
       margin-top: 6rem;
     }
+    @media (min-width: 700px) {
+      height: 22rem;
+    }
   }
   &__window {
-    width: 820px;
-
+    width: calc(100% - 40px);
     height: 100%;
-    overflow: scroll;
+    overflow: hidden;
+
+    @media (min-width: $tabletScreen) {
+      width: calc(100% - 80px);
+    }
+
+    @media (min-width: $laptopScreen) {
+      width: 620px;
+    }
+
+    @media (min-width: $desktopScreen) {
+      width: 820px;
+    }
   }
   &__elements {
     height: 100%;
@@ -22,11 +35,16 @@
     transition: transform 500ms ease-in-out;
   }
   &__arrow {
-    width: 40px;
-  }
-  &__arrow_svg {
     color: $secondaryTextColor;
-    // width: 40px;
     cursor: pointer;
+    width: 20px;
+    height: 20px;
+    @media (min-width: $tabletScreen) {
+      width: 40px;
+      height: 40px;
+    }
+    &_hidden {
+      visibility: hidden;
+    }
   }
 }

@@ -3,14 +3,18 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  @media (min-width: $tabletScreen) {
+  min-width: 100%;
+  @media (min-width: 700px) {
     flex-direction: row;
   }
   &__avatar {
-    width: 16rem;
+    width: 10rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    @media (min-width: $desktopScreen) {
+      width: 16rem;
+    }
     svg {
       width: 8rem;
       height: 8rem;
@@ -21,8 +25,12 @@
     }
   }
   &__content {
-    margin-top: 1rem;
+    margin: 1rem 1rem 0 1rem;
     @media (min-width: $tabletScreen) {
+      // width: 24rem;
+      margin-top: 0;
+    }
+    @media (min-width: $desktopScreen) {
       width: 30rem;
       margin-top: 0;
     }

@@ -4,7 +4,7 @@ import AlexGeninPhoto from "./images/personal/alex-genin-w-circle.png";
 
 import { IoRocketOutline } from "@react-icons/all-files/io5/IoRocketOutline";
 import { IoLaptopOutline } from "@react-icons/all-files/io5/IoLaptopOutline";
-import { IoLibraryOutline } from "@react-icons/all-files/io5/IoLibraryOutline";
+import { IoColorPaletteOutline } from "@react-icons/all-files/io5/IoColorPaletteOutline";
 
 import { FaGithub } from "@react-icons/all-files/fa/FaGithub";
 import { FaLinkedinIn } from "@react-icons/all-files/fa/FaLinkedinIn";
@@ -303,7 +303,7 @@ export const experiences: TExperience[] = [
   },
   {
     years: "2020",
-    icon: <IoLibraryOutline />,
+    icon: <IoColorPaletteOutline />,
     title: "Full Stack Web Developer",
     company: "ThemeForest by Envato",
     descList: [

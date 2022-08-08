@@ -4,14 +4,7 @@ import { TReview } from "types/types";
 
 const Review: FC<TReview> = ({ author, text, avatar }) => {
   return (
-    <div
-      className="review"
-      style={{
-        height: "100%",
-        minWidth: "100%",
-        maxWidth: "100%",
-      }}
-    >
+    <div className="review">
       <div className="review__avatar">{avatar}</div>
       <div className="review__content">
         <ImQuotesLeft size={74} />

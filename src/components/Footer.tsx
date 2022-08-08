@@ -32,7 +32,7 @@ const Footer: FC<Props> = ({ logo, links, socials, name }) => {
             ))}
           </div>
           <div className="copyright">
-            <p>© 2021, {name}</p>
+            <p>© 2022, {name}</p>
           </div>
         </div>
       </div>
